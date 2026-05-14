@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marama · Sample Inspection Report</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --forest: #1C2B2A;
+    --slate: #3D5C4F;
+    --sage: #C8D8C0;
+    --sage-pale: #E8F0E4;
+    --linen: #F5F2EC;
+    --linen-mid: #EAE7E0;
+    --gold: #C9A96E;
+    --gold-dk: #8a6c2c;
+    --muted: #5a6b63;
+    --red: #C0392B;
+    --red-pale: #FDECEA;
+    --amber: #D4830A;
+    --amber-pale: #FEF3DC;
+    --green: #2D6A4F;
+    --green-pale: #EAF4EF;
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --sans: 'DM Sans', sans-serif;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:var(--sans); background:#e8e4dc; color:var(--forest); font-size:11pt; line-height:1.6; }
+
+  /* ── LANGUAGE SWITCHER ── */
+  .lang-bar {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 200;
+    background: var(--forest);
+    border-bottom: 1px solid rgba(200,216,192,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 32px;
+    gap: 16px;
+  }
+  .lang-bar-brand {
+    font-family: var(--serif);
+    font-size: 13pt;
+    font-weight: 500;
+    letter-spacing: 4px;
+    color: var(--linen);
+    flex-shrink: 0;
+  }
+  .lang-bar-label {
+    font-family: var(--sans);
+    font-size: 8pt;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(200,216,192,0.4);
+    flex-shrink: 0;
+  }
+  .lang-switches {
+    display: flex;
+    gap: 3px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 3px;
+    padding: 3px;
+  }
+  .lang-btn {
+    font-family: var(--sans);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    padding: 6px 14px;
+    border-radius: 2px;
+    border: none;
+    cursor: pointer;
+    transition: background .2s, color .2s;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+  }
+  .lang-btn.active {
+    background: var(--sage);
+    color: var(--forest);
+  }
+  .lang-btn:not(.active) {
+    background: transparent;
+    color: rgba(245,242,236,0.4);
+  }
+  .lang-btn:not(.active):hover {
+    color: rgba(245,242,236,0.75);
+  }
+  .lang-flag { font-size: 14px; line-height: 1; }
+  .print-btn {
+    font-family: var(--sans);
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 7px 16px;
+    background: transparent;
+    border: 1px solid rgba(200,216,192,0.25);
+    color: rgba(200,216,192,0.55);
+    border-radius: 2px;
+    cursor: pointer;
+    transition: border-color .2s, color .2s;
+    flex-shrink: 0;
+  }
+  .print-btn:hover { border-color: var(--sage); color: var(--sage); }
+
+  /* ── PRINT ── */
+  @media print {
+    .lang-bar { display: none; }
+    body { background: #fff; margin-top: 0 !important; }
+    .page { page-break-after: always; margin: 0; box-shadow: none; }
+    .page:last-child { page-break-after: avoid; }
+    @page { margin: 0; size: A4; }
+  }
+
+  /* ── LAYOUT ── */
+  body { margin-top: 52px; }
+  .pages-wrapper { max-width: 210mm; margin: 32px auto 64px; display: flex; flex-direction: column; gap: 24px; }
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    background: #fff;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 32px rgba(28,43,42,0.18);
+  }
+
+  /* ── COVER ── */
+  .cover { background:var(--forest); min-height:297mm; display:flex; flex-direction:column; }
+  .cover-top { padding:48px 52px 0; flex:1; }
+  .cover-logo { display:flex; align-items:center; gap:14px; margin-bottom:80px; }
+  .logo-mark { width:44px; height:44px; flex-shrink:0; }
+  .logo-text { display:flex; flex-direction:column; gap:2px; }
+  .logo-name { font-family:var(--serif); font-size:18pt; font-weight:500; letter-spacing:4px; color:var(--linen); line-height:1; }
+  .logo-sub { font-family:var(--serif); font-size:8pt; font-style:italic; letter-spacing:2px; color:rgba(200,216,192,0.5); line-height:1; }
+  .cover-eyebrow { font-family:var(--sans); font-size:8pt; letter-spacing:0.18em; text-transform:uppercase; color:var(--sage); margin-bottom:20px; display:flex; align-items:center; gap:12px; }
+  .cover-eyebrow::before { content:''; display:block; width:32px; height:1px; background:var(--sage); flex-shrink:0; }
+  .cover-title { font-family:var(--serif); font-size:42pt; font-weight:300; color:var(--linen); line-height:1.05; margin-bottom:12px; letter-spacing:-0.01em; }
+  .cover-title em { font-style:italic; color:var(--sage); }
+  .cover-address { font-family:var(--sans); font-size:11pt; font-weight:300; color:rgba(245,242,236,0.55); margin-bottom:60px; line-height:1.7; }
+  .cover-status-bar { display:inline-flex; align-items:center; gap:10px; background:rgba(200,216,192,0.12); border:1px solid rgba(200,216,192,0.25); border-radius:40px; padding:10px 22px; margin-bottom:60px; }
+  .status-dot { width:8px; height:8px; border-radius:50%; background:var(--sage); flex-shrink:0; }
+  .status-dot.flag { background:var(--gold); }
+  .status-text { font-family:var(--sans); font-size:9pt; font-weight:500; letter-spacing:0.08em; color:var(--sage); }
+  .cover-meta-grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:1px; background:rgba(200,216,192,0.1); }
+  .cover-meta-item { background:rgba(255,255,255,0.03); padding:20px 28px; }
+  .cover-meta-label { font-family:var(--sans); font-size:7.5pt; letter-spacing:0.15em; text-transform:uppercase; color:rgba(200,216,192,0.4); margin-bottom:6px; }
+  .cover-meta-value { font-family:var(--serif); font-size:13pt; font-weight:400; color:var(--linen); line-height:1.3; }
+  .cover-footer { padding:24px 52px; border-top:1px solid rgba(200,216,192,0.1); display:flex; align-items:center; justify-content:space-between; }
+  .cover-footer-left { font-family:var(--sans); font-size:8pt; color:rgba(200,216,192,0.3); letter-spacing:0.04em; }
+  .cover-footer-right { font-family:var(--sans); font-size:8pt; color:rgba(200,216,192,0.3); }
+
+  /* ── INNER PAGES ── */
+  .page-header { background:var(--forest); padding:20px 48px; display:flex; align-items:center; justify-content:space-between; }
+  .page-header-brand { font-family:var(--serif); font-size:11pt; font-weight:500; letter-spacing:3px; color:var(--linen); }
+  .page-header-info { font-family:var(--sans); font-size:8pt; color:rgba(200,216,192,0.45); text-align:right; line-height:1.5; }
+  .page-content { padding:36px 48px 32px; }
+  .section { margin-bottom:36px; }
+  .section-heading { font-family:var(--serif); font-size:18pt; font-weight:400; color:var(--forest); margin-bottom:20px; padding-bottom:10px; border-bottom:1px solid rgba(61,92,79,0.12); display:flex; align-items:baseline; gap:12px; }
+  .section-heading-number { font-family:var(--sans); font-size:8pt; letter-spacing:0.12em; text-transform:uppercase; color:var(--muted); font-weight:400; }
+
+  /* ── CHECKS ── */
+  .check-grid { display:grid; grid-template-columns:1fr 1fr; gap:1px; background:rgba(61,92,79,0.08); margin-bottom:16px; }
+  .check-item { background:var(--linen); padding:14px 18px; display:flex; align-items:center; gap:12px; }
+  .check-item.flag { background:var(--amber-pale); }
+  .check-icon { width:22px; height:22px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  .check-icon.ok { background:var(--green-pale); border:1px solid rgba(45,106,79,0.2); }
+  .check-icon.warn { background:var(--amber-pale); border:1px solid rgba(212,131,10,0.3); }
+  .check-label { font-family:var(--sans); font-size:9.5pt; color:var(--forest); font-weight:400; flex:1; }
+  .check-status { font-family:var(--sans); font-size:8pt; font-weight:500; letter-spacing:0.06em; }
+  .check-status.ok { color:var(--green); }
+  .check-status.warn { color:var(--amber); }
+
+  /* ── CALLOUTS ── */
+  .flag-callout { background:var(--amber-pale); border-left:3px solid var(--gold); padding:16px 20px; margin-bottom:16px; border-radius:0 4px 4px 0; }
+  .flag-callout-title { font-family:var(--sans); font-size:8.5pt; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold-dk); margin-bottom:6px; }
+  .flag-callout-body { font-family:var(--sans); font-size:9.5pt; color:var(--gold-dk); line-height:1.6; }
+  .good-callout { background:var(--green-pale); border-left:3px solid var(--green); padding:16px 20px; margin-bottom:16px; border-radius:0 4px 4px 0; }
+  .good-callout-title { font-family:var(--sans); font-size:8.5pt; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:var(--green); margin-bottom:6px; }
+  .good-callout-body { font-family:var(--sans); font-size:9.5pt; color:var(--green); line-height:1.6; }
+
+  /* ── PHOTOS ── */
+  .photo-grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px; margin-bottom:8px; }
+  .photo-placeholder { aspect-ratio:4/3; border-radius:4px; display:flex; flex-direction:column; align-items:center; justify-content:flex-end; padding:10px 12px; position:relative; overflow:hidden; }
+  .photo-placeholder.terrace { background:linear-gradient(160deg,#b8ceb0 0%,#8aaa82 100%); }
+  .photo-placeholder.pool    { background:linear-gradient(160deg,#93b8c8 0%,#6090a8 100%); }
+  .photo-placeholder.garden  { background:linear-gradient(160deg,#a8c09a 0%,#6e9060 100%); }
+  .photo-placeholder.facade  { background:linear-gradient(160deg,#d4cfc0 0%,#a8a090 100%); }
+  .photo-placeholder.living  { background:linear-gradient(160deg,#c8bea8 0%,#a09078 100%); }
+  .photo-placeholder.kitchen { background:linear-gradient(160deg,#c4c0b0 0%,#989080 100%); }
+  .photo-placeholder.master  { background:linear-gradient(160deg,#bab0a0 0%,#908070 100%); }
+  .photo-placeholder.roof    { background:linear-gradient(160deg,#c8b898 0%,#a08860 100%); }
+  .photo-placeholder.gate    { background:linear-gradient(160deg,#b0b8a8 0%,#808870 100%); }
+  .photo-label { font-family:var(--sans); font-size:7.5pt; color:rgba(255,255,255,0.85); letter-spacing:0.06em; background:rgba(0,0,0,0.25); padding:3px 8px; border-radius:2px; width:100%; text-align:center; }
+  .photo-caption { font-family:var(--sans); font-size:8pt; color:var(--muted); margin-top:4px; text-align:center; }
+
+  /* ── NARRATIVE ── */
+  .narrative { font-family:var(--sans); font-size:10pt; font-weight:300; color:var(--muted); line-height:1.8; margin-bottom:16px; }
+  .narrative strong { font-weight:500; color:var(--forest); }
+
+  /* ── SUMMARY TABLE ── */
+  .summary-table { width:100%; border-collapse:collapse; margin-bottom:16px; }
+  .summary-table th { font-family:var(--sans); font-size:7.5pt; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:rgba(255,255,255,0.7); background:var(--forest); padding:10px 14px; text-align:left; }
+  .summary-table td { font-family:var(--sans); font-size:9.5pt; padding:10px 14px; border-bottom:1px solid rgba(61,92,79,0.08); vertical-align:top; color:var(--forest); }
+  .summary-table tr:nth-child(even) td { background:var(--linen); }
+  .badge { display:inline-block; font-family:var(--sans); font-size:7.5pt; font-weight:500; letter-spacing:0.06em; padding:3px 10px; border-radius:20px; }
+  .badge.ok   { background:var(--green-pale); color:var(--green); }
+  .badge.warn { background:var(--amber-pale); color:var(--amber); }
+  .badge.na   { background:rgba(61,92,79,0.07); color:var(--muted); }
+
+  /* ── SIGNATURE ── */
+  .signature-block { margin-top:28px; padding:24px 28px; border:1px solid rgba(61,92,79,0.12); border-radius:4px; display:grid; grid-template-columns:1fr 1fr; gap:32px; background:var(--linen); }
+  .sig-label { font-family:var(--sans); font-size:7.5pt; letter-spacing:0.12em; text-transform:uppercase; color:var(--muted); margin-bottom:4px; }
+  .sig-value { font-family:var(--serif); font-size:12pt; color:var(--forest); font-weight:400; }
+  .sig-line { height:1px; background:rgba(61,92,79,0.15); margin:14px 0 8px; }
+  .sig-contact { font-family:var(--sans); font-size:8.5pt; color:var(--muted); margin-top:4px; }
+
+  /* ── PAGE FOOTER ── */
+  .page-footer { position:absolute; bottom:0; left:0; right:0; padding:14px 48px; border-top:1px solid rgba(61,92,79,0.08); display:flex; align-items:center; justify-content:space-between; }
+  .page-footer-left { font-family:var(--sans); font-size:7.5pt; color:rgba(61,92,79,0.35); letter-spacing:0.04em; }
+  .page-footer-right { font-family:var(--sans); font-size:7.5pt; color:rgba(61,92,79,0.35); }
+  .divider-line { height:1px; background:rgba(61,92,79,0.1); margin:24px 0; }
+
+  /* ── SVG ICONS ── */
+  .ico-ok  { stroke:#2D6A4F; }
+  .ico-warn { stroke:#D4830A; }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════ LANGUAGE BAR -->
+<div class="lang-bar no-print">
+  <div class="lang-bar-brand">MARAMA</div>
+  <div class="lang-bar-label" id="bar-label">Sample report</div>
+  <div class="lang-switches">
+    <button class="lang-btn active" onclick="setLang('ES')"><span class="lang-flag">🇪🇸</span> Español</button>
+    <button class="lang-btn" onclick="setLang('EN')"><span class="lang-flag">🇬🇧</span> English</button>
+    <button class="lang-btn" onclick="setLang('CZ')"><span class="lang-flag">🇨🇿</span> Česky</button>
+  </div>
+  <button class="print-btn" onclick="window.print()" id="print-btn">↓ PDF</button>
+</div>
+
+<div class="pages-wrapper">
+
+<!-- ══════════════════════ PAGE 1 — COVER -->
+<div class="page cover">
+  <div class="cover-top">
+    <div class="cover-logo">
+      <svg class="logo-mark" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="22" cy="22" r="20" fill="#C9A96E"/>
+        <circle cx="27" cy="18" r="16" fill="#1C2B2A"/>
+        <text x="19" y="28" font-family="'Cormorant Garamond',Georgia,serif" font-weight="600" font-size="20" text-anchor="middle" fill="#F5F2EC" style="user-select:none">M</text>
+      </svg>
+      <div class="logo-text">
+        <div class="logo-name">MARAMA</div>
+        <div class="logo-sub" id="c-logo-sub"></div>
+      </div>
+    </div>
+    <div class="cover-eyebrow" id="c-eyebrow"></div>
+    <h1 class="cover-title" id="c-title"></h1>
+    <div class="cover-address" id="c-address"></div>
+    <div class="cover-status-bar">
+      <div class="status-dot flag" id="c-dot"></div>
+      <span class="status-text" id="c-status"></span>
+    </div>
+    <div class="cover-meta-grid">
+      <div class="cover-meta-item"><div class="cover-meta-label" id="ml-date"></div><div class="cover-meta-value" id="mv-date"></div></div>
+      <div class="cover-meta-item"><div class="cover-meta-label" id="ml-by"></div><div class="cover-meta-value">Marama Property Care</div></div>
+      <div class="cover-meta-item"><div class="cover-meta-label" id="ml-ref"></div><div class="cover-meta-value" id="mv-ref"></div></div>
+      <div class="cover-meta-item"><div class="cover-meta-label" id="ml-tier"></div><div class="cover-meta-value" id="mv-tier"></div></div>
+      <div class="cover-meta-item"><div class="cover-meta-label" id="ml-items"></div><div class="cover-meta-value">24 / 24</div></div>
+      <div class="cover-meta-item"><div class="cover-meta-label" id="ml-photos"></div><div class="cover-meta-value" id="mv-photos"></div></div>
+      <div class="cover-meta-item"><div class="cover-meta-label" id="ml-video"></div><div class="cover-meta-value" id="mv-video"></div></div>
+    </div>
+  </div>
+  <div class="cover-footer">
+    <div class="cover-footer-left">Marama Property Care · hola@maramapropertycare.es · +34 643 627 516 · Costa Blanca</div>
+    <div class="cover-footer-right" id="p1-of"></div>
+  </div>
+</div>
+
+<!-- ══════════════════════ PAGE 2 — EXTERIOR / POOL / ELECTRIC -->
+<div class="page" style="padding-bottom:52px;">
+  <div class="page-header">
+    <div class="page-header-brand">MARAMA</div>
+    <div class="page-header-info" id="ph2"></div>
+  </div>
+  <div class="page-content">
+
+    <div class="section">
+      <div class="section-heading"><span class="section-heading-number">01</span><span id="s-ext"></span></div>
+      <div class="check-grid">
+        <div class="check-item"><div class="check-icon ok"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2 5.5l2.5 2.5 4.5-4.5" class="ico-ok" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="check-label" id="ck-walls"></span><span class="check-status ok" id="ck-walls-s"></span></div>
+        <div class="check-item"><div class="check-icon ok"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2 5.5l2.5 2.5 4.5-4.5" class="ico-ok" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="check-label" id="ck-facade"></span><span class="check-status ok" id="ck-facade-s"></span></div>
+        <div class="check-item"><div class="check-icon ok"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2 5.5l2.5 2.5 4.5-4.5" class="ico-ok" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="check-label" id="ck-windows"></span><span class="check-status ok" id="ck-windows-s"></span></div>
+        <div class="check-item"><div class="check-icon ok"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2 5.5l2.5 2.5 4.5-4.5" class="ico-ok" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="check-label" id="ck-drains"></span><span class="check-status ok" id="ck-drains-s"></span></div>
+        <div class="check-item flag"><div class="check-icon warn"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 2.5v3M5.5 7.5v.4" class="ico-warn" stroke-width="1.5" stroke-linecap="round"/></svg></div><span class="check-label" id="ck-roof"></span><span class="check-status warn" id="ck-roof-s"></span></div>
+        <div class="check-item"><div class="check-icon ok"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2 5.5l2.5 2.5 4.5-4.5" class="ico-ok" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="check-label" id="ck-garden"></span><span class="check-status ok" id="ck-garden-s"></span></div>
+      </div>
+      <div class="flag-callout"><div class="flag-callout-title" id="flag-title"></div><div class="flag-callout-body" id="flag-body"></div></div>
+    </div>
+
+    <div class="section">
+      <div class="section-heading"><span class="section-heading-number">02</span><span id="s-pool"></span></div>
+      <div class="check-grid">
+        <div class="check-item"><div class="check-icon ok"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2 5.5l2.5 2.5 4.5-4.5" class="ico-ok" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="check-label" id="ck-pw"></span><span class="check-status ok" id="ck-pw-s"></span></div>
+        <div class="check-item"><div class="check-icon ok"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2 5.5l2.5 2.5 4.5-4.5" class="ico-ok" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="check-label" id="ck-pump"></span><span class="check-status ok" id="ck-pump-s"></span></div>
+        <div class="check-item"><div class="check-icon ok"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2 5.5l2.5 2.5 4.5-4.5" class="ico-ok" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="check-label" id="ck-wp"></span><span class="check-status ok" id="ck-wp-s"></span></div>
+        <div class="check-item"><div class="check-icon ok"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2 5.5l2.5 2.5 4.5-4.5" class="ico-ok" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="check-label" id="ck-leaks"></span><span class="check-status ok" id="ck-leaks-s"></span></div>
+        <div class="check-item"><div class="check-icon ok"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2 5.5l2.5 2.5 4.5-4.5" class="ico-ok" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="check-label" id="ck-wh"></span><span class="check-status ok" id="ck-wh-s"></span></div>
+        <div class="check-item"><div class="check-icon ok"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2 5.5l2.5 2.5 4.5-4.5" class="ico-ok" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="check-label" id="ck-irr"></span><span class="check-status ok" id="ck-irr-s"></span></div>
+      </div>
+      <div class="good-callout"><div class="good-callout-title" id="pool-note-title"></div><div class="good-callout-body" id="pool-note-body"></div></div>
+    </div>
+
+    <div class="section">
+      <div class="section-heading"><span class="section-heading-number">03</span><span id="s-elec"></span></div>
+      <div class="check-grid">
+        <div class="check-item"><div class="check-icon ok"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2 5.5l2.5 2.5 4.5-4.5" class="ico-ok" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="check-label" id="ck-mains"></span><span class="check-status ok" id="ck-mains-s"></span></div>
+        <div class="check-item"><div class="check-icon ok"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2 5.5l2.5 2.5 4.5-4.5" class="ico-ok" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="check-label" id="ck-cb"></span><span class="check-status ok" id="ck-cb-s"></span></div>
+        <div class="check-item"><div class="check-icon ok"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2 5.5l2.5 2.5 4.5-4.5" class="ico-ok" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="check-label" id="ck-alarm"></span><span class="check-status ok" id="ck-alarm-s"></span></div>
+        <div class="check-item"><div class="check-icon ok"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2 5.5l2.5 2.5 4.5-4.5" class="ico-ok" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="check-label" id="ck-cams"></span><span class="check-status ok" id="ck-cams-s"></span></div>
+        <div class="check-item"><div class="check-icon ok"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2 5.5l2.5 2.5 4.5-4.5" class="ico-ok" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="check-label" id="ck-router"></span><span class="check-status ok" id="ck-router-s"></span></div>
+        <div class="check-item"><div class="check-icon ok"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2 5.5l2.5 2.5 4.5-4.5" class="ico-ok" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="check-label" id="ck-light"></span><span class="check-status ok" id="ck-light-s"></span></div>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer"><div class="page-footer-left">Marama Property Care · Costa Blanca · hola@maramapropertycare.es</div><div class="page-footer-right" id="p2-of"></div></div>
+</div>
+
+<!-- ══════════════════════ PAGE 3 — INTERIOR + PHOTOS -->
+<div class="page" style="padding-bottom:52px;">
+  <div class="page-header"><div class="page-header-brand">MARAMA</div><div class="page-header-info" id="ph3"></div></div>
+  <div class="page-content">
+    <div class="section">
+      <div class="section-heading"><span class="section-heading-number">04</span><span id="s-int"></span></div>
+      <div class="check-grid">
+        <div class="check-item"><div class="check-icon ok"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2 5.5l2.5 2.5 4.5-4.5" class="ico-ok" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="check-label" id="ck-vent"></span><span class="check-status ok" id="ck-vent-s"></span></div>
+        <div class="check-item"><div class="check-icon ok"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2 5.5l2.5 2.5 4.5-4.5" class="ico-ok" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="check-label" id="ck-damp"></span><span class="check-status ok" id="ck-damp-s"></span></div>
+        <div class="check-item"><div class="check-icon ok"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2 5.5l2.5 2.5 4.5-4.5" class="ico-ok" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="check-label" id="ck-ac"></span><span class="check-status ok" id="ck-ac-s"></span></div>
+        <div class="check-item"><div class="check-icon ok"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2 5.5l2.5 2.5 4.5-4.5" class="ico-ok" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="check-label" id="ck-taps"></span><span class="check-status ok" id="ck-taps-s"></span></div>
+        <div class="check-item"><div class="check-icon ok"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2 5.5l2.5 2.5 4.5-4.5" class="ico-ok" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="check-label" id="ck-pests"></span><span class="check-status ok" id="ck-pests-s"></span></div>
+        <div class="check-item"><div class="check-icon ok"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2 5.5l2.5 2.5 4.5-4.5" class="ico-ok" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="check-label" id="ck-secure"></span><span class="check-status ok" id="ck-secure-s"></span></div>
+      </div>
+      <div class="narrative" id="int-narrative"></div>
+    </div>
+    <div class="divider-line"></div>
+    <div class="section">
+      <div class="section-heading"><span class="section-heading-number">05</span><span id="s-photos"></span></div>
+      <p class="narrative" id="photo-intro" style="margin-bottom:16px;"></p>
+      <div class="photo-grid">
+        <div><div class="photo-placeholder terrace"><span class="photo-label" id="ph-terrace"></span></div><div class="photo-caption" id="pc-terrace"></div></div>
+        <div><div class="photo-placeholder pool"><span class="photo-label" id="ph-pool"></span></div><div class="photo-caption" id="pc-pool"></div></div>
+        <div><div class="photo-placeholder garden"><span class="photo-label" id="ph-garden"></span></div><div class="photo-caption" id="pc-garden"></div></div>
+        <div><div class="photo-placeholder facade"><span class="photo-label" id="ph-facade"></span></div><div class="photo-caption" id="pc-facade"></div></div>
+        <div><div class="photo-placeholder living"><span class="photo-label" id="ph-living"></span></div><div class="photo-caption" id="pc-living"></div></div>
+        <div><div class="photo-placeholder kitchen"><span class="photo-label" id="ph-kitchen"></span></div><div class="photo-caption" id="pc-kitchen"></div></div>
+        <div><div class="photo-placeholder master"><span class="photo-label" id="ph-master"></span></div><div class="photo-caption" id="pc-master"></div></div>
+        <div><div class="photo-placeholder roof" style="border:2px solid rgba(212,131,10,0.4);"><span class="photo-label" id="ph-roof" style="background:rgba(212,131,10,0.4);"></span></div><div class="photo-caption" id="pc-roof" style="color:var(--amber);"></div></div>
+        <div><div class="photo-placeholder gate"><span class="photo-label" id="ph-gate"></span></div><div class="photo-caption" id="pc-gate"></div></div>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer"><div class="page-footer-left">Marama Property Care · Costa Blanca · hola@maramapropertycare.es</div><div class="page-footer-right" id="p3-of"></div></div>
+</div>
+
+<!-- ══════════════════════ PAGE 4 — SUMMARY + CLOSE -->
+<div class="page" style="padding-bottom:52px;">
+  <div class="page-header"><div class="page-header-brand">MARAMA</div><div class="page-header-info" id="ph4"></div></div>
+  <div class="page-content">
+    <div class="section">
+      <div class="section-heading"><span class="section-heading-number">06</span><span id="s-summary"></span></div>
+      <table class="summary-table">
+        <thead><tr><th id="th-area"></th><th id="th-cond"></th><th id="th-action"></th><th id="th-status"></th></tr></thead>
+        <tbody>
+          <tr><td id="tr-ext"></td><td id="tr-ext-c"></td><td id="tr-ext-a"></td><td><span class="badge ok" id="tr-ext-s"></span></td></tr>
+          <tr><td id="tr-roof"></td><td id="tr-roof-c"></td><td id="tr-roof-a"></td><td><span class="badge warn" id="tr-roof-s"></span></td></tr>
+          <tr><td id="tr-pool"></td><td id="tr-pool-c"></td><td id="tr-pool-a"></td><td><span class="badge ok" id="tr-pool-s"></span></td></tr>
+          <tr><td id="tr-elec"></td><td id="tr-elec-c"></td><td id="tr-elec-a"></td><td><span class="badge ok" id="tr-elec-s"></span></td></tr>
+          <tr><td id="tr-int"></td><td id="tr-int-c"></td><td id="tr-int-a"></td><td><span class="badge ok" id="tr-int-s"></span></td></tr>
+          <tr><td id="tr-ac"></td><td id="tr-ac-c"></td><td id="tr-ac-a"></td><td><span class="badge na" id="tr-ac-s"></span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="section">
+      <div class="section-heading"><span class="section-heading-number">07</span><span id="s-note"></span></div>
+      <div class="narrative" id="note-p1"></div>
+      <div class="narrative" id="note-p2"></div>
+    </div>
+    <div class="divider-line"></div>
+    <div class="section">
+      <div class="section-heading"><span class="section-heading-number">08</span><span id="s-okupa"></span></div>
+      <div class="narrative" id="okupa-body"></div>
+    </div>
+    <div class="signature-block">
+      <div>
+        <div class="sig-label" id="sig-by"></div>
+        <div class="sig-line"></div>
+        <div class="sig-value">Marama Property Care</div>
+        <div class="sig-contact">hola@maramapropertycare.es · +34 643 627 516</div>
+      </div>
+      <div>
+        <div class="sig-label" id="sig-issued"></div>
+        <div class="sig-line"></div>
+        <div class="sig-value" id="sig-date"></div>
+        <div class="sig-contact" id="sig-ref"></div>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <div class="page-footer-left" id="p4-left"></div>
+    <div class="page-footer-right" id="p4-of"></div>
+  </div>
+</div>
+
+</div><!-- /pages-wrapper -->
+
+<script>
+const DATA = {
+  ES: {
+    lang: "es",
+    barLabel: "Informe de muestra",
+    printBtn: "↓ PDF",
+    logoSub: "Gestión de propiedades · Costa Blanca",
+    eyebrow: "Informe mensual de inspección",
+    villa: "Villa", villaName: "Nórdica",
+    address: "Carrer dels Pins 11 · Moraira · Costa Blanca",
+    owner: "Propietario: Sr. Lars Kjeldsen · Aarhus, Dinamarca",
+    statusText: "1 incidencia detectada — operario contactado",
+    statusFlag: true,
+    mlDate: "Fecha de inspección", mvDate: "14 de junio de 2026",
+    mlBy: "Realizado por",
+    mlRef: "Referencia del informe", mvRef: "MAR-2606-033",
+    mlTier: "Tarifa contratada", mvTier: "Confort",
+    mlItems: "Puntos verificados",
+    mlPhotos: "Fotografías tomadas", mvPhotos: "31 imágenes",
+    mlVideo: "Vídeo anti-okupa", mvVideo: "Registrado",
+    phHeader: "Villa Nórdica · Moraira",
+    phSubHeader: "Informe de inspección · 14 de junio de 2026",
+    pageOf: ["Página 1 de 4","Página 2 de 4","Página 3 de 4","Página 4 de 4"],
+    // Section headings
+    sExt:"Inspección exterior", sPool:"Piscina e instalaciones hidráulicas",
+    sElec:"Instalación eléctrica y seguridad", sInt:"Inspección interior",
+    sPhotos:"Registro fotográfico", sSummary:"Resumen de hallazgos",
+    sNote:"Nota del inspector", sOkupa:"Registro de protección antiocupación",
+    // Exterior checks
+    ckWalls:"Muros perimetrales y cancelas", ckWallsS:"Correcto",
+    ckFacade:"Fachada y pintura", ckFacadeS:"Bueno",
+    ckWindows:"Ventanas y persianas", ckWindowsS:"Asegurado",
+    ckDrains:"Desagües de la terraza", ckDrainsS:"Despejados",
+    ckRoof:"Tejas del tejado — post-tormenta", ckRoofS:"Incidencia",
+    ckGarden:"Jardín y riego", ckGardenS:"Bueno",
+    flagTitle:"⚠ Incidencia detectada — tejas del tejado",
+    flagBody:"Tras el episodio de Gota Fría del 10 y 11 de junio, se han desplazado tres tejas en la vertiente norte del tejado. No se ha observado entrada de agua en el interior. Se han tomado fotografías. Se ha avisado al tejador de confianza (Construcciones Martínez), quien acudirá en un plazo de 5 días hábiles. Le remitiremos el presupuesto para su aprobación antes de iniciar cualquier trabajo.",
+    // Pool checks
+    ckPw:"Agua de la piscina — estado visual", ckPwS:"Correcto",
+    ckPump:"Bomba y filtro de la piscina", ckPumpS:"En marcha",
+    ckWp:"Presión del agua de red", ckWpS:"Normal",
+    ckLeaks:"Fugas visibles en tuberías", ckLeaksS:"Ninguna",
+    ckWh:"Calentador de agua", ckWhS:"En espera",
+    ckIrr:"Programador de riego", ckIrrS:"Activo",
+    poolNoteTitle:"✓ Nota — piscina",
+    poolNoteBody:"El agua de la piscina se observa visualmente limpia, sin decoloración, suciedad ni algas. El equipo de la piscina parece funcionar con normalidad. El análisis y tratamiento químico del agua no están incluidos en el servicio de Marama. Si dispone de empresa de mantenimiento de piscinas, le recomendamos programar su visita antes de su llegada.",
+    // Electrical checks
+    ckMains:"Suministro eléctrico", ckMainsS:"Activo",
+    ckCb:"Interruptores automáticos", ckCbS:"Normal",
+    ckAlarm:"Sistema de alarma", ckAlarmS:"Armada",
+    ckCams:"Cámaras de seguridad", ckCamsS:"Conectado",
+    ckRouter:"Router e internet", ckRouterS:"Conectado",
+    ckLight:"Iluminación exterior", ckLightS:"Funciona",
+    // Interior checks
+    ckVent:"Ventilación — todas las estancias", ckVentS:"Bueno",
+    ckDamp:"Indicios de humedad o moho", ckDampS:"Ninguno",
+    ckAc:"Unidades de climatización", ckAcS:"En espera",
+    ckTaps:"Grifería y desagües de baños", ckTapsS:"Correcto",
+    ckPests:"Plagas o insectos", ckPestsS:"Ninguno",
+    ckSecure:"Propiedad asegurada al salir", ckSecureS:"Confirmado",
+    intNarrative:"El interior de Villa Nórdica se encuentra en <strong>excelentes condiciones</strong>. Durante esta visita se abrieron y ventilaron todas las estancias. No se han detectado indicios de humedad, condensación ni entrada de agua. Los electrodomésticos de la cocina están en modo de espera y funcionan correctamente. Se han descargado los inodoros para mantener el sello de agua en todos los sifones, evitando así el característico olor a cerrado que se acumula en propiedades desocupadas durante el verano.",
+    // Photos
+    photoIntro:"Se han tomado 31 fotografías durante esta visita. A continuación se muestra una selección. El conjunto completo de imágenes está disponible bajo petición.",
+    phTerrace:"Terraza sur", pcTerrace:"Desagües despejados · Sin suciedad",
+    phPool:"Piscina", pcPool:"Agua limpia · Sin tratamiento químico",
+    phGarden:"Jardín", pcGarden:"Riego activo · Sin daños",
+    phFacade:"Fachada principal", pcFacade:"Pintura intacta · Cancela asegurada",
+    phLiving:"Salón", pcLiving:"Ventilado · Sin humedad observada",
+    phKitchen:"Cocina", pcKitchen:"Electrodomésticos en modo espera",
+    phMaster:"Dormitorio principal", pcMaster:"Sin humedad · Persianas intactas",
+    phRoof:"⚠ Tejado — incidencia", pcRoof:"3 tejas desplazadas · Ver nota",
+    phGate:"Cancela de acceso", pcGate:"Cerrado y asegurado al salir",
+    // Summary table
+    thArea:"Zona", thCond:"Estado", thAction:"Acción requerida", thStatus:"Estado",
+    trExt:"Exterior y perímetro", trExtC:"Bueno", trExtA:"Ninguna", trExtS:"Sin incidencias",
+    trRoof:"Tejado", trRoofC:"3 tejas desplazadas", trRoofA:"Tejador avisado — presupuesto pendiente", trRoofS:"Incidencia",
+    trPool:"Piscina e instalaciones hidráulicas", trPoolC:"Agua visualmente limpia", trPoolA:"Ninguna — análisis químico fuera del servicio", trPoolS:"Sin incidencias",
+    trElec:"Electricidad y seguridad", trElecC:"Todos los sistemas normales", trElecA:"Ninguna", trElecS:"Sin incidencias",
+    trInt:"Interior — todas las estancias", trIntC:"Bueno — sin humedad", trIntA:"Ninguna", trIntS:"Sin incidencias",
+    trAc:"Climatización", trAcC:"En espera — no comprobado este mes", trAcA:"Se recomienda probar antes de la llegada", trAcS:"Nota",
+    // Notes
+    noteP1:"Villa Nórdica se encuentra bien mantenida y en buen estado general. La incidencia en el tejado tras la tormenta es el único punto que requiere atención y ya está siendo gestionado. La propiedad está asegurada, la piscina está en perfectas condiciones y no hay indicios de humedad ni entrada de agua en ninguna estancia del interior. <strong>No es necesaria ninguna acción por su parte en este momento.</strong> Le remitiremos el presupuesto del tejador en cuanto lo recibamos, para que pueda decidir cómo proceder.",
+    noteP2:"Su próxima inspección programada es el <strong>14 de julio de 2026</strong>. Si tiene alguna pregunta sobre este informe o desea hablar con nosotros sobre cualquier asunto, responda a este mensaje o contáctenos por WhatsApp cuando lo desee.",
+    okupaBody:"El 14 de junio de 2026 se realizó un recorrido en vídeo con fecha y hora registradas de Villa Nórdica, que queda archivado en su expediente de propiedad. La grabación confirma que el inmueble es una residencia amueblada, activa y mantenida. Esta documentación se actualiza mensualmente y está disponible de forma inmediata si fuera necesaria para procedimientos legales en virtud de la ley antiokupa española. Referencia: <strong>MAR-VID-2606-033</strong>.",
+    sigBy:"Inspeccionado y documentado por", sigIssued:"Informe emitido",
+    sigDate:"14 de junio de 2026", sigRef:"Referencia: MAR-2606-033",
+    p4Left:"Marama Property Care · Autónomo registrado en España · Costa Blanca · hola@maramapropertycare.es",
+  },
+
+  EN: {
+    lang: "en",
+    barLabel: "Sample report",
+    printBtn: "↓ PDF",
+    logoSub: "Property Care · Costa Blanca",
+    eyebrow: "Monthly Inspection Report",
+    villa: "Villa", villaName: "Calmada",
+    address: "Carrer del Cap Prim 5 · Jávea · Costa Blanca",
+    owner: "Owner: Mrs. Seren Carew · Swansea, Wales",
+    statusText: "All clear — no issues found",
+    statusFlag: false,
+    mlDate: "Inspection date", mvDate: "14 June 2026",
+    mlBy: "Inspected by",
+    mlRef: "Report reference", mvRef: "MAR-2606-017",
+    mlTier: "Service tier", mvTier: "Prestige",
+    mlItems: "Items checked",
+    mlPhotos: "Photos taken", mvPhotos: "31 images",
+    mlVideo: "Anti-okupa video", mvVideo: "Recorded",
+    phHeader: "Villa Calmada · Jávea",
+    phSubHeader: "Inspection Report · 14 June 2026",
+    pageOf: ["Page 1 of 4","Page 2 of 4","Page 3 of 4","Page 4 of 4"],
+    sExt:"Exterior inspection", sPool:"Pool and water systems",
+    sElec:"Electrical and security", sInt:"Interior inspection",
+    sPhotos:"Photographic record", sSummary:"Summary of findings",
+    sNote:"Inspector's note", sOkupa:"Okupa protection record",
+    ckWalls:"Perimeter walls and gates", ckWallsS:"Clear",
+    ckFacade:"Façade and paintwork", ckFacadeS:"Good",
+    ckWindows:"Windows and shutters", ckWindowsS:"Secure",
+    ckDrains:"Terrace drains", ckDrainsS:"Clear",
+    ckRoof:"Roof tiles", ckRoofS:"Intact",
+    ckGarden:"Garden and irrigation", ckGardenS:"Good",
+    flagTitle:"✓ Roof — no issues",
+    flagBody:"Roof inspected following recent high winds. All tiles intact, no shifting or cracking observed. No action required.",
+    ckPw:"Pool water — visual condition", ckPwS:"Clear",
+    ckPump:"Pool pump and filter", ckPumpS:"Running",
+    ckWp:"Mains water pressure", ckWpS:"Normal",
+    ckLeaks:"Visible pipe leaks", ckLeaksS:"None",
+    ckWh:"Water heater", ckWhS:"Standby",
+    ckIrr:"Irrigation timer", ckIrrS:"Active",
+    poolNoteTitle:"✓ Note — Pool",
+    poolNoteBody:"Pool water is visually clear with no discolouration, debris, or algae observed. Pool equipment appears to be running normally. Chemical testing and treatment are outside Marama's scope — if you use a pool maintenance company, we recommend scheduling their visit before your arrival.",
+    ckMains:"Mains power", ckMainsS:"Active",
+    ckCb:"Circuit breakers", ckCbS:"Normal",
+    ckAlarm:"Alarm system", ckAlarmS:"Armed",
+    ckCams:"Security cameras", ckCamsS:"Online",
+    ckRouter:"Router and internet", ckRouterS:"Online",
+    ckLight:"Exterior lighting", ckLightS:"Working",
+    ckVent:"Ventilation — all rooms", ckVentS:"Good",
+    ckDamp:"Signs of damp or mould", ckDampS:"None",
+    ckAc:"Air conditioning units", ckAcS:"Standby",
+    ckTaps:"Bathroom taps and drains", ckTapsS:"Clear",
+    ckPests:"Pests or insects", ckPestsS:"None",
+    ckSecure:"Property secured on exit", ckSecureS:"Confirmed",
+    intNarrative:"The interior of Villa Calmada is in <strong>outstanding condition</strong>. All rooms were opened and ventilated during this visit. No signs of damp, condensation, or water ingress were found. The kitchen appliances are in standby mode and functioning normally. Toilets were flushed to maintain the water seal in all traps — this prevents the characteristic musty odour that builds up in unoccupied properties during summer.",
+    photoIntro:"31 photographs taken during this visit. A selection is shown below. The complete image set is available on request.",
+    phTerrace:"South terrace", pcTerrace:"Drains clear · No debris",
+    phPool:"Swimming pool", pcPool:"Water clear · No algae",
+    phGarden:"Garden", pcGarden:"Irrigation active · No damage",
+    phFacade:"Main façade", pcFacade:"Paintwork intact · Gates secured",
+    phLiving:"Living room", pcLiving:"Ventilated · No damp observed",
+    phKitchen:"Kitchen", pcKitchen:"Appliances on standby",
+    phMaster:"Master bedroom", pcMaster:"No moisture · Shutters intact",
+    phRoof:"Roof", pcRoof:"All tiles intact",
+    phGate:"Access gate", pcGate:"Locked and secured on exit",
+    thArea:"Area", thCond:"Condition", thAction:"Action required", thStatus:"Status",
+    trExt:"Exterior & perimeter", trExtC:"Good", trExtA:"None", trExtS:"Clear",
+    trRoof:"Roof", trRoofC:"All tiles intact", trRoofA:"None", trRoofS:"Clear",
+    trPool:"Pool & water systems", trPoolC:"Water visually clear", trPoolA:"None — chemical testing not in scope", trPoolS:"Clear",
+    trElec:"Electrics & security", trElecC:"All systems normal", trElecA:"None", trElecS:"Clear",
+    trInt:"Interior — all rooms", trIntC:"Good — no damp found", trIntA:"None", trIntS:"Clear",
+    trAc:"AC units", trAcC:"Standby — not tested this month", trAcA:"Pre-arrival test recommended", trAcS:"Note",
+    noteP1:"Villa Calmada is in outstanding condition. Every area checked has come back clear. The property is secure, the pool is in excellent shape, the roof is fully intact, and there are no signs of damp or water ingress anywhere. <strong>No action is required from you at this stage.</strong> Everything is ready for your arrival whenever you choose to come.",
+    noteP2:"Your next scheduled inspection is <strong>14 July 2026</strong>. If you have any questions about this report or wish to discuss anything, please reply to this message or contact us on WhatsApp at any time.",
+    okupaBody:"A dated video walkthrough of Villa Calmada was recorded on 14 June 2026 and is stored in your property file. The recording confirms the property is a furnished, active, maintained residence. This documentation is maintained monthly and is available immediately if required for legal proceedings under Spain's Anti-Okupa law. Reference: <strong>MAR-VID-2606-017</strong>.",
+    sigBy:"Inspected and reported by", sigIssued:"Report issued",
+    sigDate:"14 June 2026", sigRef:"Reference: MAR-2606-017",
+    p4Left:"Marama Property Care · Autónomo registered in Spain · Costa Blanca · hola@maramapropertycare.es",
+  },
+
+  CZ: {
+    lang: "cs",
+    barLabel: "Ukázkový informe",
+    printBtn: "↓ PDF",
+    logoSub: "Správa nemovitostí · Costa Blanca",
+    eyebrow: "Měsíční inspekční zpráva",
+    villa: "Villa", villaName: "Tramontana",
+    address: "Avinguda del Mediterrani 23 · Dénia · Costa Blanca",
+    owner: "Majitel: Rodina Mrkvičkových · Tábor, Česká republika",
+    statusText: "Vše v pořádku — bez závad",
+    statusFlag: false,
+    mlDate: "Datum inspekce", mvDate: "14. června 2026",
+    mlBy: "Provedl",
+    mlRef: "Číslo zprávy", mvRef: "MAR-2606-009",
+    mlTier: "Tarif", mvTier: "Prestige",
+    mlItems: "Zkontrolovaných bodů",
+    mlPhotos: "Pořízených fotografií", mvPhotos: "31 snímků",
+    mlVideo: "Video anti-okupa", mvVideo: "Zaznamenáno",
+    phHeader: "Villa Tramontana · Dénia",
+    phSubHeader: "Inspekční zpráva · 14. června 2026",
+    pageOf: ["Strana 1 ze 4","Strana 2 ze 4","Strana 3 ze 4","Strana 4 ze 4"],
+    sExt:"Vnější kontrola", sPool:"Bazén a vodoinstalace",
+    sElec:"Elektroinstalace a zabezpečení", sInt:"Vnitřní kontrola",
+    sPhotos:"Fotografická dokumentace", sSummary:"Přehled zjištění",
+    sNote:"Poznámka inspektora", sOkupa:"Záznam ochrany proti neoprávněnému obsazení",
+    ckWalls:"Oplocení a brány", ckWallsS:"V pořádku",
+    ckFacade:"Fasáda a nátěry", ckFacadeS:"Dobrý",
+    ckWindows:"Okna a okenice", ckWindowsS:"Zajištěno",
+    ckDrains:"Odtoky na terase", ckDrainsS:"Průchodné",
+    ckRoof:"Střešní tašky", ckRoofS:"Neporušeny",
+    ckGarden:"Zahrada a zavlažování", ckGardenS:"Dobrý",
+    flagTitle:"✓ Střecha — bez závad",
+    flagBody:"Střecha byla zkontrolována po nedávných větrech. Všechny tašky jsou neporušeny, bez posunutí ani prasklin. Žádná akce není potřeba.",
+    ckPw:"Voda v bazénu — vizuální stav", ckPwS:"V pořádku",
+    ckPump:"Čerpadlo a filtr bazénu", ckPumpS:"V provozu",
+    ckWp:"Tlak vody", ckWpS:"Normální",
+    ckLeaks:"Viditelné úniky vody", ckLeaksS:"Žádné",
+    ckWh:"Ohřívač vody", ckWhS:"Pohotovostní režim",
+    ckIrr:"Časovač zavlažování", ckIrrS:"Aktivní",
+    poolNoteTitle:"✓ Poznámka — bazén",
+    poolNoteBody:"Voda v bazénu je vizuálně čistá, bez zabarvení, nečistot nebo řas. Zařízení bazénu je v normálním provozu. Chemické testování a ošetření vody není součástí služeb Marama. Pokud využíváte firmu na údržbu bazénu, doporučujeme naplánovat jejich návštěvu před Vaším příjezdem.",
+    ckMains:"Přívod elektrické energie", ckMainsS:"Aktivní",
+    ckCb:"Jističe", ckCbS:"Normální",
+    ckAlarm:"Alarmový systém", ckAlarmS:"Aktivován",
+    ckCams:"Bezpečnostní kamery", ckCamsS:"Online",
+    ckRouter:"Router a internet", ckRouterS:"Online",
+    ckLight:"Venkovní osvětlení", ckLightS:"Funkční",
+    ckVent:"Větrání — všechny místnosti", ckVentS:"Dobré",
+    ckDamp:"Stopy vlhkosti nebo plísně", ckDampS:"Žádné",
+    ckAc:"Klimatizační jednotky", ckAcS:"Pohotovostní režim",
+    ckTaps:"Kohoutky a odtoky v koupelnách", ckTapsS:"V pořádku",
+    ckPests:"Škůdci nebo hmyz", ckPestsS:"Žádní",
+    ckSecure:"Nemovitost zajištěna při odchodu", ckSecureS:"Potvrzeno",
+    intNarrative:"Interiér vily Tramontana je ve <strong>výborném stavu</strong>. Během této návštěvy byly otevřeny a provětrány všechny místnosti. Nebyly zjištěny žádné stopy vlhkosti, kondenzace ani průniku vody. Kuchyňské spotřebiče jsou v pohotovostním režimu a fungují správně. Toalety byly proplachnuty, aby se udržela vodní zátka v sifonech — to zabraňuje charakteristickému zápachu zatuchliny, který se v nevyužívaných nemovitostech v létě tvoří.",
+    photoIntro:"Během této návštěvy bylo pořízeno 31 fotografií. Níže je uveden výběr. Kompletní sada snímků je k dispozici na vyžádání.",
+    phTerrace:"Jižní terasa", pcTerrace:"Odtoky průchodné · Bez nečistot",
+    phPool:"Bazén", pcPool:"Voda čistá · Bez řas",
+    phGarden:"Zahrada", pcGarden:"Zavlažování aktivní · Bez poškození",
+    phFacade:"Hlavní fasáda", pcFacade:"Nátěr neporušený · Brána zajištěna",
+    phLiving:"Obývací pokoj", pcLiving:"Provětráno · Žádná vlhkost",
+    phKitchen:"Kuchyň", pcKitchen:"Spotřebiče v pohotovostním režimu",
+    phMaster:"Hlavní ložnice", pcMaster:"Bez vlhkosti · Okenice neporušeny",
+    phRoof:"Střecha", pcRoof:"Tašky neporušeny · Vše v pořádku",
+    phGate:"Vstupní brána", pcGate:"Zamčeno a zajištěno při odchodu",
+    thArea:"Oblast", thCond:"Stav", thAction:"Požadovaná akce", thStatus:"Status",
+    trExt:"Exteriér a oplocení", trExtC:"Dobrý", trExtA:"Žádná", trExtS:"V pořádku",
+    trRoof:"Střecha", trRoofC:"Neporušena", trRoofA:"Žádná", trRoofS:"V pořádku",
+    trPool:"Bazén a vodoinstalace", trPoolC:"Voda vizuálně čistá", trPoolA:"Žádná — chemické testování není v rozsahu služeb", trPoolS:"V pořádku",
+    trElec:"Elektroinstalace a zabezpečení", trElecC:"Všechny systémy v normálu", trElecA:"Žádná", trElecS:"V pořádku",
+    trInt:"Interiér — všechny místnosti", trIntC:"Dobrý — bez vlhkosti", trIntA:"Žádná", trIntS:"V pořádku",
+    trAc:"Klimatizace", trAcC:"Pohotovostní režim — tento měsíc netestováno", trAcA:"Doporučujeme otestovat před příjezdem", trAcS:"Poznámka",
+    noteP1:"Vila Tramontana je ve vynikajícím stavu. Všechny zkontrolované oblasti jsou bez závad. Nemovitost je zabezpečena, bazén je čistý, střecha neporušena a v interiéru nejsou žádné stopy vlhkosti. <strong>Z Vaší strany není potřeba žádná akce.</strong> Vše je připraveno na Váš příjezd.",
+    noteP2:"Vaše příští plánovaná inspekce je naplánována na <strong>14. července 2026</strong>. Máte-li jakékoli dotazy k této zprávě nebo si přejete cokoliv prodiskutovat, odpovězte na tuto zprávu nebo nás kontaktujte přes WhatsApp kdykoli.",
+    okupaBody:"Dne 14. června 2026 byl pořízen datovaný videoprohlídkový záznam vily Tramontana, který je uložen ve Vašem spisu nemovitosti. Záznam potvrzuje, že nemovitost je zařízenou, aktivně využívanou a udržovanou rezidencí. Tato dokumentace je pořizována měsíčně a je okamžitě k dispozici v případě potřeby pro právní řízení podle španělského zákona proti neoprávněnému obsazování. Referenční číslo: <strong>MAR-VID-2606-009</strong>.",
+    sigBy:"Zkontroloval a zpracoval", sigIssued:"Zpráva vydána",
+    sigDate:"14. června 2026", sigRef:"Referenční číslo: MAR-2606-009",
+    p4Left:"Marama Property Care · Autónomo registrovaný ve Španělsku · Costa Blanca · hola@maramapropertycare.es",
+  }
+};
+
+function setLang(key) {
+  const d = DATA[key];
+  document.documentElement.lang = d.lang;
+
+  // Lang bar
+  document.getElementById("bar-label").textContent = d.barLabel;
+  document.getElementById("print-btn").textContent = d.printBtn;
+  document.querySelectorAll(".lang-btn").forEach(b => {
+    b.classList.toggle("active", b.textContent.includes(key === "CZ" ? "Česky" : key === "EN" ? "English" : "Español"));
+  });
+
+  // Cover
+  document.getElementById("c-logo-sub").textContent = d.logoSub;
+  document.getElementById("c-eyebrow").textContent = d.eyebrow;
+  document.getElementById("c-title").innerHTML = `${d.villa}<br><em>${d.villaName}</em>`;
+  document.getElementById("c-address").innerHTML = `${d.address}<br>${d.owner}`;
+  document.getElementById("c-status").textContent = d.statusText;
+  document.getElementById("c-dot").className = "status-dot" + (d.statusFlag ? " flag" : "");
+
+  // Cover meta
+  const ids = ["ml-date","mv-date","ml-by","ml-ref","mv-ref","ml-tier","mv-tier","ml-items","ml-photos","mv-photos","ml-video","mv-video"];
+  const vals = [d.mlDate,d.mvDate,d.mlBy,d.mlRef,d.mvRef,d.mlTier,d.mvTier,d.mlItems,d.mlPhotos,d.mvPhotos,d.mlVideo,d.mvVideo];
+  ids.forEach((id,i) => { const el = document.getElementById(id); if(el) el.textContent = vals[i]; });
+
+  // Page footers
+  document.getElementById("p1-of").textContent = d.pageOf[0];
+  document.getElementById("p2-of").textContent = d.pageOf[1];
+  document.getElementById("p3-of").textContent = d.pageOf[2];
+  document.getElementById("p4-of").textContent = d.pageOf[3];
+
+  // Page headers
+  const phHtml = `${d.phHeader}<br>${d.phSubHeader}`;
+  ["ph2","ph3","ph4"].forEach(id => document.getElementById(id).innerHTML = phHtml);
+
+  // Section headings
+  document.getElementById("s-ext").textContent = d.sExt;
+  document.getElementById("s-pool").textContent = d.sPool;
+  document.getElementById("s-elec").textContent = d.sElec;
+  document.getElementById("s-int").textContent = d.sInt;
+  document.getElementById("s-photos").textContent = d.sPhotos;
+  document.getElementById("s-summary").textContent = d.sSummary;
+  document.getElementById("s-note").textContent = d.sNote;
+  document.getElementById("s-okupa").textContent = d.sOkupa;
+
+  // Check items
+  const checks = [
+    ["ck-walls",d.ckWalls,"ck-walls-s",d.ckWallsS],["ck-facade",d.ckFacade,"ck-facade-s",d.ckFacadeS],
+    ["ck-windows",d.ckWindows,"ck-windows-s",d.ckWindowsS],["ck-drains",d.ckDrains,"ck-drains-s",d.ckDrainsS],
+    ["ck-roof",d.ckRoof,"ck-roof-s",d.ckRoofS],["ck-garden",d.ckGarden,"ck-garden-s",d.ckGardenS],
+    ["ck-pw",d.ckPw,"ck-pw-s",d.ckPwS],["ck-pump",d.ckPump,"ck-pump-s",d.ckPumpS],
+    ["ck-wp",d.ckWp,"ck-wp-s",d.ckWpS],["ck-leaks",d.ckLeaks,"ck-leaks-s",d.ckLeaksS],
+    ["ck-wh",d.ckWh,"ck-wh-s",d.ckWhS],["ck-irr",d.ckIrr,"ck-irr-s",d.ckIrrS],
+    ["ck-mains",d.ckMains,"ck-mains-s",d.ckMainsS],["ck-cb",d.ckCb,"ck-cb-s",d.ckCbS],
+    ["ck-alarm",d.ckAlarm,"ck-alarm-s",d.ckAlarmS],["ck-cams",d.ckCams,"ck-cams-s",d.ckCamsS],
+    ["ck-router",d.ckRouter,"ck-router-s",d.ckRouterS],["ck-light",d.ckLight,"ck-light-s",d.ckLightS],
+    ["ck-vent",d.ckVent,"ck-vent-s",d.ckVentS],["ck-damp",d.ckDamp,"ck-damp-s",d.ckDampS],
+    ["ck-ac",d.ckAc,"ck-ac-s",d.ckAcS],["ck-taps",d.ckTaps,"ck-taps-s",d.ckTapsS],
+    ["ck-pests",d.ckPests,"ck-pests-s",d.ckPestsS],["ck-secure",d.ckSecure,"ck-secure-s",d.ckSecureS],
+  ];
+  checks.forEach(([lid,lt,sid,st]) => {
+    const le = document.getElementById(lid); const se = document.getElementById(sid);
+    if(le) le.textContent = lt; if(se) se.textContent = st;
+  });
+
+  // Callouts
+  document.getElementById("flag-title").textContent = d.flagTitle;
+  document.getElementById("flag-body").textContent = d.flagBody;
+  // Switch callout style for EN/CZ (all-clear roof)
+  const flagBox = document.getElementById("flag-title").parentElement;
+  if(!d.statusFlag && key !== "ES") {
+    flagBox.className = "good-callout";
+    document.getElementById("flag-title").className = "good-callout-title";
+    document.getElementById("flag-body").className = "good-callout-body";
+  } else {
+    flagBox.className = "flag-callout";
+    document.getElementById("flag-title").className = "flag-callout-title";
+    document.getElementById("flag-body").className = "flag-callout-body";
+  }
+  document.getElementById("pool-note-title").textContent = d.poolNoteTitle;
+  document.getElementById("pool-note-body").textContent = d.poolNoteBody;
+
+  // Interior narrative
+  document.getElementById("int-narrative").innerHTML = d.intNarrative;
+
+  // Photos
+  document.getElementById("photo-intro").textContent = d.photoIntro;
+  [["ph-terrace",d.phTerrace,"pc-terrace",d.pcTerrace],["ph-pool",d.phPool,"pc-pool",d.pcPool],
+   ["ph-garden",d.phGarden,"pc-garden",d.pcGarden],["ph-facade",d.phFacade,"pc-facade",d.pcFacade],
+   ["ph-living",d.phLiving,"pc-living",d.pcLiving],["ph-kitchen",d.phKitchen,"pc-kitchen",d.pcKitchen],
+   ["ph-master",d.phMaster,"pc-master",d.pcMaster],["ph-roof",d.phRoof,"pc-roof",d.pcRoof],
+   ["ph-gate",d.phGate,"pc-gate",d.pcGate]
+  ].forEach(([pl,pv,cl,cv]) => {
+    const pe = document.getElementById(pl); const ce = document.getElementById(cl);
+    if(pe) pe.textContent = pv; if(ce) ce.textContent = cv;
+  });
+
+  // Summary table
+  document.getElementById("th-area").textContent = d.thArea;
+  document.getElementById("th-cond").textContent = d.thCond;
+  document.getElementById("th-action").textContent = d.thAction;
+  document.getElementById("th-status").textContent = d.thStatus;
+  const rows = [
+    ["tr-ext",d.trExt,"tr-ext-c",d.trExtC,"tr-ext-a",d.trExtA,"tr-ext-s",d.trExtS],
+    ["tr-roof",d.trRoof,"tr-roof-c",d.trRoofC,"tr-roof-a",d.trRoofA,"tr-roof-s",d.trRoofS],
+    ["tr-pool",d.trPool,"tr-pool-c",d.trPoolC,"tr-pool-a",d.trPoolA,"tr-pool-s",d.trPoolS],
+    ["tr-elec",d.trElec,"tr-elec-c",d.trElecC,"tr-elec-a",d.trElecA,"tr-elec-s",d.trElecS],
+    ["tr-int",d.trInt,"tr-int-c",d.trIntC,"tr-int-a",d.trIntA,"tr-int-s",d.trIntS],
+    ["tr-ac",d.trAc,"tr-ac-c",d.trAcC,"tr-ac-a",d.trAcA,"tr-ac-s",d.trAcS],
+  ];
+  rows.forEach(([a,av,b,bv,c,cv,s,sv]) => {
+    [a,b,c,s].forEach((id,i) => { const el = document.getElementById(id); if(el) el.textContent = [av,bv,cv,sv][i]; });
+  });
+
+  // Notes + okupa
+  document.getElementById("note-p1").innerHTML = d.noteP1;
+  document.getElementById("note-p2").innerHTML = d.noteP2;
+  document.getElementById("okupa-body").innerHTML = d.okupaBody;
+
+  // Signature
+  document.getElementById("sig-by").textContent = d.sigBy;
+  document.getElementById("sig-issued").textContent = d.sigIssued;
+  document.getElementById("sig-date").textContent = d.sigDate;
+  document.getElementById("sig-ref").textContent = d.sigRef;
+  document.getElementById("p4-left").textContent = d.p4Left;
+}
+
+// Init
+setLang("ES");
+</script>
+</body>
+</html>
