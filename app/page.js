@@ -42,8 +42,8 @@ function MaramaSEO({ lang }) {
     setMeta("og:title", m.title, true);
     setMeta("og:description", m.desc, true);
     setMeta("og:type", "website", true);
-    setMeta("og:url", "https://marama.es", true);
-    setMeta("og:image", "https://marama.es/og-image.jpg", true);
+    setMeta("og:url", "https://maramapropertycare.es", true);
+    setMeta("og:image", "https://maramapropertycare.es/og-image.jpg", true);
     setMeta("og:locale", m.lang === "en" ? "en_GB" : m.lang === "es" ? "es_ES" : "cs_CZ", true);
     setMeta("twitter:card", "summary_large_image");
     setMeta("twitter:title", m.title);
@@ -52,7 +52,7 @@ function MaramaSEO({ lang }) {
     // Canonical
     let canonical = document.querySelector('link[rel="canonical"]');
     if (!canonical) { canonical = document.createElement("link"); canonical.rel = "canonical"; document.head.appendChild(canonical); }
-    canonical.href = "https://marama.es";
+    canonical.href = "https://maramapropertycare.es";
 
     // JSON-LD Schema
     const schema = {
@@ -60,10 +60,10 @@ function MaramaSEO({ lang }) {
       "@type": "LocalBusiness",
       "name": "Marama Property Care",
       "description": meta.EN.desc,
-      "url": "https://marama.es",
-      "email": "hola@marama.es",
-      "telephone": "+34600000000",
-      "image": "https://marama.es/og-image.jpg",
+      "url": "https://maramapropertycare.es",
+      "email": "hola@maramapropertycare.es",
+      "telephone": "+34643627516",
+      "image": "https://maramapropertycare.es/og-image.jpg",
       "areaServed": {
         "@type": "Place",
         "name": "Costa Blanca, Spain"
@@ -110,9 +110,9 @@ const LANGS = [
   { key:"CZ", label:"Čeština", flag:"🇨🇿" },
 ];
 
-const WP_NUMBER = "+34600000000";
+const WP_NUMBER = "+34643627516";
 const WP_LINK   = `https://wa.me/${WP_NUMBER}`;
-const EMAIL     = "hola@marama.es";
+const EMAIL     = "hola@maramapropertycare.es";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // COPY — all geography: Costa Blanca only. No Norte. No Marina Alta.
@@ -184,7 +184,7 @@ const COPY = {
     footer_contact:"Get in touch",
     footer_email:EMAIL,
     footer_wp:"WhatsApp",
-    footer_wp_num:"+34 600 000 000",
+    footer_wp_num:"+34 643 627 516",
     footer_links:[{t:"Services",h:"#services"},{t:"The Report",h:"#report"},{t:"About",h:"#about"},{t:"FAQ",h:"#faq"}],
     footer_legal:"Marama Property Care · Autónomo registered in Spain · Costa Blanca",
     footer_copy:"© 2025 Marama. All rights reserved.",
@@ -257,7 +257,7 @@ const COPY = {
     footer_contact:"Contacto",
     footer_email:EMAIL,
     footer_wp:"WhatsApp",
-    footer_wp_num:"+34 600 000 000",
+    footer_wp_num:"+34 643 627 516",
     footer_links:[{t:"Servicios",h:"#services"},{t:"El Informe",h:"#report"},{t:"Quiénes somos",h:"#about"},{t:"Preguntas",h:"#faq"}],
     footer_legal:"Marama Property Care · Autónomo registrado en España · Costa Blanca",
     footer_copy:"© 2025 Marama. Todos los derechos reservados.",
@@ -330,7 +330,7 @@ const COPY = {
     footer_contact:"Kontakt",
     footer_email:EMAIL,
     footer_wp:"WhatsApp",
-    footer_wp_num:"+34 600 000 000",
+    footer_wp_num:"+34 643 627 516",
     footer_links:[{t:"Služby",h:"#services"},{t:"Zpráva",h:"#report"},{t:"O nás",h:"#about"},{t:"Otázky",h:"#faq"}],
     footer_legal:"Marama Property Care · Autónomo registrováno ve Španělsku · Costa Blanca",
     footer_copy:"© 2025 Marama. Všechna práva vyhrazena.",
