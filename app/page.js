@@ -42,8 +42,8 @@ function MaramaSEO({ lang }) {
     setMeta("og:title", m.title, true);
     setMeta("og:description", m.desc, true);
     setMeta("og:type", "website", true);
-    setMeta("og:url", "https://marama.es", true);
-    setMeta("og:image", "https://marama.es/og-image.jpg", true);
+    setMeta("og:url", "https://maramapropertycare.es", true);
+    setMeta("og:image", "https://maramapropertycare.es/og-image.jpg", true);
     setMeta("og:locale", m.lang === "en" ? "en_GB" : m.lang === "es" ? "es_ES" : "cs_CZ", true);
     setMeta("twitter:card", "summary_large_image");
     setMeta("twitter:title", m.title);
@@ -52,7 +52,7 @@ function MaramaSEO({ lang }) {
     // Canonical
     let canonical = document.querySelector('link[rel="canonical"]');
     if (!canonical) { canonical = document.createElement("link"); canonical.rel = "canonical"; document.head.appendChild(canonical); }
-    canonical.href = "https://marama.es";
+    canonical.href = "https://maramapropertycare.es";
 
     // JSON-LD Schema
     const schema = {
@@ -60,10 +60,10 @@ function MaramaSEO({ lang }) {
       "@type": "LocalBusiness",
       "name": "Marama Property Care",
       "description": meta.EN.desc,
-      "url": "https://marama.es",
+      "url": "https://maramapropertycare.es",
       "email": "hola@maramapropertycare.es",
       "telephone": "+34643627516",
-      "image": "https://marama.es/og-image.jpg",
+      "image": "https://maramapropertycare.es/og-image.jpg",
       "areaServed": {
         "@type": "Place",
         "name": "Costa Blanca, Spain"
@@ -73,11 +73,7 @@ function MaramaSEO({ lang }) {
         "Absentee Property Care",
         "Key Holding",
         "Property Inspection",
-        "Administrative Concierge",
-        "Holiday Rental Coordination",
-        "Airbnb Check-in Management",
-        "Guest Services Costa Blanca",
-        "Short Term Rental Support"
+        "Administrative Concierge"
       ],
       "availableLanguage": ["English", "Czech", "Spanish"],
       "priceRange": "€€",
@@ -124,233 +120,239 @@ const EMAIL     = "hola@maramapropertycare.es";
 const COPY = {
   EN: {
     eyebrow:"Costa Blanca · Property Care",
-    h1:"Your home in Spain deserves", h2:"someone who is actually there.",
-    sub:"Marama looks after villas on the Costa Blanca for owners who live somewhere else. Monthly visits, same-day reports, emergency response, and every conversation in your language. We are not just a service. We are someone who genuinely cares that your second home is properly looked after when you are not there.",
+    h1:"Your home in Spain deserves", h2:"better than a spare key and a prayer.",
+    sub:"Marama is a boutique property care service for absentee owners on the Costa Blanca. We visit, we document, we handle — and every month you know exactly what is happening at your property, whether you asked or not.",
     cta:"Talk to us on WhatsApp", ctaLink:"See a sample report",
     trust:[
-      {n:"English · Español · Čeština",l:"Native speakers"},
-      {n:"Same day",l:"Photographic report"},
-      {n:"Dénia · Jávea · Moraira",l:"Costa Blanca"},
+      {n:"English · Czech",l:"Native languages"},
+      {n:"Monthly",l:"Written photo report"},
+      {n:"Costa Blanca",l:"Full coverage"},
     ],
     nav:[{t:"Services",h:"#services"},{t:"The Report",h:"#report"},{t:"About",h:"#about"},{t:"FAQ",h:"#faq"}],
     navCta:"WhatsApp",
 
-    s_sub:"Who we are for", s_h:"One contract covers it all.",
-    s_body:"A single monthly fee gives you a person on the Costa Blanca, present, reliable, and speaking your language, so your home never goes without the care it deserves.",
+    s_sub:"What we do", s_h:"One retainer.\nEverything covered.",
+    s_body:"A single monthly arrangement gives you a dedicated professional on the Costa Blanca — present, attentive, and fluent in your language — so your property is never without someone who genuinely cares for it.",
     svcs:[
-      {t:"Key Holding",d:"Your keys held securely. Every contractor visit and emergency call-out coordinated for you. We are your guarantee that even without you, everything runs smoothly.",i:"key"},
-      {t:"Monthly Inspection & Report",d:"A thorough walk-through of your entire property, exterior, interior, pool and garden, with a full photographic report on the actual condition of the property, delivered the same day. Every month.",i:"clip"},
-      {t:"Administrative Shield",d:"Official correspondence received at a secure registered address, not left at an empty property. Forwarded electronically with a clear explanation of what to do with it and whether it requires immediate attention. Tax deadlines tracked. Gestor liaison when needed.",i:"admin"},
-      {t:"Arrival & Departure",d:"Arriving next week? Your home will be aired and checked before you land. Need groceries waiting on arrival? Send us your list and we coordinate delivery through a local online service, at cost, no markup. Only the pleasant things will be left for you. Leaving? We handle the shutdown: locked, unplugged, water mains off.",i:"home"},
-      {t:"The Marama Record",d:"A dated monthly video walkthrough of your home, timestamped, stored, and delivered directly to you. Under Spain's updated anti-okupa legislation, this documented trail gives your lawyer the specific evidence needed to pursue express eviction proceedings in the event of illegal occupation by strangers.",i:"secure"},
-      {t:"Holiday Rental Coordination",d:"Already listing your Dénia property on Airbnb or Booking.com? We handle the practical side. Check-in on time, every time. Within 60 minutes of our arrival for inspection, a full photographic report is in your WhatsApp, documenting the property's condition before the next guests arrive.",i:"home"},
+      {t:"Key Holding",d:"Your keys held securely, your property accessed only when needed. We coordinate every contractor visit, inspection, and emergency — so you never need to be present to make things happen.",i:"key"},
+      {t:"Property Inspections",d:"A thorough monthly walk-through of your entire property — exterior, interior, pool, systems — with a full photographic report delivered to you the same day. No assumptions. Only evidence.",i:"clip"},
+      {t:"Administrative Shield",d:"Official correspondence received at your Spanish address, forwarded the same day with a plain explanation. Tax deadlines tracked. Gestor introductions made. No deadline ever missed from 1,500km away.",i:"admin"},
+      {t:"Arrival & Departure",d:"Arriving next week? Your home will be aired, checked, and stocked before you land. Leaving? We handle the shutdown — secured, unplugged, water mains off. The kind of care that turns a house into a home.",i:"home"},
     ],
     s_lang_h:"English · Español · Čeština",
-    s_lang_body:"Everything handled by a native speaker. No Google Translate. We stand by that.",
+    s_lang_body:"Every conversation, every report, every emergency call — handled in your language. Not translated. Written natively. This is not a feature. It is the foundation.",
 
-    r_sub:"The Marama Report", r_h:"A picture is worth\nten thousand words.",
-    r_body:"Every visit ends with a structured photographic report sent directly to you, in your language, the same day. You see exactly what we saw. Every room documented. Every system verified. Every problem flagged before it becomes a disaster.",
-    r_lang:"Through regular monthly reports you can continuously monitor that your home is being properly looked after, together with us. With a careful approach and cast-iron regularity.",
+    r_sub:"The Marama Report", r_h:"Not a promise.\nA record.",
+    r_body:"Every visit ends with a structured, photographic report sent directly to you — in your language, on the same day. You see precisely what we saw: every room documented, every system verified, every concern flagged before it becomes a problem.",
+    r_lang:"Available in English, Español, and Čeština.",
     r_luxury:"Property care with receipts. Every month, whether anything happened or not — because knowing that everything is fine is also worth something.",
-    r_feats:["Full exterior and interior photographic record","Systems check: water, electrics, AC, pool, garden","Priority-rated condition flags","Contractor work recorded with original invoice","Same-day delivery via WhatsApp and email","Available in English, Español, and Čeština"],
+    r_feats:["Full exterior & interior photo record","Systems check — water, electrics, AC, pool","Priority-rated condition flags","Contractor actions logged & receipted","Same-day delivery via WhatsApp & email"],
     r_cta:"Request a sample report",
     p_status:"Property Status", p_secure:"Secure",
-    p_title:"Monthly Inspection Report", p_date:"May 2026 · Jávea, Costa Blanca",
+    p_title:"Monthly Inspection Report", p_date:"June 2025 · Jávea, Costa Blanca",
     p_items:[
       {l:"Water Leak Check",ok:true},{l:"Alarms Tested",ok:true},{l:"Ventilation",ok:true},
-      {l:"Pool Chemistry",ok:true},{l:"Exterior Perimeter",ok:true},{l:"Post-storm Roof",flag:true},
+      {l:"Locks & Access Points",ok:true},{l:"Exterior Perimeter",ok:true},{l:"Post-storm Roof",flag:true},
     ],
     p_flag:"1 item flagged — contractor engaged",
-    p_photos:"Recent Photos", p_photo_sub:"18 images captured · 14 May 2026",
+    p_photos:"Recent Photos", p_photo_sub:"18 images captured · 14 June 2025",
     p_lbs:["Terrace","Pool","Entrance"],
 
     about_sub:"Who we are",
     about_h:"A small operation.\nA serious standard.",
-    about_p1:"Marama was built for owners who want genuine care, not a contract signed by someone who has never walked through their front door. We work with a small number of properties. We know each one well.",
-    about_p2:"We are based in Dénia. We cover the Costa Blanca Norte. We speak English, Spanish, and Czech natively.",
-    about_p3:"Every report we write, every contractor we coordinate, every key we hold, it is all done with the knowledge that your home is not just an investment vehicle. It is a place that matters.",
+    about_p1:"Marama was built for owners who want genuine care, not a management contract signed by someone who has never unlocked their front door. We work with a small number of properties. We know each one well.",
+    about_p2:"We are the bridge between your home and your other home. Between the life you live every day and the place that is always somewhere in the back of your mind — professional enough to trust, personal enough to call.",
+    about_p3:"Every report we write, every contractor we brief, every key we hold — it is done with the knowledge that your property is not an investment vehicle. It is a place that matters.",
     about_q:'"We work across the Costa Blanca. We answer in your language. And every month, whether anything happened or not, you receive a report."',
     about_attr:"— Marama",
-    about_tag1:"Costa Blanca", about_tag2:"Founded 2025", about_tag3:"English · Czech · Spanish",
+    about_tag1:"Costa Blanca", about_tag2:"Founded 2025", about_tag3:"Czech · English · Spanish",
 
     faq_sub:"Questions",
     faq_h:"Everything you need to know.",
-    faq_body:"If you cannot find the answer to your question, do not hesitate to write or call us. We answer in English, Spanish, and Czech. Usually the same day.",
+    faq_body:"If your question isn't here, send it to us directly — by WhatsApp or email. We answer in English, Spanish, and Czech — usually the same day.",
     faqs:[
-      {q:"How often are reports sent?",a:"Every month, within 24 hours of the inspection visit. The report arrives via WhatsApp and email, with photographs, a summary of the actual condition of the property, and all flagged issues."},
-      {q:"Do you handle emergency repairs?",a:"Yes. A burst pipe, a triggered alarm, a broken shutter: we attend, coordinate, and report. We work with trusted local contractors across plumbing, electrics, glazing, and general maintenance. The final invoice for any work is presented to you without hidden markups. We don't get any kickbacks from contractors. Our loyalty belongs exclusively to you."},
-      {q:"What is the Marama Record?",a:"A dated monthly video walkthrough of your entire property, exterior and interior, timestamped and delivered directly to you. Under Spain's updated anti-okupa legislation it gives your lawyer the specific evidence needed to pursue express eviction proceedings in the event of illegal occupation by strangers. It is included in every subscription tier offered."},
-      {q:"Do you coordinate holiday rental check-ins?",a:"Yes, for owners who already have their apartment or villa in Dénia listed on Airbnb, Booking.com, or any other platform. We welcome your guests, manage check-outs, supervise the turnaround between stays, and send a full photographic report within 60 minutes of our arrival for inspection. We do not operate as a rental host. The licence and responsibility remains with you."},
-      {q:"What languages do you work in?",a:"English, Spanish, and Czech, as native speakers. All reports, correspondence, and WhatsApp communication are handled in whichever language you prefer."},
-      {q:"Do you provide cleaning services?",a:"No. Marama coordinates and supervises your chosen cleaning crew. We do not provide cleaners. What we do provide is a documented record of the actual condition of the property immediately after every checkout."},
-      {q:"What are the founding rates?",a:"Clients who sign before 31 July 2026 have fixed rates for the first twelve months: Essential at €120, Comfort at €165, Prestige at €220. After that date, full rates apply to all new clients."},
-      {q:"How do I get started?",a:"Send us a message on WhatsApp or by email. We will get back to you within one working day to arrange a short call in your language, to get to know your property and your needs. No obligation. No pressure."},
+      {q:"How often are reports sent?",a:"Every calendar month, within 24 hours of the inspection visit. The report arrives by WhatsApp and email, with photographs, a condition summary, and any flagged items. You never have to ask — it simply arrives."},
+      {q:"Do you handle emergency repairs?",a:"Yes. A burst pipe, a triggered alarm, a broken shutter — we attend, coordinate, and report. We maintain relationships with trusted local contractors across plumbing, electrics, glazing, and general maintenance. You are notified at every stage."},
+      {q:"What is the administrative shield?",a:"We act as your physical Spanish address for official correspondence. Letters from the Agencia Tributaria, Ayuntamiento, and community of owners are received, photographed, and forwarded the same day with a plain-language explanation. We track your Modelo 210 deadlines and maintain a gestor relationship for when professional handling is needed."},
+      {q:"What languages do you work in?",a:"English, Spanish, and Czech natively. All reports, correspondence, and WhatsApp communication are written in whichever language you prefer. If you prefer to switch mid-conversation, so do we."},
+      {q:"Does Marama handle holiday rentals?",a:"Not at this stage. Tourist rental management requires a specific licence under Valencian Community regulations, and we have chosen not to operate in that space yet. Our focus is on absentee care — the period when your property needs protecting, not generating income."},
+      {q:"How do I get started?",a:"Send us a message on WhatsApp or by email. We will respond within one working day to arrange a brief call — in your language — to understand your property and what you need. No obligation and no hard sell."},
     ],
 
     footer_tagline:"Your home in good hands.",
-    footer_desc:"Boutique property care for villa and apartment owners on the Costa Blanca. Professional, documented, and available in English, Spanish, and Czech.",
+    footer_desc:"Boutique property care for absentee villa owners on the Costa Blanca. Professional, documented, and available in English, Spanish, and Czech.",
     footer_contact:"Get in touch",
     footer_email:EMAIL,
     footer_wp:"WhatsApp",
     footer_wp_num:"+34 643 627 516",
     footer_links:[{t:"Services",h:"#services"},{t:"The Report",h:"#report"},{t:"About",h:"#about"},{t:"FAQ",h:"#faq"}],
     footer_legal:"Marama Property Care · Autónomo registered in Spain · Costa Blanca",
-    footer_copy:"© 2026 Marama. All rights reserved.",
+    footer_copy:"© 2025 Marama. All rights reserved.",
     footer_cta:"WhatsApp",
+    footer_nav:"Navigation",
+    stat_zone:"Zone of operation",
+    stat_langs:"Native languages",
+    stat_freq:"Every single property",
+    stat_call:"Everything moves",
+    footer_lang:"Language",
   },
 
   ES: {
-    eyebrow:"Costa Blanca · Cuidado de Propiedades",
-    h1:"Su vivienda en España merece", h2:"a alguien que esté de verdad.",
-    sub:"Marama cuida de villas y apartamentos en la Costa Blanca para propietarios que viven en otro lugar. Visitas mensuales, informes el mismo día, respuesta ante emergencias, y cada conversación en su idioma. No somos solo un servicio. Somos alguien que verdaderamente se preocupa de que su segunda residencia esté bien cuidada cuando usted no está.",
+    eyebrow:"Costa Blanca · Gestión de Propiedades",
+    h1:"Su vivienda en España merece", h2:"algo más que una llave y cruzar los dedos.",
+    sub:"Marama es un servicio boutique de cuidado de propiedades para propietarios no residentes en la Costa Blanca. Visitamos, documentamos y gestionamos — cada mes usted sabe exactamente qué ocurre en su propiedad.",
     cta:"Escríbanos por WhatsApp", ctaLink:"Ver un informe de ejemplo",
     trust:[
-      {n:"Español · English · Čeština",l:"Hablantes nativos"},
-      {n:"El mismo día",l:"Informe fotográfico"},
-      {n:"Dénia · Jávea · Moraira",l:"Costa Blanca"},
+      {n:"Español · English · Čeština",l:"Idiomas nativos"},
+      {n:"Mensual",l:"Informe fotográfico"},
+      {n:"Costa Blanca",l:"Cobertura completa"},
     ],
     nav:[{t:"Servicios",h:"#services"},{t:"El Informe",h:"#report"},{t:"Quiénes somos",h:"#about"},{t:"Preguntas",h:"#faq"}],
     navCta:"WhatsApp",
 
-    s_sub:"Para quién somos", s_h:"Un contrato lo cubre todo.",
-    s_body:"Una tarifa mensual le proporciona un profesional dedicado en la Costa Blanca, presente, fiable y en su idioma, para que su vivienda nunca esté sin la atención que se merece.",
+    s_sub:"Lo que hacemos", s_h:"Un acuerdo mensual.\nTodo cubierto.",
+    s_body:"Una tarifa mensual le proporciona un profesional dedicado en la Costa Blanca — presente, atento y en su idioma — para que su propiedad nunca esté sin alguien que verdaderamente la cuide.",
     svcs:[
-      {t:"Custodia de Llaves",d:"Sus llaves custodiadas con seguridad. Cada visita de contratistas y/o visita de emergencia coordinada por nosotros. Somos su garantía de que, incluso en su ausencia, todo funciona a la perfección.",i:"key"},
-      {t:"Inspección Mensual e Informe",d:"Una visita completa a toda su propiedad, exterior, interior, piscina y jardín, con un informe fotográfico completo sobre el estado real de la propiedad, entregado el mismo día. Cada mes.",i:"clip"},
-      {t:"Escudo Administrativo",d:"Correspondencia oficial recibida en una dirección segura registrada, no dejada en una propiedad vacía. Le reenviamos una copia electrónica con una explicación clara de lo que significa cada carta y si requiere atención inmediata. Seguimiento de plazos fiscales. Coordinación con gestor.",i:"admin"},
-      {t:"Llegada y Salida",d:"¿Llega la próxima semana? Su vivienda estará ventilada y revisada antes de que aterrice. ¿Necesita provisiones al llegar? Envíenos su lista y coordinamos la entrega a través de un servicio de entrega online local, al precio de coste, sin margen. ¿Se va? Nos encargamos del cierre: cerrado, desenchufado, llave de paso del agua cerrada.",i:"home"},
-      {t:"El Registro Marama",d:"Un recorrido en vídeo fechado de su vivienda, con marca de tiempo, almacenado y entregado directamente a usted. Según la legislación anti-okupa actualizada en España, este registro documentado proporciona a su abogado la evidencia específica necesaria para iniciar un procedimiento de desahucio exprés en caso de ocupación ilegal.",i:"secure"},
-      {t:"Coordinación de Alquiler Vacacional",d:"¿Ofrece su apartamento o villa en Dénia en Airbnb o Booking.com? Nos ocupamos de la parte práctica. Check-in puntual, siempre. En los 60 minutos siguientes a nuestra llegada para la inspección, tiene en su WhatsApp un informe fotográfico completo que documenta el estado real de la propiedad.",i:"home"},
+      {t:"Custodia de Llaves",d:"Sus llaves custodiadas con seguridad. Coordinamos cada visita de contratistas, inspección y emergencia — sin necesidad de que usted esté presente.",i:"key"},
+      {t:"Inspecciones de Propiedad",d:"Una visita mensual completa — exterior, interior, piscina, sistemas — con informe fotográfico entregado el mismo día. Sin suposiciones. Solo evidencias.",i:"clip"},
+      {t:"Escudo Administrativo",d:"Correspondencia oficial recibida en su domicilio español, reenviada el mismo día con una explicación clara. Seguimiento de plazos fiscales. Coordinación con gestor. Ningún plazo se pierde a 1.500 km de distancia.",i:"admin"},
+      {t:"Llegada y Salida",d:"¿Llega la próxima semana? Su vivienda estará ventilada, revisada y con lo esencial antes de que aterrice. ¿Se va? Nosotros cerramos todo correctamente.",i:"home"},
     ],
-    s_lang_h:"Español · English · Čeština",
-    s_lang_body:"Todo gestionado por hablantes nativos. Sin Google Translate. Lo garantizamos.",
+    s_lang_h:"English · Español · Čeština",
+    s_lang_body:"Cada conversación, cada informe, cada llamada de emergencia — gestionados en su idioma. No traducidos. Redactados de forma nativa. Esto no es una característica. Es el fundamento.",
 
-    r_sub:"El Informe Marama", r_h:"Una imagen vale\nmás que mil palabras.",
-    r_body:"Cada visita concluye con un informe fotográfico estructurado enviado directamente a usted, en su idioma, el mismo día. Ve exactamente lo que vimos. Cada estancia documentada. Cada sistema verificado. Cada problema señalado antes de que se convierta en un desastre.",
-    r_lang:"A través de informes mensuales regulares puede supervisar de forma continua que su vivienda está bien cuidada, junto a nosotros. Con un enfoque atento y una regularidad inquebrantable.",
-    r_luxury:"Cuidado de propiedades con justificantes. Cada mes, haya pasado algo o no, porque saber que todo está bien también tiene valor.",
-    r_feats:["Registro fotográfico completo, exterior e interior","Revisión de sistemas: agua, electricidad, AC, piscina y jardín","Incidencias con valoración de prioridad","Actuaciones de contratistas registradas con factura original","Entrega el mismo día por WhatsApp y correo electrónico","Disponible en Español, English y Čeština"],
+    r_sub:"El Informe Marama", r_h:"No una promesa.\nUn registro.",
+    r_body:"Cada visita concluye con un informe fotográfico estructurado enviado directamente a usted — en su idioma, el mismo día. Ve exactamente lo que vimos: cada estancia documentada, cada sistema verificado.",
+    r_lang:"Disponible en Español, English y Čeština.",
+    r_luxury:"Cuidado de propiedades con justificantes. Cada mes, haya pasado algo o no — porque saber que todo está bien también tiene valor.",
+    r_feats:["Registro fotográfico completo, exterior e interior","Revisión de sistemas — agua, electricidad, AC, piscina","Incidencias con valoración de prioridad","Actuaciones de contratistas registradas y facturadas","Entrega el mismo día por WhatsApp y email"],
     r_cta:"Solicitar informe de ejemplo",
     p_status:"Estado de la Propiedad", p_secure:"Segura",
-    p_title:"Informe Mensual de Inspección", p_date:"Mayo 2026 · Jávea, Costa Blanca",
+    p_title:"Informe Mensual de Inspección", p_date:"Junio 2025 · Jávea, Costa Blanca",
     p_items:[
       {l:"Revisión de fugas de agua",ok:true},{l:"Alarmas probadas",ok:true},{l:"Ventilación",ok:true},
-      {l:"Química de la piscina",ok:true},{l:"Perímetro exterior",ok:true},{l:"Tejado post-tormenta",flag:true},
+      {l:"Cerraduras y accesos",ok:true},{l:"Perímetro exterior",ok:true},{l:"Tejado post-tormenta",flag:true},
     ],
     p_flag:"1 incidencia — contratista en curso",
-    p_photos:"Fotos Recientes", p_photo_sub:"18 imágenes · 14 mayo 2026",
+    p_photos:"Fotos Recientes", p_photo_sub:"18 imágenes · 14 junio 2025",
     p_lbs:["Terraza","Piscina","Entrada"],
 
     about_sub:"Quiénes somos",
     about_h:"Una operación pequeña.\nUn estándar serio.",
-    about_p1:"Marama fue creado para propietarios que quieren una atención real, no un contrato firmado por alguien que nunca ha entrado en su casa. Trabajamos con un número reducido de propiedades. Las conocemos bien.",
-    about_p2:"Estamos en Dénia. Cubrimos la Costa Blanca Norte. Hablamos español, inglés y checo de forma nativa.",
-    about_p3:"Cada informe que escribimos, cada contratista que coordinamos, cada llave que custodiamos, todo se hace con la certeza de que su vivienda no es solo un vehículo de inversión. Es un lugar de valor.",
+    about_p1:"Marama fue creado para propietarios que quieren una atención real, no un contrato firmado por alguien que nunca ha abierto su puerta. Trabajamos con pocas propiedades. Las conocemos bien.",
+    about_p2:"Somos el puente entre su hogar y su otro hogar. Entre la vida que vive cada día y el lugar que siempre lleva en algún rincón de su mente — suficientemente profesional para confiar, suficientemente cercano para llamar.",
+    about_p3:"Cada informe que escribimos, cada contratista que coordinamos, cada llave que custodiamos — se hace con la certeza de que su propiedad no es un vehículo de inversión. Es un lugar que importa.",
     about_q:'"Trabajamos en toda la Costa Blanca. Respondemos en su idioma. Y cada mes, haya pasado algo o no, usted recibe un informe."',
     about_attr:"— Marama",
-    about_tag1:"Costa Blanca", about_tag2:"Fundada en 2025", about_tag3:"Español · Inglés · Checo",
+    about_tag1:"Costa Blanca", about_tag2:"Fundada en 2025", about_tag3:"Checo · Inglés · Español",
 
     faq_sub:"Preguntas",
     faq_h:"Todo lo que necesita saber.",
-    faq_body:"Si no encuentra respuesta a su pregunta, no dude en escribirnos o llamarnos. Respondemos en español, inglés y checo. Normalmente el mismo día.",
+    faq_body:"Si su pregunta no está aquí, escríbanos directamente — por WhatsApp o email. Respondemos en español, inglés y checo — normalmente el mismo día.",
     faqs:[
-      {q:"¿Con qué frecuencia se envían los informes?",a:"Cada mes, en las 24 horas siguientes a la visita de inspección. El informe llega por WhatsApp y correo electrónico, con fotografías, un resumen del estado real de la propiedad y todas las incidencias detectadas."},
-      {q:"¿Gestionan reparaciones de emergencia?",a:"Sí. Una tubería rota, una alarma disparada, una persiana dañada: acudimos, coordinamos e informamos. Contamos con contratistas de confianza en fontanería, electricidad, cristalería y mantenimiento general. La factura final por cualquier trabajo se le presenta sin márgenes ocultos. No obtenemos comisiones de contratistas. Nuestra lealtad es exclusivamente hacia usted."},
-      {q:"¿Qué es el Registro Marama?",a:"Un recorrido en vídeo fechado de toda su propiedad, exterior e interior, con marca de tiempo y entregado directamente a usted. Según la legislación anti-okupa actualizada en España, proporciona a su abogado la evidencia específica necesaria para iniciar un procedimiento de desahucio exprés en caso de ocupación ilegal por parte de terceros. Está incluido en todos los niveles de suscripción disponibles."},
-      {q:"¿Coordinan check-ins de alquiler vacacional?",a:"Sí, para propietarios que ya tienen su apartamento o villa en Dénia publicado en Airbnb, Booking.com o cualquier otra plataforma. Recibimos a sus huéspedes, gestionamos los check-outs, supervisamos el cambio de estancia y enviamos un informe fotográfico completo en los 60 minutos siguientes a nuestra llegada para la inspección. No actuamos como gestores de alquiler turístico. La licencia y la responsabilidad permanecen con usted."},
-      {q:"¿En qué idiomas trabajan?",a:"Español, inglés y checo, de forma nativa. Todos los informes, la correspondencia y la comunicación por WhatsApp se gestionan en el idioma que prefiera."},
-      {q:"¿Proporcionan servicios de limpieza?",a:"No. Marama coordina y supervisa el equipo de limpieza que usted elija. No suministramos personal de limpieza. Lo que sí proporcionamos es un registro documentado del estado real de la propiedad inmediatamente después de cada check-out."},
-      {q:"¿Qué son las tarifas fundadoras?",a:"Los clientes que firmen antes del 31 de julio de 2026 tienen tarifas fijas durante los primeros doce meses: Essential a 120 €, Comfort a 165 €, Prestige a 220 €. A partir de esa fecha, las tarifas completas se aplican a todos los nuevos clientes."},
-      {q:"¿Cómo empiezo?",a:"Envíenos un mensaje por WhatsApp o correo electrónico. Le responderemos en un día laborable para acordar una breve llamada en su idioma, para conocer su propiedad y sus necesidades. Sin compromiso. Sin presión."},
+      {q:"¿Con qué frecuencia se envían los informes?",a:"Cada mes natural, en las 24 horas siguientes a la visita de inspección. El informe llega por WhatsApp y email, con fotografías, un resumen de estado y cualquier incidencia detectada. No tiene que pedirlo — simplemente llega."},
+      {q:"¿Gestionan reparaciones de emergencia?",a:"Sí. Una tubería rota, una alarma disparada, una persiana dañada — acudimos, coordinamos y reportamos. Contamos con contratistas de confianza en fontanería, electricidad, cristalería y mantenimiento general."},
+      {q:"¿Qué es el escudo administrativo?",a:"Actuamos como su domicilio fiscal en España para correspondencia oficial. Las cartas de la Agencia Tributaria, el Ayuntamiento y la comunidad de propietarios se reciben, se fotografían y se reenvían el mismo día con una explicación clara. Hacemos seguimiento de sus plazos del Modelo 210 y mantenemos relación con un gestor para cuando se necesite gestión profesional."},
+      {q:"¿En qué idiomas trabajan?",a:"Español, inglés y checo de forma nativa. Todos los informes, la correspondencia y la comunicación por WhatsApp se redactan en el idioma que prefiera."},
+      {q:"¿Gestiona Marama alquileres vacacionales?",a:"Por el momento, no. La gestión de alquileres turísticos requiere una licencia específica bajo la normativa de la Comunitat Valenciana, y hemos optado por no operar en ese ámbito todavía. Nuestro foco es el cuidado en ausencia."},
+      {q:"¿Cómo empiezo?",a:"Envíenos un mensaje por WhatsApp o email. Le responderemos en un día laborable para acordar una breve llamada — en su idioma — y entender su propiedad y sus necesidades. Sin compromiso."},
     ],
 
     footer_tagline:"Su vivienda en buenas manos.",
-    footer_desc:"Cuidado boutique de propiedades para propietarios de villas y apartamentos en la Costa Blanca. Profesional, documentado y disponible en español, inglés y checo.",
+    footer_desc:"Cuidado boutique de propiedades para propietarios de villas en la Costa Blanca. Profesional, documentado y disponible en español, inglés y checo.",
     footer_contact:"Contacto",
     footer_email:EMAIL,
     footer_wp:"WhatsApp",
     footer_wp_num:"+34 643 627 516",
     footer_links:[{t:"Servicios",h:"#services"},{t:"El Informe",h:"#report"},{t:"Quiénes somos",h:"#about"},{t:"Preguntas",h:"#faq"}],
     footer_legal:"Marama Property Care · Autónomo registrado en España · Costa Blanca",
-    footer_copy:"© 2026 Marama. Todos los derechos reservados.",
+    footer_copy:"© 2025 Marama. Todos los derechos reservados.",
     footer_cta:"WhatsApp",
+    footer_nav:"Navegación",
+    stat_zone:"Zona de operación",
+    stat_langs:"Idiomas nativos",
+    stat_freq:"Cada propiedad, cada mes",
+    stat_call:"Todo en marcha",
+    footer_lang:"Idioma",
   },
 
   CZ: {
     eyebrow:"Costa Blanca · Správa nemovitostí",
-    h1:"Váš dům ve Španělsku si zaslouží", h2:"člověka na místě. V každém smyslu.",
-    sub:"Marama se stará o domy a vily na Costa Blanca pro majitele, kteří žijí jinde. Měsíční návštěvy, zprávy v den kontroly, pohotovostní výjezd, a každá komunikace ve vašem jazyce. Nejsme jen služba. Jsme někdo, komu záleží na tom, že váš druhý domov je dobře zaopatřen, když vy tu nejste.",
-    cta:"Napište nám na WhatsApp", ctaLink:"Ukázková zpráva",
+    h1:"Váš dům ve Španělsku si zaslouží", h2:"víc než klíč u souseda a naději.",
+    sub:"Marama se stará o domy majitelů, kteří žijí daleko — v Praze, Brně nebo Bratislavě. Každý měsíc navštívíme váš dům, zdokumentujeme jeho stav a postaráme se o vše, co nestíháte z dálky.",
+    cta:"Napište nám na WhatsApp", ctaLink:"Zobrazit vzorovou zprávu",
     trust:[
-      {n:"Čeština · English · Español",l:"Rodilí mluvčí"},
-      {n:"Tentýž den",l:"Fotografická zpráva"},
-      {n:"Dénia · Jávea · Moraira",l:"Costa Blanca"},
+      {n:"Čeština · English",l:"Rodné jazyky"},
+      {n:"Měsíčně",l:"Fotografická zpráva"},
+      {n:"Costa Blanca",l:"Celé pobřeží"},
     ],
     nav:[{t:"Služby",h:"#services"},{t:"Zpráva",h:"#report"},{t:"O nás",h:"#about"},{t:"Otázky",h:"#faq"}],
     navCta:"WhatsApp",
 
-    s_sub:"Pro koho jsme", s_h:"Jedna smlouva a je postaráno.",
-    s_body:"Jeden měsíční poplatek vám zajistí člověka na Costa Blanca, přítomného, spolehlivého a mluvícího vaším jazykem, aby váš dům nikdy nezůstal bez péče, kterou si zaslouží.",
+    s_sub:"Co děláme", s_h:"Jeden poplatek.\nVše pokryto.",
+    s_body:"Jediný měsíční poplatek vám zajistí profesionála na Costa Blanca — přítomného, pozorného a hovořícího vaším jazykem — aby váš dům nikdy nebyl bez někoho, kdo o něj skutečně pečuje.",
     svcs:[
-      {t:"Správa klíčů",d:"Vaše klíče v bezpečí. Každou návštěvu řemeslníků i nouzový výjezd koordinujeme za vás. Jsme vaší zárukou, že i bez vás vše půjde jak po másle.",i:"key"},
-      {t:"Měsíční kontrola a zpráva",d:"Důkladná prohlídka celého domu, exteriér, interiér, bazén a zahrada, s kompletní fotografickou zprávou o skutečném stavu objektu, doručenou v ten stejný den. Každý měsíc.",i:"clip"},
-      {t:"Administrativní štít",d:"Úřední korespondence přijímaná na bezpečné registrované adrese, nezůstává ležet v prázdném domě. Přepošleme vám elektronickou kopii s odborným objasněním jak s ní naložit a zda vyžaduje neodkladnou pozornost. Hlídáme daňové termíny.",i:"admin"},
-      {t:"Příjezd a odjezd",d:"Přijíždíte příští týden? Dům bude vyvětraný a zkontrolovaný k vaší spokojenosti. Potřebujete zásoby v lednici? Pošlete nám seznam a my zajistíme doručení prostřednictvím místní online doručovací služby, za nákupní cenu bez přirážek. Odjíždíte? Postaráme se o uzavření: zamčeno, odpojeno, hlavní uzávěr vody zavřený.",i:"home"},
-      {t:"Záznam Marama",d:"Datovaná měsíční videoprohlídka vašeho domu, s časovým razítkem, uložená a doručená přímo vám. Podle aktualizované španělské legislativy anti-okupa poskytuje tento záznam vašemu právníkovi konkrétní důkaz potřebný k zahájení zrychleného vystěhovacího řízení v případě nelegálního obsazení.",i:"secure"},
-      {t:"Koordinace pronájmu apartmánů",d:"Nabízíte svůj apartmán či vilu v Dénii na Airbnb nebo Booking.com? My obstáráme praktickou část. Check-in včas, pokaždé. Do 60 minut od našeho příjezdu ke kontrole máte ve WhatsAppu kompletní fotografickou zprávu dokumentující skutečný stav objektu.",i:"home"},
+      {t:"Úschova klíčů",d:"Vaše klíče v bezpečí. Koordinujeme každou návštěvu řemeslníků, inspekci i naléhavou situaci — aniž byste museli být přítomni.",i:"key"},
+      {t:"Inspekce domu",d:"Měsíční kompletní prohlídka — exteriér, interiér, bazén, systémy — s fotografickou zprávou doručenou tentýž den. Žádné dohady. Pouze fakta.",i:"clip"},
+      {t:"Administrativní asistence",d:"Úřední korespondence přijata na vaší španělské adrese, předána tentýž den s jasným vysvětlením. Hlídáme daňové termíny. Zajistíme kontakt na gestora. Žádný termín nezapadne 1 500 km od vás.",i:"admin"},
+      {t:"Příjezd a odjezd",d:"Přijíždíte příští týden? Dům bude vyvětraný, zkontrolovaný a zásobený ještě před přistáním. Odjíždíte? Postaráme se o bezpečné uzavření.",i:"home"},
     ],
-    s_lang_h:"Čeština · English · Español",
-    s_lang_body:"Vše vyřizováno Čechem. Žádné Google překladače. Za tím si stojíme.",
+    s_lang_h:"English · Español · Čeština",
+    s_lang_body:"Každý rozhovor, každá zpráva, každý nouzový hovor — ve vašem jazyce. Ne přeloženo. Napsáno rodilým mluvčím. To není funkce. Je to základ.",
 
-    r_sub:"Zpráva Marama", r_h:"Důvěřuj,\nale prověřuj.",
-    r_body:"Každá návštěva končí strukturovanou fotografickou zprávou zaslanou přímo vám, ve vašem jazyce, ve stejný den. Vidíte přesně to, co jsme viděli. Každý pokoj zdokumentován. Každý systém prověřen. Každý problém nahlášen dřív, než se z něj stane katastrofa.",
-    r_lang:"Skrz pravidelné měsíční zprávy spolu s námi můžete průběžně sledovat, že o váš dům je dobře postaráno. S citlivým přístupem a se železnou pravidelností.",
-    r_luxury:"Péče o dům s doklady. Každý měsíc, protože vědět, že je vše v pořádku, má také svou cenu.",
-    r_feats:["Kompletní fotografický záznam exteriéru i interiéru","Kontrola systémů: voda, elektřina, klimatizace, bazén a zahrada","Závady seřazené podle priority","Práce řemeslníků zaznamenány s originální fakturou","Doručeno ve stejný den přes WhatsApp a e-mail","Dostupné v češtině, angličtině a španělštině"],
-    r_cta:"Požádat o ukázkovou zprávu",
+    r_sub:"Zpráva Marama", r_h:"Nejde o slib.\nJde o doklad.",
+    r_body:"Každá návštěva končí strukturovanou fotografickou zprávou zaslanou přímo vám — ve vašem jazyce, tentýž den. Vidíte přesně to, co jsme viděli: každou místnost zdokumentovanou, každý systém ověřený.",
+    r_lang:"Dostupné v češtině, English a Español.",
+    r_luxury:"Péče o dům s doklady. Každý měsíc, ať se dělo něco nebo nic — protože vědět, že je vše v pořádku, má také svou cenu.",
+    r_feats:["Kompletní fotografický záznam exteriéru i interiéru","Kontrola systémů — voda, elektřina, klimatizace, bazén","Závady s hodnocením priority","Práce řemeslníků zaznamenány a potvrzeny","Doručeno tentýž den přes WhatsApp a email"],
+    r_cta:"Požádat o vzorovou zprávu",
     p_status:"Stav nemovitosti", p_secure:"Zabezpečena",
-    p_title:"Měsíční inspekční zpráva", p_date:"Květen 2026 · Jávea, Costa Blanca",
+    p_title:"Měsíční inspekční zpráva", p_date:"Červen 2025 · Jávea, Costa Blanca",
     p_items:[
       {l:"Kontrola úniku vody",ok:true},{l:"Test poplachového systému",ok:true},{l:"Ventilace",ok:true},
-      {l:"Chemie bazénu",ok:true},{l:"Vnější obvod",ok:true},{l:"Střecha po bouřce",flag:true},
+      {l:"Zámky a přístupové body",ok:true},{l:"Vnější obvod",ok:true},{l:"Střecha po bouřce",flag:true},
     ],
     p_flag:"1 závada — řemeslník v řízení",
-    p_photos:"Nedávné fotografie", p_photo_sub:"18 snímků · 14. května 2026",
+    p_photos:"Nedávné fotografie", p_photo_sub:"18 snímků · 14. června 2025",
     p_lbs:["Terasa","Bazén","Vstup"],
 
     about_sub:"Kdo jsme",
-    about_h:"Malá firma.\nSeriózní standard.",
-    about_p1:"Marama vznikla pro majitele, kteří chtějí skutečnou péči, ne smlouvu podepsanou někým, kdo nikdy nevstoupil do jejich domu. Pracujeme s malým počtem nemovitostí. Každou dobře známe.",
-    about_p2:"Sídlíme v Dénii. Pokrýváme severní Costa Blanca. Mluvíme česky, anglicky a španělsky jako rodilí mluvčí, což znamená, že čeští majitelé mají k dispozici místního profesionála, který rozumí nejen jejich jazyku, ale i jejich nárokům na kvalitu, dokumentaci a důvěru.",
-    about_p3:"Každá zpráva, kterou napíšeme, každý řemeslník, kterého koordinujeme, každý klíč, který přebíráme, vše děláme s vědomím, že váš dům není jen investičním nástrojem. Je to místo, na kterém záleží.",
-    about_q:'"Působíme po celé Costa Blanca. Odpovídáme ve vašem jazyce. A každý měsíc dostanete zprávu."',
+    about_h:"Malý tým.\nVážný standard.",
+    about_p1:"Marama vznikla pro majitele, kteří chtějí skutečnou péči — ne smlouvu podepsanou někým, kdo nikdy neotevřel jejich dveře. Staráme se o malý počet domů. Každý známe dobře.",
+    about_p2:"Jsme mostem mezi vaším domovem a vaším druhým domovem. Mezi životem, který žijete každý den, a místem, které máte stále někde v mysli — dostatečně profesionální na to, abychom jí důvěřovali, dostatečně osobní na to, abychom ji zavolali.",
+    about_p3:"Každá zpráva, kterou napíšeme, každý řemeslník, kterého koordinujeme, každý klíč, který přebíráme — vše děláme s vědomím, že váš dům není investiční nástroj. Je to místo, na kterém záleží.",
+    about_q:'"Působíme po celé Costa Blanca. Odpovídáme ve vašem jazyce. A každý měsíc dostanete zprávu — ať se dělo něco, nebo nic."',
     about_attr:"— Marama",
     about_tag1:"Costa Blanca", about_tag2:"Založeno 2025", about_tag3:"Čeština · English · Español",
 
     faq_sub:"Otázky",
     faq_h:"Vše, co potřebujete vědět.",
-    faq_body:"Pokud nenajdete odpověď na vaši otázku, neváhejte nám napsat či zavolat. Odpovídáme česky, anglicky a španělsky. Většinou tentýž den.",
+    faq_body:"Pokud vaše otázka zde není, napište nám přímo — přes WhatsApp nebo email. Odpovídáme česky, anglicky a španělsky — obvykle tentýž den.",
     faqs:[
-      {q:"Jak často posíláte zprávy?",a:"Každý měsíc, do 24 hodin od kontrolní návštěvy. Zpráva přijde přes WhatsApp a e-mailem, s fotografiemi, souhrnem skutečného stavu a všemi zaznamenanými závadami."},
-      {q:"Řešíte nouzové opravy?",a:"Ano. Prasklé potrubí, spuštěný alarm, poškozená žaluzie: vyjedeme, zkoordinujeme a nahlásíme. Spolupracujeme s prověřenými řemeslníky v oblasti instalatérství, elektřiny, zasklení a běžné údržby. Konečná faktura za řemeslnou práci vám bude předložena bez skrytých přirážek. Nepřijímáme provize od řemeslníků. Naše loajalita patří výhradně vám."},
-      {q:"Co je Záznam Marama?",a:"Datovaná měsíční videoprohlídka celého domu, exteriér i interiér, s časovým razítkem, doručená přímo vám. Podle aktualizované španělské legislativy anti-okupa poskytuje vašemu právníkovi konkrétní důkaz pro zahájení zrychleného vystěhovacího řízení v případě nelegálního obsazení cizí osobou. Je součástí každého nabízeného tarifu."},
-      {q:"Zajišťujete check-in do apartmánů?",a:"Ano, pro majitele, kteří už mají svůj apartmán nebo vilu v Dénii nabízenou na Airbnb, Booking.com nebo jakékoliv jiné platformě. Přivítáme vaše hosty, zajistíme check-out, dohlédneme na přípravu mezi pobyty a pošleme kompletní fotografickou zprávu do 60 minut od našeho příjezdu ke kontrole. Nepůsobíme jako provozovatel pronájmu. Licence a odpovědnost zůstává u vás."},
-      {q:"V jakých jazycích pracujete?",a:"Česky, anglicky a španělsky, jako rodilí mluvčí. Všechny zprávy, korespondence i komunikace přes WhatsApp probíhají v jazyce, který preferujete."},
-      {q:"Poskytujete úklidové služby?",a:"Ne. Marama koordinuje a kontroluje váš úklidový tým. Úklid neprovádíme. Co dodáváme, je zdokumentovaný záznam skutečného stavu domu bezprostředně po každém check-outu."},
-      {q:"Co jsou zakládající sazby?",a:"Klienti, kteří podepíší do 31. července 2026, mají fixní sazby po dobu prvních dvanácti měsíců: Essential za 120 €, Comfort za 165 €, Prestige za 220 €. Po tomto datu platí plné ceny pro všechny nové klienty."},
-      {q:"Jak začít?",a:"Napište nám přes WhatsApp nebo e-mailem. Ozveme se do jednoho pracovního dne a domluvíme krátký hovor ve vašem jazyce, abychom poznali váš dům a vaše potřeby. Bez závazků. Bez nátlaku."},
+      {q:"Jak často jsou zprávy zasílány?",a:"Každý kalendářní měsíc, do 24 hodin od inspekční návštěvy. Zpráva přichází přes WhatsApp a email s fotografiemi, souhrnem stavu a všemi zaznamenanými závadami. Nemusíte se ptát — prostě přijde."},
+      {q:"Zajišťujete nouzové opravy?",a:"Ano. Prasklé potrubí, spuštěný alarm, poškozená okenice — přijedeme, zkoordinujeme a nahlásíme. Spolupracujeme s prověřenými řemeslníky v oblasti instalatérství, elektřiny, zasklení a obecné údržby."},
+      {q:"Co je administrativní asistence?",a:"Fungujeme jako vaše fyzická adresa ve Španělsku pro úřední korespondenci. Dopisy od Agencia Tributaria, Ayuntamiento a společenství vlastníků přijímáme, fotografujeme a předáváme tentýž den s jasným vysvětlením. Sledujeme termíny Modelo 210 a udržujeme kontakt s gestorem pro případ, že je potřeba profesionální pomoc."},
+      {q:"V jakých jazycích pracujete?",a:"Česky, anglicky a španělsky — rodilí mluvčí. Všechny zprávy, korespondence i komunikace přes WhatsApp jsou vedeny v jazyce, který preferujete."},
+      {q:"Zajišťuje Marama dovolenkové pronájmy?",a:"Zatím ne. Správa turistických pronájmů vyžaduje specifickou licenci dle předpisů Valencijského společenství a v tomto prostoru jsme se zatím rozhodli nepůsobit. Naším zaměřením je péče v době nepřítomnosti."},
+      {q:"Jak začít?",a:"Pošlete nám zprávu přes WhatsApp nebo email. Ozveme se do jednoho pracovního dne a domluvíme krátký hovor — ve vašem jazyce — abychom poznali váš dům a vaše potřeby. Bez závazků."},
     ],
 
     footer_tagline:"Váš dům v dobrých rukou.",
-    footer_desc:"Prémiová péče o domy pro majitele vil a apartmánů na Costa Blanca. Profesionální, doložitelná a dostupná v češtině, angličtině a španělštině.",
+    footer_desc:"Prémiová péče o domy pro majitele vil na Costa Blanca. Profesionální, dokumentovaná a dostupná v češtině, angličtině a španělštině.",
     footer_contact:"Kontakt",
     footer_email:EMAIL,
     footer_wp:"WhatsApp",
     footer_wp_num:"+34 643 627 516",
     footer_links:[{t:"Služby",h:"#services"},{t:"Zpráva",h:"#report"},{t:"O nás",h:"#about"},{t:"Otázky",h:"#faq"}],
     footer_legal:"Marama Property Care · Autónomo registrováno ve Španělsku · Costa Blanca",
-    footer_copy:"© 2026 Marama. Všechna práva vyhrazena.",
+    footer_copy:"© 2025 Marama. Všechna práva vyhrazena.",
     footer_cta:"WhatsApp",
+    footer_nav:"Navigace",
+    stat_zone:"Oblast působení",
+    stat_langs:"Rodné jazyky",
+    stat_freq:"Každá nemovitost, každý měsíc",
+    stat_call:"Vše se pohne",
+    footer_lang:"Jazyk",
   },
 };
 
@@ -554,7 +556,7 @@ export default function MaramaPage() {
             style={{fontFamily:sans,fontSize:"14px",fontWeight:500,color:C.forest,background:C.sage,padding:"15px 36px",borderRadius:"2px",textDecoration:"none",letterSpacing:"0.06em",transition:"background .2s,transform .15s",display:"inline-block"}}
             onMouseEnter={e=>{e.target.style.background=C.linen;e.target.style.transform="translateY(-1px)"}}
             onMouseLeave={e=>{e.target.style.background=C.sage;e.target.style.transform="translateY(0)"}}>{c.cta}</a>
-          <a href="#report" style={{fontFamily:sans,fontSize:"14px",color:"rgba(245,242,236,0.72)",textDecoration:"none",display:"flex",alignItems:"center",gap:"8px",transition:"color .2s"}}
+          <a href="/report.html" target="_blank" style={{fontFamily:sans,fontSize:"14px",color:"rgba(245,242,236,0.72)",textDecoration:"none",display:"flex",alignItems:"center",gap:"8px",transition:"color .2s"}}
             onMouseEnter={e=>e.currentTarget.style.color=C.sage} onMouseLeave={e=>e.currentTarget.style.color="rgba(245,242,236,0.72)"}>
             {c.ctaLink} <Ico n="arrow"/>
           </a>
@@ -750,10 +752,10 @@ export default function MaramaPage() {
             </div>
             <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:"1px",background:"rgba(61,92,79,0.1)"}}>
               {[
-                {n:"Costa Blanca",l:"Zone of operation"},
-                {n:"3",l:"Native languages"},
-                {n:"Monthly",l:"Every single property"},
-                {n:"One call",l:"Everything moves"},
+                {n:"Costa Blanca",l:c.stat_zone},
+                {n:"3",l:c.stat_langs},
+                {n:"Monthly",l:c.stat_freq},
+                {n:"One call",l:c.stat_call},
               ].map(item=>(
                 <div key={item.l} style={{background:C.linen,padding:"1.75rem 1.5rem"}}>
                   <p style={{fontFamily:serif,fontSize:"26px",fontWeight:400,color:C.slate,margin:"0 0 5px"}}>{item.n}</p>
@@ -842,7 +844,7 @@ export default function MaramaPage() {
             </div>
           </div>
           <div>
-            <p style={{fontFamily:sans,fontSize:"10.5px",letterSpacing:"0.18em",textTransform:"uppercase",color:"rgba(200,216,192,0.45)",margin:"0 0 1.5rem"}}>Navigation</p>
+            <p style={{fontFamily:sans,fontSize:"10.5px",letterSpacing:"0.18em",textTransform:"uppercase",color:"rgba(200,216,192,0.45)",margin:"0 0 1.5rem"}}>{c.footer_nav}</p>
             <div style={{display:"flex",flexDirection:"column",gap:"0.9rem"}}>
               {c.footer_links.map(l=>(
                 <a key={l.t} href={l.h} style={{fontFamily:sans,fontSize:"14px",fontWeight:300,color:"rgba(245,242,236,0.55)",textDecoration:"none",transition:"color .2s"}}
@@ -852,7 +854,7 @@ export default function MaramaPage() {
           </div>
           <div style={{display:"flex",flexDirection:"column",justifyContent:"space-between",gap:"2rem"}}>
             <div>
-              <p style={{fontFamily:sans,fontSize:"10.5px",letterSpacing:"0.18em",textTransform:"uppercase",color:"rgba(200,216,192,0.45)",margin:"0 0 1rem"}}>Language</p>
+              <p style={{fontFamily:sans,fontSize:"10.5px",letterSpacing:"0.18em",textTransform:"uppercase",color:"rgba(200,216,192,0.45)",margin:"0 0 1rem"}}>{c.footer_lang}</p>
               <LangSwitch lang={lang} setLang={setLang}/>
             </div>
             <a href={WP_LINK} target="_blank" rel="noopener noreferrer"
