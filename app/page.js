@@ -554,15 +554,15 @@ export default function MaramaPage() {
         <div style={{position:"absolute",bottom:"1.75rem",right:"2rem",fontFamily:sans,fontSize:"9px",letterSpacing:"0.14em",color:"rgba(200,216,192,0.16)",textTransform:"uppercase"}}>Replace with villa photograph</div>
       </div>
       <div style={{position:"absolute",inset:0,background:"linear-gradient(to bottom,rgba(28,43,42,0.1) 0%,rgba(28,43,42,0.52) 100%)",zIndex:1}}/>
-      <div style={{position:"relative",zIndex:2,maxWidth:"1280px",margin:"0 auto",padding:"144px 2.5rem 110px",width:"100%"}}>
+      <div style={{position:"relative",zIndex:2,maxWidth:"1280px",margin:"0 auto",padding:"120px 1.5rem 80px",width:"100%"}}>
         <div style={{display:"flex",alignItems:"center",gap:"14px",marginBottom:"2.25rem",...fd(0)}}>
           <div style={{width:"36px",height:"1px",background:C.sage}}/>
           <span style={{fontFamily:sans,fontSize:"10.5px",letterSpacing:"0.2em",color:C.sage,textTransform:"uppercase"}}>{c.eyebrow}</span>
         </div>
-        <h1 style={{fontFamily:serif,fontSize:"clamp(38px,6.5vw,82px)",fontWeight:300,lineHeight:1.08,color:C.linen,margin:"0 0 1.75rem",maxWidth:"820px",letterSpacing:"-0.015em",...fd(0.12)}}>
+        <h1 style={{fontFamily:serif,fontSize:"clamp(26px,6.5vw,82px)",fontWeight:300,lineHeight:1.1,color:C.linen,margin:"0 0 1.75rem",maxWidth:"820px",width:"100%",letterSpacing:"-0.015em",overflowWrap:"break-word",...fd(0.12)}}>
           {c.h1}<br/><em style={{fontStyle:"italic",color:C.sage}}>{c.h2}</em>
         </h1>
-        <p style={{fontFamily:sans,fontSize:"clamp(16px,2vw,19px)",fontWeight:300,color:"rgba(245,242,236,0.72)",lineHeight:1.75,maxWidth:"500px",margin:"0 0 3rem",...fd(0.24)}}>{c.sub}</p>
+        <p style={{fontFamily:sans,fontSize:"clamp(15px,2vw,19px)",fontWeight:300,color:"rgba(245,242,236,0.72)",lineHeight:1.75,maxWidth:"100%",width:"100%",margin:"0 0 3rem",...fd(0.24)}}>{c.sub}</p>
         <div style={{display:"flex",alignItems:"center",gap:"1.75rem",flexWrap:"wrap",...fd(0.36)}}>
           <a href={WP_LINK} target="_blank" rel="noopener noreferrer"
             style={{fontFamily:sans,fontSize:"14px",fontWeight:500,color:C.forest,background:C.sage,padding:"15px 36px",borderRadius:"2px",textDecoration:"none",letterSpacing:"0.06em",transition:"background .2s,transform .15s",display:"inline-block"}}
