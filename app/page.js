@@ -194,6 +194,10 @@ const COPY = {
     stat_langs:"Native languages",
     stat_freq:"Every single property",
     stat_call:"Everything moves",
+    stat_h1:"Costa Blanca",
+    stat_h2:"3",
+    stat_h3:"Monthly",
+    stat_h4:"One call",
     footer_lang:"Language",
   },
 
@@ -273,6 +277,10 @@ const COPY = {
     stat_langs:"Idiomas nativos",
     stat_freq:"Cada propiedad, cada mes",
     stat_call:"Todo en marcha",
+    stat_h1:"Costa Blanca",
+    stat_h2:"3",
+    stat_h3:"Mensual",
+    stat_h4:"Una llamada",
     footer_lang:"Idioma",
   },
 
@@ -352,6 +360,10 @@ const COPY = {
     stat_langs:"Rodné jazyky",
     stat_freq:"Každá nemovitost, každý měsíc",
     stat_call:"Vše se pohne",
+    stat_h1:"Costa Blanca",
+    stat_h2:"3",
+    stat_h3:"Měsíčně",
+    stat_h4:"Jeden hovor",
     footer_lang:"Jazyk",
   },
 };
@@ -752,10 +764,10 @@ export default function MaramaPage() {
             </div>
             <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:"1px",background:"rgba(61,92,79,0.1)"}}>
               {[
-                {n:"Costa Blanca",l:c.stat_zone},
-                {n:"3",l:c.stat_langs},
-                {n:"Monthly",l:c.stat_freq},
-                {n:"One call",l:c.stat_call},
+                {n:c.stat_h1,l:c.stat_zone},
+                {n:c.stat_h2,l:c.stat_langs},
+                {n:c.stat_h3,l:c.stat_freq},
+                {n:c.stat_h4,l:c.stat_call},
               ].map(item=>(
                 <div key={item.l} style={{background:C.linen,padding:"1.75rem 1.5rem"}}>
                   <p style={{fontFamily:serif,fontSize:"26px",fontWeight:400,color:C.slate,margin:"0 0 5px"}}>{item.n}</p>
