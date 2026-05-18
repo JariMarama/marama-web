@@ -124,8 +124,8 @@ const COPY = {
     sub:"Marama is a boutique property care service for absentee owners on the Costa Blanca. We visit, we document, we handle — and every month you know exactly what is happening at your property, whether you asked or not.",
     cta:"Talk to us on WhatsApp", ctaLink:"See a sample report",
     trust:[
-      {n:"English · Czech",l:"Native languages"},
-      {n:"Monthly",l:"Written photo report"},
+      {n:"English · Español · Čeština",l:"Native languages"},
+      {n:"Same day",l:"Photographic report"},
       {n:"Costa Blanca",l:"Full coverage"},
     ],
     nav:[{t:"Services",h:"#services"},{t:"The Report",h:"#report"},{t:"About",h:"#about"},{t:"FAQ",h:"#faq"}],
@@ -290,7 +290,7 @@ const COPY = {
     sub:"Marama se stará o domy majitelů, kteří žijí daleko — v Praze, Brně nebo Bratislavě. Každý měsíc navštívíme váš dům, zdokumentujeme jeho stav a postaráme se o vše, co nestíháte z dálky.",
     cta:"Napište nám na WhatsApp", ctaLink:"Zobrazit vzorovou zprávu",
     trust:[
-      {n:"Čeština · English",l:"Rodné jazyky"},
+      {n:"Čeština · English · Español",l:"Rodné jazyky"},
       {n:"Měsíčně",l:"Fotografická zpráva"},
       {n:"Costa Blanca",l:"Celé pobřeží"},
     ],
@@ -562,7 +562,7 @@ export default function MaramaPage() {
         <h1 style={{fontFamily:serif,fontSize:"clamp(26px,6.5vw,82px)",fontWeight:300,lineHeight:1.1,color:C.linen,margin:"0 0 1.75rem",maxWidth:"820px",width:"100%",letterSpacing:"-0.015em",overflowWrap:"break-word",...fd(0.12)}}>
           {c.h1}<br/><em style={{fontStyle:"italic",color:C.sage}}>{c.h2}</em>
         </h1>
-        <p style={{fontFamily:sans,fontSize:"clamp(15px,2vw,19px)",fontWeight:300,color:"rgba(245,242,236,0.72)",lineHeight:1.75,maxWidth:"100%",width:"100%",margin:"0 0 3rem",...fd(0.24)}}>{c.sub}</p>
+        <p style={{fontFamily:sans,fontSize:"clamp(15px,2vw,19px)",fontWeight:300,color:"rgba(245,242,236,0.72)",lineHeight:1.75,maxWidth:"100%",width:"100%",margin:"0 0 3rem",paddingRight:"1rem",boxSizing:"border-box",...fd(0.24)}}>{c.sub}</p>
         <div style={{display:"flex",alignItems:"center",gap:"1.75rem",flexWrap:"wrap",...fd(0.36)}}>
           <a href={WP_LINK} target="_blank" rel="noopener noreferrer"
             style={{fontFamily:sans,fontSize:"14px",fontWeight:500,color:C.forest,background:C.sage,padding:"15px 36px",borderRadius:"2px",textDecoration:"none",letterSpacing:"0.06em",transition:"background .2s,transform .15s",display:"inline-block"}}
