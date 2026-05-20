@@ -93,7 +93,7 @@ function MaramaSEO({ lang }) {
   return null;
 }
 
-const FONT_URL = "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap";
+
 
 const C = {
   forest: "#1C2B2A", slate: "#3D5C4F", sage: "#C8D8C0",
@@ -187,7 +187,10 @@ const COPY = {
     footer_wp_num:"+34 643 627 516",
     footer_links:[{t:"Services",h:"#services"},{t:"The Report",h:"#report"},{t:"About",h:"#about"},{t:"FAQ",h:"#faq"}],
     footer_legal:"Marama Property Care · Autónomo registered in Spain · Costa Blanca",
-    footer_copy:"© 2025 Marama. All rights reserved.",
+    footer_copy:"© 2026 Marama. All rights reserved.",
+    legal_notice:"Legal Notice",
+    legal_privacy:"Privacy",
+    legal_cookies:"Cookies",
     footer_cta:"WhatsApp",
     footer_nav:"Navigation",
     stat_zone:"Zone of operation",
@@ -270,7 +273,10 @@ const COPY = {
     footer_wp_num:"+34 643 627 516",
     footer_links:[{t:"Servicios",h:"#services"},{t:"El Informe",h:"#report"},{t:"Quiénes somos",h:"#about"},{t:"Preguntas",h:"#faq"}],
     footer_legal:"Marama Property Care · Autónomo registrado en España · Costa Blanca",
-    footer_copy:"© 2025 Marama. Todos los derechos reservados.",
+    footer_copy:"© 2026 Marama. Todos los derechos reservados.",
+    legal_notice:"Aviso Legal",
+    legal_privacy:"Privacidad",
+    legal_cookies:"Cookies",
     footer_cta:"WhatsApp",
     footer_nav:"Navegación",
     stat_zone:"Zona de operación",
@@ -353,7 +359,10 @@ const COPY = {
     footer_wp_num:"+34 643 627 516",
     footer_links:[{t:"Služby",h:"#services"},{t:"Zpráva",h:"#report"},{t:"O nás",h:"#about"},{t:"Otázky",h:"#faq"}],
     footer_legal:"Marama Property Care · Autónomo registrováno ve Španělsku · Costa Blanca",
-    footer_copy:"© 2025 Marama. Všechna práva vyhrazena.",
+    footer_copy:"© 2026 Marama. Všechna práva vyhrazena.",
+    legal_notice:"Právní informace",
+    legal_privacy:"Soukromí",
+    legal_cookies:"Cookies",
     footer_cta:"WhatsApp",
     footer_nav:"Navigace",
     stat_zone:"Oblast působení",
@@ -473,9 +482,6 @@ export default function MaramaPage() {
   const c = COPY[lang];
 
   useEffect(()=>{
-    const link=document.createElement("link");
-    link.href=FONT_URL; link.rel="stylesheet";
-    document.head.appendChild(link);
     const t=setTimeout(()=>setHeroVis(true),80);
     const onScroll=()=>setScrolled(window.scrollY>40);
     window.addEventListener("scroll",onScroll,{passive:true});
@@ -876,7 +882,12 @@ export default function MaramaPage() {
         </div>
         <div style={{paddingTop:"2rem",borderTop:"1px solid rgba(200,216,192,0.07)",display:"flex",flexWrap:"wrap",alignItems:"center",justifyContent:"space-between",gap:"1rem"}}>
           <p style={{fontFamily:sans,fontSize:"11px",color:"rgba(245,242,236,0.25)",margin:0,letterSpacing:"0.03em"}}>{c.footer_legal}</p>
-          <p style={{fontFamily:sans,fontSize:"11px",color:"rgba(245,242,236,0.22)",margin:0}}>{c.footer_copy}</p>
+          <div style={{display:"flex",alignItems:"center",gap:"1.5rem",flexWrap:"wrap"}}>
+            <a href="/legal.html" style={{fontFamily:sans,fontSize:"11px",color:"rgba(245,242,236,0.22)",textDecoration:"none",transition:"color .2s"}} onMouseEnter={e=>e.target.style.color=C.sage} onMouseLeave={e=>e.target.style.color="rgba(245,242,236,0.22)"}>{c.legal_notice}</a>
+            <a href="/legal.html" style={{fontFamily:sans,fontSize:"11px",color:"rgba(245,242,236,0.22)",textDecoration:"none",transition:"color .2s"}} onMouseEnter={e=>e.target.style.color=C.sage} onMouseLeave={e=>e.target.style.color="rgba(245,242,236,0.22)"}>{c.legal_privacy}</a>
+            <a href="/legal.html" style={{fontFamily:sans,fontSize:"11px",color:"rgba(245,242,236,0.22)",textDecoration:"none",transition:"color .2s"}} onMouseEnter={e=>e.target.style.color=C.sage} onMouseLeave={e=>e.target.style.color="rgba(245,242,236,0.22)"}>{c.legal_cookies}</a>
+            <p style={{fontFamily:sans,fontSize:"11px",color:"rgba(245,242,236,0.22)",margin:0}}>{c.footer_copy}</p>
+          </div>
         </div>
       </div>
     </footer>

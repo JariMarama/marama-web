@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marama · Legal</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --forest: #1C2B2A;
+    --slate: #3D5C4F;
+    --sage: #C8D8C0;
+    --linen: #F5F2EC;
+    --linen-mid: #EAE7E0;
+    --gold: #C9A96E;
+    --muted: #5a6b63;
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --sans: 'DM Sans', sans-serif;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:var(--sans); background:var(--linen); color:var(--forest); font-size:10.5pt; line-height:1.75; }
+
+  /* ── LANG BAR ── */
+  .lang-bar {
+    position: fixed; top:0; left:0; right:0; z-index:100;
+    background: var(--forest);
+    border-bottom: 1px solid rgba(200,216,192,0.15);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 10px 32px; gap: 16px;
+  }
+  .lang-bar-brand { font-family:var(--serif); font-size:13pt; font-weight:500; letter-spacing:4px; color:var(--linen); }
+  .lang-switches { display:flex; gap:3px; background:rgba(255,255,255,0.06); border-radius:3px; padding:3px; }
+  .lang-btn {
+    font-family:var(--sans); font-size:10px; font-weight:500; letter-spacing:0.08em;
+    padding:6px 14px; border-radius:2px; border:none; cursor:pointer; transition:background .2s,color .2s;
+    display:flex; align-items:center; gap:6px;
+  }
+  .lang-btn.active { background:var(--sage); color:var(--forest); }
+  .lang-btn:not(.active) { background:transparent; color:rgba(245,242,236,0.4); }
+  .lang-btn:not(.active):hover { color:rgba(245,242,236,0.75); }
+  .back-link {
+    font-family:var(--sans); font-size:9px; font-weight:500; letter-spacing:0.12em; text-transform:uppercase;
+    color:rgba(200,216,192,0.55); text-decoration:none; border:1px solid rgba(200,216,192,0.2);
+    padding:6px 14px; border-radius:2px; transition:color .2s,border-color .2s;
+  }
+  .back-link:hover { color:var(--sage); border-color:rgba(200,216,192,0.5); }
+
+  /* ── TAB NAV ── */
+  .tab-nav {
+    margin-top: 72px; background:var(--forest);
+    display:flex; border-bottom:1px solid rgba(200,216,192,0.1);
+    padding: 0 2rem;
+  }
+  .tab-btn {
+    font-family:var(--sans); font-size:11px; font-weight:500; letter-spacing:0.1em; text-transform:uppercase;
+    padding:16px 24px; border:none; cursor:pointer; background:transparent;
+    color:rgba(200,216,192,0.4); border-bottom:2px solid transparent;
+    transition:color .2s,border-color .2s;
+  }
+  .tab-btn.active { color:var(--sage); border-bottom-color:var(--sage); }
+  .tab-btn:hover:not(.active) { color:rgba(200,216,192,0.7); }
+
+  /* ── CONTENT ── */
+  .content { max-width: 820px; margin: 0 auto; padding: 4rem 2rem 6rem; }
+  .doc-eyebrow {
+    font-family:var(--sans); font-size:9pt; letter-spacing:0.18em; text-transform:uppercase;
+    color:var(--muted); margin-bottom:1rem;
+    display:flex; align-items:center; gap:12px;
+  }
+  .doc-eyebrow::before { content:''; display:block; width:28px; height:1px; background:var(--slate); flex-shrink:0; }
+  .doc-title { font-family:var(--serif); font-size:clamp(32px,5vw,52px); font-weight:300; color:var(--forest); margin-bottom:0.5rem; line-height:1.05; }
+  .doc-updated { font-family:var(--sans); font-size:9pt; color:var(--muted); margin-bottom:3rem; }
+  .doc-divider { height:1px; background:rgba(61,92,79,0.12); margin:2.5rem 0; }
+
+  .section-title { font-family:var(--serif); font-size:22pt; font-weight:400; color:var(--forest); margin:2.5rem 0 1rem; }
+  .section-number { font-family:var(--sans); font-size:8pt; letter-spacing:0.12em; text-transform:uppercase; color:var(--muted); margin-right:8px; }
+  p { margin-bottom:1rem; font-weight:300; color:var(--muted); }
+  strong { font-weight:500; color:var(--forest); }
+  a { color:var(--slate); }
+  ul { margin:0.5rem 0 1rem 1.5rem; }
+  ul li { margin-bottom:0.4rem; font-weight:300; color:var(--muted); }
+
+  .info-block {
+    background:var(--forest); border-radius:4px; padding:2rem 2.5rem; margin:2rem 0;
+  }
+  .info-block p { color:rgba(245,242,236,0.7); margin-bottom:0.5rem; }
+  .info-block strong { color:var(--sage); }
+  .info-block a { color:var(--sage); }
+
+  .cookie-table { width:100%; border-collapse:collapse; margin:1.5rem 0; font-size:9.5pt; }
+  .cookie-table th { background:var(--forest); color:rgba(245,242,236,0.8); font-family:var(--sans); font-size:8pt; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; padding:10px 14px; text-align:left; }
+  .cookie-table td { padding:10px 14px; border-bottom:1px solid rgba(61,92,79,0.08); color:var(--muted); font-weight:300; }
+  .cookie-table tr:nth-child(even) td { background:rgba(61,92,79,0.03); }
+
+  .footer-note { margin-top:4rem; padding:1.5rem 2rem; background:rgba(61,92,79,0.05); border-left:2px solid var(--sage); border-radius:0 4px 4px 0; }
+  .footer-note p { font-size:9pt; color:var(--muted); margin:0; }
+
+  .page-footer { background:var(--forest); padding:2rem; text-align:center; margin-top:4rem; }
+  .page-footer p { font-family:var(--sans); font-size:9pt; color:rgba(200,216,192,0.35); margin:0; }
+
+  .hidden { display:none; }
+</style>
+</head>
+<body>
+
+<!-- LANG BAR -->
+<div class="lang-bar">
+  <div class="lang-bar-brand">MARAMA</div>
+  <div class="lang-switches">
+    <button class="lang-btn active" onclick="setLang('ES')"><span>🇪🇸</span> Español</button>
+    <button class="lang-btn" onclick="setLang('EN')"><span>🇬🇧</span> English</button>
+    <button class="lang-btn" onclick="setLang('CZ')"><span>🇨🇿</span> Česky</button>
+  </div>
+  <a href="/" class="back-link" id="back-link">← Web</a>
+</div>
+
+<!-- TAB NAV -->
+<div class="tab-nav">
+  <button class="tab-btn active" onclick="setTab('aviso')" id="tab-aviso">Aviso Legal</button>
+  <button class="tab-btn" onclick="setTab('privacidad')" id="tab-privacidad">Privacidad</button>
+  <button class="tab-btn" onclick="setTab('cookies')" id="tab-cookies">Cookies</button>
+</div>
+
+<!-- ══════════════════════════════════════════ AVISO LEGAL -->
+<div id="doc-aviso" class="content">
+  <div class="doc-eyebrow" id="av-eyebrow">Información legal</div>
+  <h1 class="doc-title" id="av-title">Aviso Legal</h1>
+  <p class="doc-updated" id="av-updated">Última actualización: mayo 2026</p>
+  <div class="doc-divider"></div>
+
+  <div class="info-block">
+    <p><strong id="av-owner-label">Titular del sitio web</strong></p>
+    <p><strong>Jaroslav Zapp</strong><br>
+    <span id="av-activity">Autónomo — Gestión de propiedades · Costa Blanca</span></p>
+    <p><strong id="av-nif-label">NIF:</strong> Z4170626-H</p>
+    <p><strong id="av-address-label">Domicilio:</strong> Calle Sant Francesc 26, Dénia 03700, Alicante, España</p>
+    <p><strong id="av-email-label">Correo electrónico:</strong> <a href="mailto:hola@maramapropertycare.es">hola@maramapropertycare.es</a></p>
+    <p><strong id="av-phone-label">Teléfono:</strong> +34 643 627 516</p>
+    <p><strong id="av-web-label">Sitio web:</strong> <a href="https://maramapropertycare.es">maramapropertycare.es</a></p>
+  </div>
+
+  <h2 class="section-title"><span class="section-number">01</span><span id="av-s1-title">Objeto</span></h2>
+  <p id="av-s1-body">En cumplimiento de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSI-CE), se pone a disposición de los usuarios la presente información legal relativa al titular del sitio web maramapropertycare.es.</p>
+
+  <h2 class="section-title"><span class="section-number">02</span><span id="av-s2-title">Condiciones de uso</span></h2>
+  <p id="av-s2-body">El acceso y uso del sitio web atribuye la condición de usuario e implica la aceptación plena de las presentes condiciones. El usuario se compromete a hacer un uso adecuado de los contenidos y servicios ofrecidos, y a no emplearlos para actividades ilícitas o contrarias a la buena fe.</p>
+
+  <h2 class="section-title"><span class="section-number">03</span><span id="av-s3-title">Propiedad intelectual</span></h2>
+  <p id="av-s3-body">Todos los contenidos del sitio web — incluyendo textos, imágenes, logotipos y diseño — son propiedad de Jaroslav Zapp o de terceros que han autorizado su uso. Queda prohibida su reproducción total o parcial sin autorización expresa y por escrito del titular.</p>
+
+  <h2 class="section-title"><span class="section-number">04</span><span id="av-s4-title">Responsabilidad</span></h2>
+  <p id="av-s4-body">El titular no se hace responsable de los daños derivados del uso incorrecto del sitio web, de fallos técnicos fuera de su control, ni de la información contenida en sitios web de terceros enlazados desde este sitio.</p>
+
+  <h2 class="section-title"><span class="section-number">05</span><span id="av-s5-title">Legislación aplicable</span></h2>
+  <p id="av-s5-body">Este aviso legal se rige por la legislación española. Para cualquier controversia derivada del uso de este sitio web, las partes se someten a los juzgados y tribunales de Dénia (Alicante), salvo que la normativa aplicable establezca otro fuero.</p>
+
+  <div class="footer-note">
+    <p id="av-footer-note">Este aviso legal ha sido redactado de conformidad con la LSSI-CE y el RGPD/LOPDGDD. Se recomienda su revisión periódica.</p>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════ PRIVACIDAD -->
+<div id="doc-privacidad" class="content hidden">
+  <div class="doc-eyebrow" id="pr-eyebrow">Protección de datos</div>
+  <h1 class="doc-title" id="pr-title">Política de Privacidad</h1>
+  <p class="doc-updated" id="pr-updated">Última actualización: mayo 2026</p>
+  <div class="doc-divider"></div>
+
+  <p id="pr-intro">En Marama Property Care respetamos su privacidad y nos comprometemos a proteger sus datos personales. Esta política explica quién recoge sus datos, para qué, durante cuánto tiempo y cuáles son sus derechos.</p>
+
+  <h2 class="section-title"><span class="section-number">01</span><span id="pr-s1-title">Responsable del tratamiento</span></h2>
+  <div class="info-block">
+    <p><strong>Jaroslav Zapp</strong> — Autónomo</p>
+    <p><strong id="pr-nif-label">NIF:</strong> Z4170626-H</p>
+    <p><strong id="pr-address-label">Dirección:</strong> Calle Sant Francesc 26, Dénia 03700, Alicante, España</p>
+    <p><strong id="pr-contact-label">Contacto:</strong> <a href="mailto:hola@maramapropertycare.es">hola@maramapropertycare.es</a></p>
+  </div>
+
+  <h2 class="section-title"><span class="section-number">02</span><span id="pr-s2-title">Datos que recogemos</span></h2>
+  <p id="pr-s2-intro">Recogemos únicamente los datos que usted nos facilita voluntariamente a través de los canales de contacto (WhatsApp, correo electrónico o formulario de contacto):</p>
+  <ul id="pr-s2-list">
+    <li>Nombre y apellidos</li>
+    <li>Dirección de correo electrónico</li>
+    <li>Número de teléfono (si lo facilita)</li>
+    <li>Información sobre su propiedad en España</li>
+    <li>Cualquier otra información que usted incluya en su mensaje</li>
+  </ul>
+
+  <h2 class="section-title"><span class="section-number">03</span><span id="pr-s3-title">Finalidad y base jurídica</span></h2>
+  <ul id="pr-s3-list">
+    <li><strong>Atender su consulta</strong> — base jurídica: interés legítimo / ejecución de un contrato (art. 6.1.b RGPD).</li>
+    <li><strong>Enviarle presupuestos e información sobre nuestros servicios</strong> — base jurídica: interés legítimo (art. 6.1.f RGPD).</li>
+    <li><strong>Gestionar la relación contractual</strong> si contrata nuestros servicios — base jurídica: ejecución de un contrato (art. 6.1.b RGPD).</li>
+  </ul>
+
+  <h2 class="section-title"><span class="section-number">04</span><span id="pr-s4-title">Conservación de los datos</span></h2>
+  <p id="pr-s4-body">Sus datos se conservarán durante el tiempo necesario para gestionar su consulta o mantener la relación contractual, y posteriormente durante los plazos legales exigidos por la legislación fiscal y mercantil española (generalmente 5 años desde la última interacción).</p>
+
+  <h2 class="section-title"><span class="section-number">05</span><span id="pr-s5-title">Cesión de datos</span></h2>
+  <p id="pr-s5-body">No cedemos sus datos a terceros salvo obligación legal. En el ejercicio de nuestra actividad, podemos compartir información estrictamente necesaria con contratistas de confianza (fontaneros, electricistas, etc.) únicamente para la prestación del servicio contratado y nunca con fines comerciales.</p>
+
+  <h2 class="section-title"><span class="section-number">06</span><span id="pr-s6-title">Sus derechos (ARCO+)</span></h2>
+  <p id="pr-s6-intro">Tiene derecho a:</p>
+  <ul id="pr-s6-list">
+    <li><strong>Acceso</strong> — conocer qué datos tenemos sobre usted.</li>
+    <li><strong>Rectificación</strong> — corregir datos inexactos.</li>
+    <li><strong>Supresión</strong> — solicitar el borrado de sus datos.</li>
+    <li><strong>Oposición</strong> — oponerse al tratamiento de sus datos.</li>
+    <li><strong>Limitación</strong> — solicitar la limitación del tratamiento.</li>
+    <li><strong>Portabilidad</strong> — recibir sus datos en formato estructurado.</li>
+  </ul>
+  <p id="pr-s6-contact">Para ejercer cualquiera de estos derechos, escriba a <a href="mailto:hola@maramapropertycare.es">hola@maramapropertycare.es</a> indicando su solicitud. Responderemos en el plazo máximo de un mes. También tiene derecho a presentar una reclamación ante la Agencia Española de Protección de Datos (<a href="https://www.aepd.es" target="_blank">aepd.es</a>).</p>
+
+  <h2 class="section-title"><span class="section-number">07</span><span id="pr-s7-title">Seguridad</span></h2>
+  <p id="pr-s7-body">Aplicamos medidas técnicas y organizativas adecuadas para proteger sus datos frente a accesos no autorizados, pérdida o alteración. Las comunicaciones con este sitio web están cifradas mediante protocolo HTTPS.</p>
+</div>
+
+<!-- ══════════════════════════════════════════ COOKIES -->
+<div id="doc-cookies" class="content hidden">
+  <div class="doc-eyebrow" id="ck-eyebrow">Transparencia digital</div>
+  <h1 class="doc-title" id="ck-title">Política de Cookies</h1>
+  <p class="doc-updated" id="ck-updated">Última actualización: mayo 2026</p>
+  <div class="doc-divider"></div>
+
+  <p id="ck-intro"><strong id="ck-highlight">Marama Property Care no utiliza cookies de seguimiento, publicidad ni análisis en este sitio web.</strong></p>
+  <p id="ck-body">Este sitio web no instala ninguna cookie en su navegador. Las fuentes tipográficas utilizadas se sirven directamente desde nuestro servidor, sin realizar ninguna llamada a servidores externos de terceros (como Google Fonts). No utilizamos Google Analytics, Meta Pixel ni ningún otro servicio de medición de audiencias.</p>
+
+  <h2 class="section-title"><span class="section-number">01</span><span id="ck-s1-title">Tabla de cookies</span></h2>
+  <table class="cookie-table">
+    <thead>
+      <tr>
+        <th id="ck-th1">Nombre</th>
+        <th id="ck-th2">Tipo</th>
+        <th id="ck-th3">Proveedor</th>
+        <th id="ck-th4">Finalidad</th>
+        <th id="ck-th5">Duración</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td colspan="5" style="text-align:center;font-style:italic;color:var(--muted);padding:20px;" id="ck-no-cookies">Este sitio web no utiliza cookies.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2 class="section-title"><span class="section-number">02</span><span id="ck-s2-title">Cookies técnicas de sesión</span></h2>
+  <p id="ck-s2-body">El servidor de alojamiento (Vercel) puede generar cookies de sesión estrictamente técnicas y necesarias para el funcionamiento del sitio. Estas cookies no recogen datos personales, no se comparten con terceros y desaparecen al cerrar el navegador. No requieren consentimiento bajo la normativa vigente.</p>
+
+  <h2 class="section-title"><span class="section-number">03</span><span id="ck-s3-title">Cambios futuros</span></h2>
+  <p id="ck-s3-body">Si en el futuro incorporamos herramientas que utilicen cookies (por ejemplo, analítica web), actualizaremos esta política e implementaremos un banner de consentimiento conforme a la normativa de la AEPD antes de activar dichos servicios.</p>
+
+  <h2 class="section-title"><span class="section-number">04</span><span id="ck-s4-title">Más información</span></h2>
+  <p id="ck-s4-body">Para cualquier consulta sobre el uso de cookies en este sitio, puede contactarnos en <a href="mailto:hola@maramapropertycare.es">hola@maramapropertycare.es</a>. Para más información sobre cookies en general, puede consultar la guía de la <a href="https://www.aepd.es" target="_blank">Agencia Española de Protección de Datos</a>.</p>
+
+  <div class="footer-note">
+    <p id="ck-footer-note">Este sitio web está diseñado desde su origen respetando la privacidad del usuario. Sin cookies. Sin rastreo. Sin compromisos.</p>
+  </div>
+</div>
+
+<!-- PAGE FOOTER -->
+<div class="page-footer">
+  <p>Marama Property Care · Autónomo registrado en España · NIF Z4170626-H · <a href="mailto:hola@maramapropertycare.es" style="color:rgba(200,216,192,0.35);">hola@maramapropertycare.es</a></p>
+</div>
+
+<script>
+// ── TAB CONTROL ──
+function setTab(tab) {
+  ['aviso','privacidad','cookies'].forEach(t => {
+    document.getElementById('doc-' + t).classList.toggle('hidden', t !== tab);
+    document.getElementById('tab-' + t).classList.toggle('active', t === tab);
+  });
+}
+
+// ── LANGUAGE DATA ──
+const LEGAL = {
+  ES: {
+    lang:'es', backLink:'← Web',
+    tabAviso:'Aviso Legal', tabPriv:'Privacidad', tabCookies:'Cookies',
+    // Aviso Legal
+    avEyebrow:'Información legal', avTitle:'Aviso Legal', avUpdated:'Última actualización: mayo 2026',
+    avOwnerLabel:'Titular del sitio web', avActivity:'Autónomo — Gestión de propiedades · Costa Blanca',
+    avNifLabel:'NIF', avAddressLabel:'Domicilio', avEmailLabel:'Correo electrónico', avPhoneLabel:'Teléfono', avWebLabel:'Sitio web',
+    avS1Title:'Objeto', avS1Body:'En cumplimiento de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSI-CE), se pone a disposición de los usuarios la presente información legal relativa al titular del sitio web maramapropertycare.es.',
+    avS2Title:'Condiciones de uso', avS2Body:'El acceso y uso del sitio web atribuye la condición de usuario e implica la aceptación plena de las presentes condiciones. El usuario se compromete a hacer un uso adecuado de los contenidos y servicios ofrecidos, y a no emplearlos para actividades ilícitas o contrarias a la buena fe.',
+    avS3Title:'Propiedad intelectual', avS3Body:'Todos los contenidos del sitio web — incluyendo textos, imágenes, logotipos y diseño — son propiedad de Jaroslav Zapp o de terceros que han autorizado su uso. Queda prohibida su reproducción total o parcial sin autorización expresa y por escrito del titular.',
+    avS4Title:'Responsabilidad', avS4Body:'El titular no se hace responsable de los daños derivados del uso incorrecto del sitio web, de fallos técnicos fuera de su control, ni de la información contenida en sitios web de terceros enlazados desde este sitio.',
+    avS5Title:'Legislación aplicable', avS5Body:'Este aviso legal se rige por la legislación española. Para cualquier controversia derivada del uso de este sitio web, las partes se someten a los juzgados y tribunales de Dénia (Alicante), salvo que la normativa aplicable establezca otro fuero.',
+    avFooterNote:'Este aviso legal ha sido redactado de conformidad con la LSSI-CE y el RGPD/LOPDGDD.',
+    // Privacidad
+    prEyebrow:'Protección de datos', prTitle:'Política de Privacidad', prUpdated:'Última actualización: mayo 2026',
+    prIntro:'En Marama Property Care respetamos su privacidad y nos comprometemos a proteger sus datos personales. Esta política explica quién recoge sus datos, para qué, durante cuánto tiempo y cuáles son sus derechos.',
+    prS1Title:'Responsable del tratamiento', prNifLabel:'NIF', prAddressLabel:'Dirección', prContactLabel:'Contacto',
+    prS2Title:'Datos que recogemos', prS2Intro:'Recogemos únicamente los datos que usted nos facilita voluntariamente:',
+    prS2List:['Nombre y apellidos','Dirección de correo electrónico','Número de teléfono (si lo facilita)','Información sobre su propiedad en España','Cualquier otra información que incluya en su mensaje'],
+    prS3Title:'Finalidad y base jurídica',
+    prS3List:['Atender su consulta — base jurídica: interés legítimo / ejecución de un contrato (art. 6.1.b RGPD).','Enviarle presupuestos e información sobre nuestros servicios — base jurídica: interés legítimo (art. 6.1.f RGPD).','Gestionar la relación contractual si contrata nuestros servicios — base jurídica: ejecución de un contrato (art. 6.1.b RGPD).'],
+    prS4Title:'Conservación de los datos', prS4Body:'Sus datos se conservarán durante el tiempo necesario para gestionar su consulta o mantener la relación contractual, y posteriormente durante los plazos legales exigidos por la legislación fiscal y mercantil española (generalmente 5 años desde la última interacción).',
+    prS5Title:'Cesión de datos', prS5Body:'No cedemos sus datos a terceros salvo obligación legal. Podemos compartir información estrictamente necesaria con contratistas de confianza únicamente para la prestación del servicio contratado.',
+    prS6Title:'Sus derechos (ARCO+)', prS6Intro:'Tiene derecho a:',
+    prS6List:['Acceso — conocer qué datos tenemos sobre usted.','Rectificación — corregir datos inexactos.','Supresión — solicitar el borrado de sus datos.','Oposición — oponerse al tratamiento de sus datos.','Limitación — solicitar la limitación del tratamiento.','Portabilidad — recibir sus datos en formato estructurado.'],
+    prS6Contact:'Para ejercer cualquiera de estos derechos, escriba a hola@maramapropertycare.es. Responderemos en el plazo máximo de un mes. También puede reclamar ante la Agencia Española de Protección de Datos (aepd.es).',
+    prS7Title:'Seguridad', prS7Body:'Aplicamos medidas técnicas y organizativas adecuadas para proteger sus datos. Las comunicaciones con este sitio web están cifradas mediante protocolo HTTPS.',
+    // Cookies
+    ckEyebrow:'Transparencia digital', ckTitle:'Política de Cookies', ckUpdated:'Última actualización: mayo 2026',
+    ckHighlight:'Marama Property Care no utiliza cookies de seguimiento, publicidad ni análisis en este sitio web.',
+    ckBody:'Este sitio web no instala ninguna cookie en su navegador. Las fuentes tipográficas se sirven directamente desde nuestro servidor, sin realizar llamadas a servicios externos. No utilizamos Google Analytics, Meta Pixel ni ningún otro servicio de medición de audiencias.',
+    ckS1Title:'Tabla de cookies', ckNoCookies:'Este sitio web no utiliza cookies.',
+    ckTh1:'Nombre', ckTh2:'Tipo', ckTh3:'Proveedor', ckTh4:'Finalidad', ckTh5:'Duración',
+    ckS2Title:'Cookies técnicas de sesión', ckS2Body:'El servidor de alojamiento (Vercel) puede generar cookies de sesión estrictamente técnicas y necesarias. Estas cookies no recogen datos personales y desaparecen al cerrar el navegador.',
+    ckS3Title:'Cambios futuros', ckS3Body:'Si en el futuro incorporamos herramientas que utilicen cookies, actualizaremos esta política e implementaremos un banner de consentimiento antes de activar dichos servicios.',
+    ckS4Title:'Más información', ckS4Body:'Para consultas sobre privacidad, contacte con nosotros en hola@maramapropertycare.es.',
+    ckFooterNote:'Este sitio está diseñado respetando su privacidad. Sin cookies. Sin rastreo. Sin compromisos.',
+  },
+
+  EN: {
+    lang:'en', backLink:'← Website',
+    tabAviso:'Legal Notice', tabPriv:'Privacy', tabCookies:'Cookies',
+    // Legal Notice
+    avEyebrow:'Legal information', avTitle:'Legal Notice', avUpdated:'Last updated: May 2026',
+    avOwnerLabel:'Website owner', avActivity:'Self-employed (Autónomo) — Property Management · Costa Blanca',
+    avNifLabel:'Tax ID (NIF)', avAddressLabel:'Registered address', avEmailLabel:'Email', avPhoneLabel:'Phone', avWebLabel:'Website',
+    avS1Title:'Purpose', avS1Body:'In compliance with Spanish Law 34/2002 on Information Society Services and Electronic Commerce (LSSI-CE), the following legal information is provided regarding the owner of maramapropertycare.es.',
+    avS2Title:'Terms of use', avS2Body:'Accessing and using this website implies full acceptance of these terms. Users agree to use the content and services lawfully and in good faith, and not for any illegal or harmful purposes.',
+    avS3Title:'Intellectual property', avS3Body:'All content on this website — including texts, images, logos and design — is the property of Jaroslav Zapp or third parties who have authorised its use. Reproduction in whole or in part without express written consent is prohibited.',
+    avS4Title:'Liability', avS4Body:'The website owner accepts no liability for damages arising from improper use of the site, technical failures beyond their control, or the content of third-party websites linked from this site.',
+    avS5Title:'Applicable law', avS5Body:'This legal notice is governed by Spanish law. Any disputes arising from use of this website shall be submitted to the courts of Dénia (Alicante), unless applicable regulations provide otherwise.',
+    avFooterNote:'This legal notice has been drafted in accordance with Spanish LSSI-CE and GDPR/LOPDGDD regulations.',
+    // Privacy
+    prEyebrow:'Data protection', prTitle:'Privacy Policy', prUpdated:'Last updated: May 2026',
+    prIntro:'At Marama Property Care we respect your privacy and are committed to protecting your personal data. This policy explains who collects your data, for what purpose, for how long, and what your rights are.',
+    prS1Title:'Data controller', prNifLabel:'Tax ID (NIF)', prAddressLabel:'Address', prContactLabel:'Contact',
+    prS2Title:'Data we collect', prS2Intro:'We only collect data you voluntarily provide through our contact channels (WhatsApp, email or contact form):',
+    prS2List:['Full name','Email address','Phone number (if provided)','Information about your property in Spain','Any other information you include in your message'],
+    prS3Title:'Purpose and legal basis',
+    prS3List:['Responding to your enquiry — legal basis: legitimate interest / contract performance (Art. 6.1.b GDPR).','Sending quotes and service information — legal basis: legitimate interest (Art. 6.1.f GDPR).','Managing the contractual relationship if you engage our services — legal basis: contract performance (Art. 6.1.b GDPR).'],
+    prS4Title:'Data retention', prS4Body:'Your data will be kept for as long as necessary to handle your enquiry or maintain the contractual relationship, and subsequently for the periods required by Spanish tax and commercial law (generally 5 years from the last interaction).',
+    prS5Title:'Data sharing', prS5Body:'We do not share your data with third parties except where legally required. In the course of our work, we may share strictly necessary information with trusted contractors (plumbers, electricians, etc.) solely for service delivery and never for commercial purposes.',
+    prS6Title:'Your rights', prS6Intro:'You have the right to:',
+    prS6List:['Access — find out what data we hold about you.','Rectification — correct inaccurate data.','Erasure — request deletion of your data.','Objection — object to processing of your data.','Restriction — request limitation of processing.','Portability — receive your data in a structured format.'],
+    prS6Contact:'To exercise any of these rights, write to hola@maramapropertycare.es stating your request. We will respond within one month. You also have the right to lodge a complaint with the Spanish Data Protection Agency (aepd.es).',
+    prS7Title:'Security', prS7Body:'We apply appropriate technical and organisational measures to protect your data against unauthorised access, loss or alteration. All communications with this website are encrypted via HTTPS.',
+    // Cookies
+    ckEyebrow:'Digital transparency', ckTitle:'Cookie Policy', ckUpdated:'Last updated: May 2026',
+    ckHighlight:'Marama Property Care does not use tracking, advertising or analytics cookies on this website.',
+    ckBody:'This website does not install any cookies on your browser. The fonts used are served directly from our own server, with no calls to external third-party services. We do not use Google Analytics, Meta Pixel or any other audience measurement service.',
+    ckS1Title:'Cookie table', ckNoCookies:'This website does not use cookies.',
+    ckTh1:'Name', ckTh2:'Type', ckTh3:'Provider', ckTh4:'Purpose', ckTh5:'Duration',
+    ckS2Title:'Technical session cookies', ckS2Body:'Our hosting provider (Vercel) may generate strictly necessary technical session cookies. These do not collect personal data and are deleted when you close your browser.',
+    ckS3Title:'Future changes', ckS3Body:'If we introduce tools that use cookies in the future, we will update this policy and implement a consent banner in line with applicable regulations before activating such services.',
+    ckS4Title:'Further information', ckS4Body:'For any privacy-related questions, contact us at hola@maramapropertycare.es.',
+    ckFooterNote:'This website is built with privacy by design. No cookies. No tracking. No compromises.',
+  },
+
+  CZ: {
+    lang:'cs', backLink:'← Web',
+    tabAviso:'Právní informace', tabPriv:'Ochrana dat', tabCookies:'Cookies',
+    // Právní informace
+    avEyebrow:'Právní informace', avTitle:'Právní informace', avUpdated:'Poslední aktualizace: květen 2026',
+    avOwnerLabel:'Provozovatel webu', avActivity:'Osoba samostatně výdělečně činná (Autónomo) — Správa nemovitostí · Costa Blanca',
+    avNifLabel:'DIČ (NIF)', avAddressLabel:'Sídlo', avEmailLabel:'E-mail', avPhoneLabel:'Telefon', avWebLabel:'Web',
+    avS1Title:'Účel', avS1Body:'V souladu se španělským zákonem 34/2002 o službách informační společnosti a elektronickém obchodu (LSSI-CE) jsou zde zveřejněny právní informace o provozovateli webu maramapropertycare.es.',
+    avS2Title:'Podmínky užívání', avS2Body:'Přístupem na tento web a jeho používáním uživatel vyjadřuje souhlas s těmito podmínkami. Uživatel se zavazuje využívat obsah a služby webu zákonným způsobem a v dobré víře.',
+    avS3Title:'Duševní vlastnictví', avS3Body:'Veškerý obsah webu — včetně textů, obrázků, log a designu — je vlastnictvím Jaroslava Zappa nebo třetích stran, které udělily souhlas s jeho užitím. Reprodukce bez výslovného písemného souhlasu je zakázána.',
+    avS4Title:'Odpovědnost', avS4Body:'Provozovatel nenese odpovědnost za škody vzniklé nesprávným použitím webu, technickými selháními mimo jeho kontrolu ani za obsah webů třetích stran odkazovaných z tohoto webu.',
+    avS5Title:'Rozhodné právo', avS5Body:'Tyto právní informace se řídí španělským právem. Veškeré spory vzniklé v souvislosti s užíváním tohoto webu budou řešeny u soudů v Dénii (Alicante), pokud příslušné předpisy nestanoví jinak.',
+    avFooterNote:'Tento dokument byl vypracován v souladu se španělskou LSSI-CE a GDPR/LOPDGDD.',
+    // Ochrana dat
+    prEyebrow:'Ochrana osobních údajů', prTitle:'Zásady ochrany osobních údajů', prUpdated:'Poslední aktualizace: květen 2026',
+    prIntro:'Ve společnosti Marama Property Care respektujeme vaše soukromí a zavazujeme se chránit vaše osobní údaje. Tyto zásady vysvětlují, kdo shromažďuje vaše údaje, za jakým účelem, jak dlouho a jaká jsou vaše práva.',
+    prS1Title:'Správce osobních údajů', prNifLabel:'DIČ (NIF)', prAddressLabel:'Adresa', prContactLabel:'Kontakt',
+    prS2Title:'Jaké údaje shromažďujeme', prS2Intro:'Shromažďujeme pouze údaje, které nám dobrovolně poskytnete prostřednictvím kontaktních kanálů (WhatsApp, e-mail nebo kontaktní formulář):',
+    prS2List:['Jméno a příjmení','E-mailová adresa','Telefonní číslo (pokud ho uvedete)','Informace o vaší nemovitosti ve Španělsku','Veškeré další informace, které ve zprávě uvedete'],
+    prS3Title:'Účel zpracování a právní základ',
+    prS3List:['Vyřízení vaší poptávky — právní základ: oprávněný zájem / plnění smlouvy (čl. 6 odst. 1 písm. b) GDPR).','Zasílání nabídek a informací o službách — právní základ: oprávněný zájem (čl. 6 odst. 1 písm. f) GDPR).','Správa smluvního vztahu při uzavření smlouvy — právní základ: plnění smlouvy (čl. 6 odst. 1 písm. b) GDPR).'],
+    prS4Title:'Doba uchovávání údajů', prS4Body:'Vaše údaje budeme uchovávat po dobu nezbytně nutnou k vyřízení poptávky nebo k trvání smluvního vztahu a poté po dobu stanovenou španělskými daňovými a obchodními předpisy (zpravidla 5 let od poslední interakce).',
+    prS5Title:'Předávání údajů', prS5Body:'Vaše údaje nepředáváme třetím stranám s výjimkou zákonem stanovených případů. V rámci poskytování služeb můžeme sdílet nezbytné informace s prověřenými řemeslníky výhradně za účelem plnění smlouvy.',
+    prS6Title:'Vaše práva', prS6Intro:'Máte právo na:',
+    prS6List:['Přístup — zjistit, jaké údaje o vás máme.','Opravu — opravit nepřesné údaje.','Výmaz — požádat o smazání vašich údajů.','Námitku — vznést námitku proti zpracování.','Omezení — požádat o omezení zpracování.','Přenositelnost — obdržet vaše údaje ve strukturovaném formátu.'],
+    prS6Contact:'Pro uplatnění jakéhokoli z těchto práv nás kontaktujte na hola@maramapropertycare.es. Odpovíme do jednoho měsíce. Máte také právo podat stížnost u Španělského úřadu pro ochranu osobních údajů (aepd.es).',
+    prS7Title:'Zabezpečení', prS7Body:'Uplatňujeme odpovídající technická a organizační opatření k ochraně vašich údajů. Veškerá komunikace s tímto webem je šifrována prostřednictvím protokolu HTTPS.',
+    // Cookies
+    ckEyebrow:'Digitální transparentnost', ckTitle:'Zásady používání cookies', ckUpdated:'Poslední aktualizace: květen 2026',
+    ckHighlight:'Marama Property Care nepoužívá na tomto webu žádné sledovací, reklamní ani analytické cookies.',
+    ckBody:'Tento web neinstaluje do vašeho prohlížeče žádné soubory cookie. Použitá písma jsou načítána přímo z našeho serveru bez jakýchkoli volání externích služeb třetích stran. Nepoužíváme Google Analytics, Meta Pixel ani jiné nástroje pro měření návštěvnosti.',
+    ckS1Title:'Přehled cookies', ckNoCookies:'Tento web nepoužívá soubory cookie.',
+    ckTh1:'Název', ckTh2:'Typ', ckTh3:'Poskytovatel', ckTh4:'Účel', ckTh5:'Platnost',
+    ckS2Title:'Technické relační cookies', ckS2Body:'Náš poskytovatel hostingu (Vercel) může generovat přísně nezbytné technické relační cookies. Tyto soubory neshromažďují osobní údaje a jsou smazány po zavření prohlížeče.',
+    ckS3Title:'Budoucí změny', ckS3Body:'Pokud v budoucnu zavedeme nástroje využívající cookies, tuto politiku aktualizujeme a před aktivací takových služeb zavedeme banner pro udělení souhlasu.',
+    ckS4Title:'Další informace', ckS4Body:'V případě dotazů týkajících se ochrany soukromí nás kontaktujte na hola@maramapropertycare.es.',
+    ckFooterNote:'Tento web byl navržen s ohledem na ochranu soukromí. Žádné cookies. Žádné sledování. Bez kompromisů.',
+  }
+};
+
+function setLang(key) {
+  const d = LEGAL[key];
+  document.documentElement.lang = d.lang;
+
+  // Lang buttons
+  document.querySelectorAll('.lang-btn').forEach(b => {
+    b.classList.toggle('active',
+      (key==='ES' && b.textContent.includes('Español')) ||
+      (key==='EN' && b.textContent.includes('English')) ||
+      (key==='CZ' && b.textContent.includes('Česky'))
+    );
+  });
+
+  // Tab labels
+  document.getElementById('tab-aviso').textContent = d.tabAviso;
+  document.getElementById('tab-privacidad').textContent = d.tabPriv;
+  document.getElementById('tab-cookies').textContent = d.tabCookies;
+  document.getElementById('back-link').textContent = d.backLink;
+
+  // Aviso Legal
+  document.getElementById('av-eyebrow').textContent = d.avEyebrow;
+  document.getElementById('av-title').textContent = d.avTitle;
+  document.getElementById('av-updated').textContent = d.avUpdated;
+  document.getElementById('av-owner-label').textContent = d.avOwnerLabel;
+  document.getElementById('av-activity').textContent = d.avActivity;
+  document.getElementById('av-nif-label').textContent = d.avNifLabel + ':';
+  document.getElementById('av-address-label').textContent = d.avAddressLabel + ':';
+  document.getElementById('av-email-label').textContent = d.avEmailLabel + ':';
+  document.getElementById('av-phone-label').textContent = d.avPhoneLabel + ':';
+  document.getElementById('av-web-label').textContent = d.avWebLabel + ':';
+  document.getElementById('av-s1-title').textContent = d.avS1Title;
+  document.getElementById('av-s1-body').textContent = d.avS1Body;
+  document.getElementById('av-s2-title').textContent = d.avS2Title;
+  document.getElementById('av-s2-body').textContent = d.avS2Body;
+  document.getElementById('av-s3-title').textContent = d.avS3Title;
+  document.getElementById('av-s3-body').textContent = d.avS3Body;
+  document.getElementById('av-s4-title').textContent = d.avS4Title;
+  document.getElementById('av-s4-body').textContent = d.avS4Body;
+  document.getElementById('av-s5-title').textContent = d.avS5Title;
+  document.getElementById('av-s5-body').textContent = d.avS5Body;
+  document.getElementById('av-footer-note').textContent = d.avFooterNote;
+
+  // Privacidad
+  document.getElementById('pr-eyebrow').textContent = d.prEyebrow;
+  document.getElementById('pr-title').textContent = d.prTitle;
+  document.getElementById('pr-updated').textContent = d.prUpdated;
+  document.getElementById('pr-intro').textContent = d.prIntro;
+  document.getElementById('pr-s1-title').textContent = d.prS1Title;
+  document.getElementById('pr-nif-label').textContent = d.prNifLabel + ':';
+  document.getElementById('pr-address-label').textContent = d.prAddressLabel + ':';
+  document.getElementById('pr-contact-label').textContent = d.prContactLabel + ':';
+  document.getElementById('pr-s2-title').textContent = d.prS2Title;
+  document.getElementById('pr-s2-intro').textContent = d.prS2Intro;
+  const s2list = document.getElementById('pr-s2-list');
+  s2list.innerHTML = d.prS2List.map(i => `<li>${i}</li>`).join('');
+  document.getElementById('pr-s3-title').textContent = d.prS3Title;
+  const s3list = document.getElementById('pr-s3-list');
+  s3list.innerHTML = d.prS3List.map(i => `<li>${i}</li>`).join('');
+  document.getElementById('pr-s4-title').textContent = d.prS4Title;
+  document.getElementById('pr-s4-body').textContent = d.prS4Body;
+  document.getElementById('pr-s5-title').textContent = d.prS5Title;
+  document.getElementById('pr-s5-body').textContent = d.prS5Body;
+  document.getElementById('pr-s6-title').textContent = d.prS6Title;
+  document.getElementById('pr-s6-intro').textContent = d.prS6Intro;
+  const s6list = document.getElementById('pr-s6-list');
+  s6list.innerHTML = d.prS6List.map(i => `<li>${i}</li>`).join('');
+  document.getElementById('pr-s6-contact').textContent = d.prS6Contact;
+  document.getElementById('pr-s7-title').textContent = d.prS7Title;
+  document.getElementById('pr-s7-body').textContent = d.prS7Body;
+
+  // Cookies
+  document.getElementById('ck-eyebrow').textContent = d.ckEyebrow;
+  document.getElementById('ck-title').textContent = d.ckTitle;
+  document.getElementById('ck-updated').textContent = d.ckUpdated;
+  document.getElementById('ck-highlight').textContent = d.ckHighlight;
+  document.getElementById('ck-body').textContent = d.ckBody;
+  document.getElementById('ck-s1-title').textContent = d.ckS1Title;
+  document.getElementById('ck-no-cookies').textContent = d.ckNoCookies;
+  document.getElementById('ck-th1').textContent = d.ckTh1;
+  document.getElementById('ck-th2').textContent = d.ckTh2;
+  document.getElementById('ck-th3').textContent = d.ckTh3;
+  document.getElementById('ck-th4').textContent = d.ckTh4;
+  document.getElementById('ck-th5').textContent = d.ckTh5;
+  document.getElementById('ck-s2-title').textContent = d.ckS2Title;
+  document.getElementById('ck-s2-body').textContent = d.ckS2Body;
+  document.getElementById('ck-s3-title').textContent = d.ckS3Title;
+  document.getElementById('ck-s3-body').textContent = d.ckS3Body;
+  document.getElementById('ck-s4-title').textContent = d.ckS4Title;
+  document.getElementById('ck-s4-body').textContent = d.ckS4Body;
+  document.getElementById('ck-footer-note').textContent = d.ckFooterNote;
+}
+
+// Init
+setLang('ES');
+</script>
+</body>
+</html>
