@@ -53,8 +53,8 @@ export const metadata = {
     canonical: "https://maramapropertycare.es",
     languages: {
       "en":        "https://maramapropertycare.es",
-      "es":        "https://maramapropertycare.es",
-      "cs":        "https://maramapropertycare.es",
+      "es":        "https://maramapropertycare.es/es",
+      "cs":        "https://maramapropertycare.es/cz",
       "nl":        "https://maramapropertycare.es",
       "de":        "https://maramapropertycare.es",
       "x-default": "https://maramapropertycare.es",

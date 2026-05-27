@@ -241,7 +241,7 @@ const COPY = {
     p_lbs:["Terasa","Bazén","Vstup"],
 
     about_sub:"Kdo jsme",
-    about_h:"Malý tým.\nO to více šikovný.",
+    about_h:"Malý tým.\nVážný standard.",
     about_p1:"Marama vznikla pro majitele, kteří chtějí skutečnou péči — ne smlouvu podepsanou někým, kdo nikdy neotevřel jejich dveře. Staráme se o malý počet domů. Každý známe dobře.",
     about_p2:"Jsme mostem mezi vaším domovem a vaším druhým domovem. Mezi životem, který žijete každý den, a místem, které máte stále někde v mysli — dostatečně profesionální na to, abychom jí důvěřovali, dostatečně osobní na to, abychom ji zavolali.",
     about_p3:"Každá zpráva, kterou napíšeme, každý řemeslník, kterého koordinujeme, každý klíč, který přebíráme — vše děláme s vědomím, že váš dům není investiční nástroj. Je to místo, na kterém záleží.",
@@ -257,7 +257,7 @@ const COPY = {
       {q:"Zajišťujete nouzové opravy?",a:"Ano. Prasklé potrubí, spuštěný alarm, poškozená okenice — přijedeme, zkoordinujeme a nahlásíme. Spolupracujeme s prověřenými řemeslníky v oblasti instalatérství, elektřiny, zasklení a obecné údržby."},
       {q:"Co je administrativní asistence?",a:"Fungujeme jako vaše fyzická adresa ve Španělsku pro úřední korespondenci. Dopisy od Agencia Tributaria, Ayuntamiento a společenství vlastníků přijímáme, fotografujeme a předáváme tentýž den s jasným vysvětlením. Sledujeme termíny Modelo 210 a udržujeme kontakt s gestorem pro případ, že je potřeba profesionální pomoc."},
       {q:"V jakých jazycích pracujete?",a:"Česky, anglicky a španělsky — rodilí mluvčí. Všechny zprávy, korespondence i komunikace přes WhatsApp jsou vedeny v jazyce, který preferujete."},
-      {q:"Pracujete s majiteli turistických apartmánů?",a:"Ano. Pokud spravujete turistický apartmán nebo vilu v Dénia — přes Airbnb, Booking.com nebo přímo — nabízíme službu check-in a check-out, inspekce mezi pobyty a reakci na bouřky. Vše se fakturuje za návštěvu, bez měsíčního paušálu. Napište nám a vysvětlíme vám, jak to funguje."},
+      {q:"Pracujete s hostiteli dovolenkových pronájmů?",a:"Ano. Pokud spravujete dovolenkový pronájem v Dénia — přes Airbnb, Booking.com nebo přímo — nabízíme službu check-in a check-out, inspekce mezi pobyty a reakci na bouřky. Vše se fakturuje za návštěvu, bez měsíčního paušálu. Napište nám a vysvětlíme vám, jak to funguje."},
       {q:"Jak začít?",a:"Pošlete nám zprávu přes WhatsApp nebo email. Ozveme se do jednoho pracovního dne a domluvíme krátký hovor — ve vašem jazyce — abychom poznali váš dům a vaše potřeby. Bez závazků."},
     ],
 
@@ -376,8 +376,8 @@ function LangSwitch({lang,setLang}) {
 // ─────────────────────────────────────────────────────────────────────────────
 // ROOT
 // ─────────────────────────────────────────────────────────────────────────────
-export default function MaramaPage() {
-  const [lang,setLang]         = useState("EN");
+export default function MaramaPage({ defaultLang = "EN" }) {
+  const [lang,setLang]         = useState(defaultLang);
   const [scrolled,setScrolled] = useState(false);
   const [menuOpen,setMenuOpen] = useState(false);
   const [heroVis,setHeroVis]   = useState(false);
