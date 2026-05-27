@@ -262,7 +262,7 @@ const COPY = {
 
   CZ: {
     eyebrow:"Costa Blanca · Správa nemovitostí",
-    h1:"Váš dům ve Španělsku si zaslouží", h2:"víc než klíč u souseda a naději.",
+    h1:"Váš dům ve Španělsku si zaslouží", h2:"klíče u souseda a doufat, že to nějak dopadne?",
     sub:"Marama se stará o domy majitelů, kteří žijí daleko — v Praze, Brně nebo Bratislavě. Každý měsíc navštívíme váš dům, zdokumentujeme jeho stav a postaráme se o vše, co nestíháte z dálky.",
     cta:"Napište nám na WhatsApp", ctaLink:"Zobrazit vzorovou zprávu",
     trust:[
