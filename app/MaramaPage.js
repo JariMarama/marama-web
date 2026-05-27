@@ -139,9 +139,23 @@ const COPY = {
       },
     ],
     pr_popular:"Most popular",
-    pr_holiday_title:"Holiday rental hosts",
-    pr_holiday_body:"Already listing your Dénia property on Airbnb or Booking.com? We handle the practical side — check-in, check-out, between-stay inspection and storm response. Billed per visit, no monthly retainer required.",
-    pr_holiday_cta:"Ask about visit rates",
+    pr_holiday_title:"Holiday Rental Coordination",
+    pr_holiday_sub:"Hybrid retainer — active rental months only",
+    pr_holiday_body:"Already listing your Dénia property on Airbnb or Booking.com? We provide local boots on the ground for every guest turnaround — check-in handover, 60-minute post-checkout audit, and a full photographic report to your WhatsApp before the cleaning crew arrives.",
+    pr_holiday_base:"€180", pr_holiday_base_label:"/month (active months)",
+    pr_holiday_base_desc:"Includes up to 4 guest turnarounds per calendar month — mapping to a typical weekly Saturday-to-Saturday rental rhythm.",
+    pr_holiday_overage:"€45", pr_holiday_overage_label:"per additional turnaround",
+    pr_holiday_overage_desc:"Any turnaround beyond the first 4 in a single month.",
+    pr_holiday_offseason:"Off-season months transition seamlessly to your standard Essential or Comfort tier — year-round coverage, predictable cost.",
+    pr_holiday_hours_title:"Out-of-hours surcharges",
+    pr_holiday_hours_note:"Standard hours: Monday–Saturday 08:00–20:00",
+    pr_holiday_hours:[
+      {time:"20:00–22:00", label:"Late arrivals", fee:"€25"},
+      {time:"22:00–08:00", label:"Night arrivals / emergency lockout", fee:"€50"},
+      {time:"Sundays & public holidays", label:"All interactions", fee:"€50"},
+    ],
+    pr_holiday_policy:"Zero markup on all contractor invoices. Original invoice always presented. Pool chemistry and landscaping outside core scope.",
+    pr_holiday_cta:"Ask about holiday rental rates",
   },
 
   ES: {
@@ -255,9 +269,23 @@ const COPY = {
       },
     ],
     pr_popular:"El más elegido",
-    pr_holiday_title:"Anfitriones de alquiler vacacional",
-    pr_holiday_body:"¿Ya ofrece su propiedad en Dénia en Airbnb o Booking.com? Gestionamos la parte práctica — check-in, check-out, inspección entre estancias y respuesta ante tormentas. Facturado por visita, sin cuota mensual.",
-    pr_holiday_cta:"Consultar tarifas por visita",
+    pr_holiday_title:"Coordinación de Alquiler Vacacional",
+    pr_holiday_sub:"Tarifa híbrida — solo meses de alquiler activo",
+    pr_holiday_body:"¿Ya ofrece su propiedad en Dénia en Airbnb o Booking.com? Gestionamos cada cambio de huésped sobre el terreno — entrega de llaves en el check-in, auditoría post-checkout en 60 minutos con informe fotográfico completo a su WhatsApp antes de que llegue el equipo de limpieza.",
+    pr_holiday_base:"€180", pr_holiday_base_label:"/mes (meses activos)",
+    pr_holiday_base_desc:"Incluye hasta 4 cambios de huésped por mes natural — equivalente al ritmo típico de alquiler semanal de sábado a sábado.",
+    pr_holiday_overage:"€45", pr_holiday_overage_label:"por cambio adicional",
+    pr_holiday_overage_desc:"Cualquier cambio a partir del cuarto en un mismo mes.",
+    pr_holiday_offseason:"Los meses fuera de temporada pasan automáticamente a su tarifa Essential o Comfort habitual — cobertura anual, coste predecible.",
+    pr_holiday_hours_title:"Suplementos fuera de horario",
+    pr_holiday_hours_note:"Horario estándar: lunes a sábado 08:00–20:00",
+    pr_holiday_hours:[
+      {time:"20:00–22:00", label:"Llegadas tardías", fee:"€25"},
+      {time:"22:00–08:00", label:"Llegadas nocturnas / apertura de emergencia", fee:"€50"},
+      {time:"Domingos y festivos oficiales", label:"Cualquier interacción", fee:"€50"},
+    ],
+    pr_holiday_policy:"Sin comisiones en facturas de contratistas. Factura original siempre presentada. Análisis químico de piscina y jardinería fuera del alcance básico.",
+    pr_holiday_cta:"Consultar tarifas de alquiler vacacional",
   },
 
   CZ: {
@@ -371,9 +399,23 @@ const COPY = {
       },
     ],
     pr_popular:"Nejoblíbenější",
-    pr_holiday_title:"Majitelé turistických apartmánů",
-    pr_holiday_body:"Nabízíte svůj apartmán nebo vilu v Dénii na Airbnb nebo Booking.com? Postaráme se o praktickou část — check-in, check-out, inspekce mezi pobyty a reakce na bouřky. Fakturováno za návštěvu, bez měsíčního paušálu.",
-    pr_holiday_cta:"Zeptat se na ceny za návštěvu",
+    pr_holiday_title:"Koordinace turistických apartmánů",
+    pr_holiday_sub:"Hybridní paušál — pouze v měsících aktivního pronájmu",
+    pr_holiday_body:"Nabízíte svůj apartmán nebo vilu v Dénii na Airbnb nebo Booking.com? Zajistíme přítomnost na místě při každé výměně hostů — předání klíčů při check-inu, audit po check-outu do 60 minut s kompletní fotografickou zprávou do vašeho WhatsAppu ještě před příchodem úklidového týmu.",
+    pr_holiday_base:"€180", pr_holiday_base_label:"/měsíc (aktivní měsíce)",
+    pr_holiday_base_desc:"Zahrnuje až 4 výměny hostů za kalendářní měsíc — odpovídá typickému týdennímu rytmu pronájmu od soboty do soboty.",
+    pr_holiday_overage:"€45", pr_holiday_overage_label:"za každou další výměnu",
+    pr_holiday_overage_desc:"Každá výměna nad rámec prvních 4 v jednom měsíci.",
+    pr_holiday_offseason:"Mimo sezonu nemovitost automaticky přechází na váš standardní tarif Essential nebo Comfort — celoroční pokrytí, předvídatelné náklady.",
+    pr_holiday_hours_title:"Příplatky za mimopracovní dobu",
+    pr_holiday_hours_note:"Standardní provozní doba: pondělí–sobota 08:00–20:00",
+    pr_holiday_hours:[
+      {time:"20:00–22:00", label:"Pozdní příjezdy", fee:"€25"},
+      {time:"22:00–08:00", label:"Noční příjezdy / nouzové otevření", fee:"€50"},
+      {time:"Neděle a státní svátky", label:"Jakákoli interakce", fee:"€50"},
+    ],
+    pr_holiday_policy:"Nulová provize z faktur řemeslníků. Vždy předkládáme originální fakturu. Chemická úprava bazénu a zahradnictví nejsou součástí základního rozsahu.",
+    pr_holiday_cta:"Zeptat se na ceny pro turistické apartmány",
   },
 };
 
@@ -745,15 +787,56 @@ export default function MaramaPage() {
             </div>
           ))}
         </div>
-        <div style={{padding:"2.5rem 3rem",background:C.forest,borderRadius:"2px",display:"flex",flexWrap:"wrap",alignItems:"center",justifyContent:"space-between",gap:"1.5rem"}}>
-          <div>
-            <p style={{fontFamily:serif,fontSize:"22px",fontWeight:300,color:C.sage,margin:"0 0 8px",fontStyle:"italic"}}>{c.pr_holiday_title}</p>
-            <p style={{fontFamily:sans,fontSize:"13px",fontWeight:300,color:"rgba(245,242,236,0.58)",margin:0,lineHeight:1.7,maxWidth:"560px"}}>{c.pr_holiday_body}</p>
+        <div style={{marginTop:"3rem"}}>
+          <div style={{padding:"2.5rem 3rem",background:C.forest,borderRadius:"2px 2px 0 0",display:"flex",flexWrap:"wrap",alignItems:"flex-start",justifyContent:"space-between",gap:"2rem"}}>
+            <div style={{flex:"1",minWidth:"280px"}}>
+              <p style={{fontFamily:sans,fontSize:"10.5px",letterSpacing:"0.18em",textTransform:"uppercase",color:"rgba(200,216,192,0.45)",margin:"0 0 0.5rem"}}>{c.pr_holiday_sub}</p>
+              <p style={{fontFamily:serif,fontSize:"26px",fontWeight:300,color:C.sage,margin:"0 0 1rem",fontStyle:"italic"}}>{c.pr_holiday_title}</p>
+              <p style={{fontFamily:sans,fontSize:"13px",fontWeight:300,color:"rgba(245,242,236,0.58)",margin:"0 0 1.5rem",lineHeight:1.75,maxWidth:"520px"}}>{c.pr_holiday_body}</p>
+              <p style={{fontFamily:sans,fontSize:"12px",fontWeight:300,color:"rgba(200,216,192,0.4)",lineHeight:1.7,maxWidth:"520px",fontStyle:"italic"}}>{c.pr_holiday_offseason}</p>
+            </div>
+            <div style={{display:"flex",flexDirection:"column",gap:"1rem",minWidth:"200px"}}>
+              <div style={{background:"rgba(200,216,192,0.08)",border:"1px solid rgba(200,216,192,0.15)",borderRadius:"2px",padding:"1.25rem 1.5rem"}}>
+                <div style={{display:"flex",alignItems:"baseline",gap:"4px",marginBottom:"4px"}}>
+                  <span style={{fontFamily:serif,fontSize:"36px",fontWeight:300,color:C.linen,lineHeight:1}}>{c.pr_holiday_base}</span>
+                  <span style={{fontFamily:sans,fontSize:"12px",color:"rgba(200,216,192,0.55)"}}>{c.pr_holiday_base_label}</span>
+                </div>
+                <p style={{fontFamily:sans,fontSize:"12px",fontWeight:300,color:"rgba(245,242,236,0.45)",margin:0,lineHeight:1.5}}>{c.pr_holiday_base_desc}</p>
+              </div>
+              <div style={{background:"rgba(200,216,192,0.05)",border:"1px solid rgba(200,216,192,0.1)",borderRadius:"2px",padding:"1.25rem 1.5rem"}}>
+                <div style={{display:"flex",alignItems:"baseline",gap:"4px",marginBottom:"4px"}}>
+                  <span style={{fontFamily:serif,fontSize:"28px",fontWeight:300,color:C.sage,lineHeight:1}}>{c.pr_holiday_overage}</span>
+                  <span style={{fontFamily:sans,fontSize:"12px",color:"rgba(200,216,192,0.45)"}}>{c.pr_holiday_overage_label}</span>
+                </div>
+                <p style={{fontFamily:sans,fontSize:"12px",fontWeight:300,color:"rgba(245,242,236,0.4)",margin:0,lineHeight:1.5}}>{c.pr_holiday_overage_desc}</p>
+              </div>
+            </div>
           </div>
-          <a href={"https://wa.me/"+WP_NUMBER} target="_blank" rel="noopener noreferrer"
-            style={{fontFamily:sans,fontSize:"13px",fontWeight:500,color:C.forest,background:C.sage,padding:"13px 28px",borderRadius:"2px",textDecoration:"none",letterSpacing:"0.06em",whiteSpace:"nowrap",transition:"background .2s"}}>
-            {c.pr_holiday_cta}
-          </a>
+          <div style={{background:"rgba(28,43,42,0.6)",border:"1px solid rgba(200,216,192,0.08)",borderTop:"none",borderRadius:"0 0 2px 2px",padding:"2rem 3rem",display:"flex",flexWrap:"wrap",gap:"3rem",alignItems:"flex-start",justifyContent:"space-between"}}>
+            <div style={{flex:"1",minWidth:"260px"}}>
+              <p style={{fontFamily:sans,fontSize:"10px",letterSpacing:"0.14em",textTransform:"uppercase",color:"rgba(200,216,192,0.35)",margin:"0 0 0.75rem"}}>{c.pr_holiday_hours_title}</p>
+              <p style={{fontFamily:sans,fontSize:"11px",color:"rgba(200,216,192,0.3)",margin:"0 0 0.75rem",fontStyle:"italic"}}>{c.pr_holiday_hours_note}</p>
+              <div style={{display:"flex",flexDirection:"column",gap:"0"}}>
+                {c.pr_holiday_hours.map((h,i)=>(
+                  <div key={i} style={{display:"flex",alignItems:"center",justifyContent:"space-between",gap:"1rem",padding:"8px 0",borderBottom:"1px solid rgba(200,216,192,0.07)"}}>
+                    <div>
+                      <span style={{fontFamily:sans,fontSize:"12px",fontWeight:500,color:C.sage}}>{h.time}</span>
+                      <span style={{fontFamily:sans,fontSize:"11px",color:"rgba(245,242,236,0.35)",marginLeft:"8px"}}>{h.label}</span>
+                    </div>
+                    <span style={{fontFamily:serif,fontSize:"18px",fontWeight:400,color:C.linen,flexShrink:0}}>{h.fee}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div style={{flex:"1",minWidth:"240px"}}>
+              <p style={{fontFamily:sans,fontSize:"10px",letterSpacing:"0.14em",textTransform:"uppercase",color:"rgba(200,216,192,0.35)",margin:"0 0 0.75rem"}}>Policy</p>
+              <p style={{fontFamily:sans,fontSize:"12px",fontWeight:300,color:"rgba(245,242,236,0.4)",lineHeight:1.75,margin:"0 0 1.5rem"}}>{c.pr_holiday_policy}</p>
+              <a href={"https://wa.me/"+WP_NUMBER} target="_blank" rel="noopener noreferrer"
+                style={{fontFamily:sans,fontSize:"13px",fontWeight:500,color:C.forest,background:C.sage,padding:"12px 24px",borderRadius:"2px",textDecoration:"none",letterSpacing:"0.06em",display:"inline-block",transition:"background .2s"}}>
+                {c.pr_holiday_cta}
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
