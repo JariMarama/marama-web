@@ -51,14 +51,6 @@ export const metadata = {
   ],
   alternates: {
     canonical: "https://maramapropertycare.es",
-    languages: {
-      "en":        "https://maramapropertycare.es",
-      "es":        "https://maramapropertycare.es/es",
-      "cs":        "https://maramapropertycare.es/cz",
-      "nl":        "https://maramapropertycare.es",
-      "de":        "https://maramapropertycare.es",
-      "x-default": "https://maramapropertycare.es",
-    },
   },
   robots: {
     index: true,
@@ -96,7 +88,6 @@ export default function Home() {
     "image": "https://maramapropertycare.es/og-image.jpg",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Calle Sant Francesc 26",
       "addressLocality": "Dénia",
       "postalCode": "03700",
       "addressRegion": "Alicante",

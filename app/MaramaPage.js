@@ -38,7 +38,7 @@ const COPY = {
       {n:"Same day",l:"Photographic report"},
       {n:"Costa Blanca",l:"Full coverage"},
     ],
-    nav:[{t:"Services",h:"#services"},{t:"The Report",h:"#report"},{t:"About",h:"#about"},{t:"FAQ",h:"#faq"}],
+    nav:[{t:"Services",h:"#services"},{t:"Pricing",h:"#pricing"},{t:"The Report",h:"#report"},{t:"About",h:"#about"},{t:"FAQ",h:"#faq"}],
     navCta:"WhatsApp",
 
     s_sub:"What we do", s_h:"One retainer.\nEverything covered.",
@@ -48,6 +48,8 @@ const COPY = {
       {t:"Property Inspections",d:"A thorough monthly walk-through of your entire property — exterior, interior, pool, systems — with a full photographic report delivered to you the same day. No assumptions. Only evidence.",i:"clip"},
       {t:"Administrative Shield",d:"Official correspondence received at your Spanish address, forwarded the same day with a plain explanation. Tax deadlines tracked. Gestor introductions made. No deadline ever missed from 1,500km away.",i:"admin"},
       {t:"Arrival & Departure",d:"Arriving next week? Your home will be aired, checked, and stocked before you land. Leaving? We handle the shutdown — secured, unplugged, water mains off. The kind of care that turns a house into a home.",i:"home"},
+      {t:"The Marama Record",d:"A dated monthly video walkthrough of your home, timestamped and stored. Under Spain's updated anti-okupa legislation, this documented trail gives your lawyer the specific evidence needed to pursue express eviction proceedings if your property is illegally occupied.",i:"secure"},
+      {t:"Holiday Rental Coordination",d:"Already listing your Dénia property on Airbnb or Booking.com? We handle check-in on time, every time. Within 60 minutes of our arrival for inspection, a full photographic report is in your WhatsApp, documenting the property's condition before the next guests arrive.",i:"home"},
     ],
     s_lang_h:"English · Español · Čeština",
     s_lang_body:"Every conversation, every report, every emergency call — handled in your language. Not translated. Written natively. This is not a feature. It is the foundation.",
@@ -56,7 +58,7 @@ const COPY = {
     r_body:"Every visit ends with a structured, photographic report sent directly to you — in your language, on the same day. You see precisely what we saw: every room documented, every system verified, every concern flagged before it becomes a problem.",
     r_lang:"Available in English, Español, and Čeština.",
     r_luxury:"Property care with receipts. Every month, whether anything happened or not — because knowing that everything is fine is also worth something.",
-    r_feats:["Full exterior & interior photo record","Systems check — water, electrics, AC, pool","Priority-rated condition flags","Contractor actions logged & receipted","Same-day delivery via WhatsApp & email"],
+    r_feats:["Full exterior & interior photo record","Systems check — water, electrics, AC, pool, garden","Priority-rated condition flags","Contractor actions logged with original invoice","Same-day delivery via WhatsApp & email","Available in English, Español, and Čeština"],
     r_cta:"Request a sample report",
     p_status:"Property Status", p_secure:"Secure",
     p_title:"Monthly Inspection Report", p_date:"June 2025 · Jávea, Costa Blanca",
@@ -112,6 +114,34 @@ const COPY = {
     stat_h3:"Monthly",
     stat_h4:"One call",
     footer_lang:"Language",
+    // Pricing
+    pr_sub:"Simple, honest pricing",
+    pr_h:"One fee.\nNo surprises.",
+    pr_body:"A fixed monthly fee covers everything. No hidden call-out charges, no contractor markups, no surprises at the end of the month.",
+    pr_founding:"Founding client rates — locked for 12 months if you sign before 31 July 2026.",
+    pr_cta:"Ask us anything on WhatsApp",
+    pr_tiers:[
+      {
+        name:"Essential", price:"€120", period:"/month",
+        desc:"The complete monthly care package for owners who want documented peace of mind.",
+        features:["Monthly inspection + same-day photo report","Key holding","WhatsApp updates in your language","Spanish registered address for correspondence","Tax deadline tracking","Monthly anti-okupa video record"],
+      },
+      {
+        name:"Comfort", price:"€165", period:"/month",
+        desc:"Everything in Essential, plus active response and contractor coordination.",
+        features:["Everything in Essential","Storm response within 24–48h of alert","Smart home & router reboot","Contractor coordination (no markups)","Utility consumption monitoring","Quarterly deep inspection"],
+        highlight:true,
+      },
+      {
+        name:"Prestige", price:"€220", period:"/month",
+        desc:"Full concierge property care. Your home ready when you arrive.",
+        features:["Everything in Comfort","Arrival preparation — aired, checked, ready","Departure shutdown — locked, unplugged, water off","Grocery welcome pack coordination","Priority WhatsApp response","Annual full condition report"],
+      },
+    ],
+    pr_popular:"Most popular",
+    pr_holiday_title:"Holiday rental hosts",
+    pr_holiday_body:"Already listing your Dénia property on Airbnb or Booking.com? We handle the practical side — check-in, check-out, between-stay inspection and storm response. Billed per visit, no monthly retainer required.",
+    pr_holiday_cta:"Ask about visit rates",
   },
 
   ES: {
@@ -124,7 +154,7 @@ const COPY = {
       {n:"Mensual",l:"Informe fotográfico"},
       {n:"Costa Blanca",l:"Cobertura completa"},
     ],
-    nav:[{t:"Servicios",h:"#services"},{t:"El Informe",h:"#report"},{t:"Quiénes somos",h:"#about"},{t:"Preguntas",h:"#faq"}],
+    nav:[{t:"Servicios",h:"#services"},{t:"Precios",h:"#pricing"},{t:"El Informe",h:"#report"},{t:"Quiénes somos",h:"#about"},{t:"Preguntas",h:"#faq"}],
     navCta:"WhatsApp",
 
     s_sub:"Lo que hacemos", s_h:"Un acuerdo mensual.\nTodo cubierto.",
@@ -134,6 +164,8 @@ const COPY = {
       {t:"Inspecciones de Propiedad",d:"Una visita mensual completa — exterior, interior, piscina, sistemas — con informe fotográfico entregado el mismo día. Sin suposiciones. Solo evidencias.",i:"clip"},
       {t:"Escudo Administrativo",d:"Correspondencia oficial recibida en su domicilio español, reenviada el mismo día con una explicación clara. Seguimiento de plazos fiscales. Coordinación con gestor. Ningún plazo se pierde a 1.500 km de distancia.",i:"admin"},
       {t:"Llegada y Salida",d:"¿Llega la próxima semana? Su vivienda estará ventilada, revisada y con lo esencial antes de que aterrice. ¿Se va? Nosotros cerramos todo correctamente.",i:"home"},
+      {t:"El Registro Marama",d:"Un recorrido en vídeo fechado de su vivienda, con marca de tiempo y almacenado. Según la legislación anti-okupa actualizada en España, este registro proporciona a su abogado la evidencia específica necesaria para iniciar un procedimiento de desahucio exprés en caso de ocupación ilegal.",i:"secure"},
+      {t:"Coordinación de Alquiler Vacacional",d:"¿Ya ofrece su propiedad en Dénia en Airbnb o Booking.com? Gestionamos el check-in puntual, siempre. En los 60 minutos siguientes a nuestra llegada para la inspección, tiene en su WhatsApp un informe fotográfico completo que documenta el estado de la propiedad antes de la llegada de los próximos huéspedes.",i:"home"},
     ],
     s_lang_h:"English · Español · Čeština",
     s_lang_body:"Cada conversación, cada informe, cada llamada de emergencia — gestionados en su idioma. No traducidos. Redactados de forma nativa. Esto no es una característica. Es el fundamento.",
@@ -142,7 +174,7 @@ const COPY = {
     r_body:"Cada visita concluye con un informe fotográfico estructurado enviado directamente a usted — en su idioma, el mismo día. Ve exactamente lo que vimos: cada estancia documentada, cada sistema verificado.",
     r_lang:"Disponible en Español, English y Čeština.",
     r_luxury:"Cuidado de propiedades con justificantes. Cada mes, haya pasado algo o no — porque saber que todo está bien también tiene valor.",
-    r_feats:["Registro fotográfico completo, exterior e interior","Revisión de sistemas — agua, electricidad, AC, piscina","Incidencias con valoración de prioridad","Actuaciones de contratistas registradas y facturadas","Entrega el mismo día por WhatsApp y email"],
+    r_feats:["Registro fotográfico completo, exterior e interior","Revisión de sistemas — agua, electricidad, AC, piscina y jardín","Incidencias con valoración de prioridad","Actuaciones de contratistas con factura original","Entrega el mismo día por WhatsApp y email","Disponible en Español, English y Čeština"],
     r_cta:"Solicitar informe de ejemplo",
     p_status:"Estado de la Propiedad", p_secure:"Segura",
     p_title:"Informe Mensual de Inspección", p_date:"Junio 2025 · Jávea, Costa Blanca",
@@ -198,6 +230,34 @@ const COPY = {
     stat_h3:"Mensual",
     stat_h4:"Una llamada",
     footer_lang:"Idioma",
+    // Pricing
+    pr_sub:"Precios claros y honestos",
+    pr_h:"Una tarifa.\nSin sorpresas.",
+    pr_body:"Una cuota mensual fija lo cubre todo. Sin cargos ocultos por visitas, sin comisiones de contratistas, sin sorpresas a fin de mes.",
+    pr_founding:"Tarifas fundadoras — fijadas durante 12 meses si firma antes del 31 de julio de 2026.",
+    pr_cta:"Consúltenos por WhatsApp",
+    pr_tiers:[
+      {
+        name:"Essential", price:"€120", period:"/mes",
+        desc:"El paquete completo de cuidado mensual para propietarios que quieren tranquilidad documentada.",
+        features:["Inspección mensual + informe fotográfico el mismo día","Custodia de llaves","Actualizaciones por WhatsApp en su idioma","Domicilio registrado español para correspondencia","Seguimiento de plazos fiscales","Registro mensual de vídeo antiokupa"],
+      },
+      {
+        name:"Comfort", price:"€165", period:"/mes",
+        desc:"Todo lo del Essential, más respuesta activa y coordinación de contratistas.",
+        features:["Todo lo incluido en Essential","Respuesta ante tormentas en 24–48h","Reinicio de domótica y router","Coordinación de contratistas (sin comisiones)","Monitorización del consumo de suministros","Inspección profunda trimestral"],
+        highlight:true,
+      },
+      {
+        name:"Prestige", price:"€220", period:"/mes",
+        desc:"Cuidado concierge completo. Su vivienda lista cuando llegue.",
+        features:["Todo lo incluido en Comfort","Preparación de llegada — ventilada, revisada, lista","Cierre de salida — cerrada, desenchufada, llave de paso cerrada","Coordinación de pedido de bienvenida","Respuesta prioritaria por WhatsApp","Informe completo anual de estado"],
+      },
+    ],
+    pr_popular:"El más elegido",
+    pr_holiday_title:"Anfitriones de alquiler vacacional",
+    pr_holiday_body:"¿Ya ofrece su propiedad en Dénia en Airbnb o Booking.com? Gestionamos la parte práctica — check-in, check-out, inspección entre estancias y respuesta ante tormentas. Facturado por visita, sin cuota mensual.",
+    pr_holiday_cta:"Consultar tarifas por visita",
   },
 
   CZ: {
@@ -210,7 +270,7 @@ const COPY = {
       {n:"Měsíčně",l:"Fotografická zpráva"},
       {n:"Costa Blanca",l:"Celé pobřeží"},
     ],
-    nav:[{t:"Služby",h:"#services"},{t:"Zpráva",h:"#report"},{t:"O nás",h:"#about"},{t:"Otázky",h:"#faq"}],
+    nav:[{t:"Služby",h:"#services"},{t:"Ceny",h:"#pricing"},{t:"Zpráva",h:"#report"},{t:"O nás",h:"#about"},{t:"Otázky",h:"#faq"}],
     navCta:"WhatsApp",
 
     s_sub:"Co děláme", s_h:"Jeden poplatek.\nVše pokryto.",
@@ -220,6 +280,8 @@ const COPY = {
       {t:"Inspekce domu",d:"Měsíční kompletní prohlídka — exteriér, interiér, bazén, systémy — s fotografickou zprávou doručenou tentýž den. Žádné dohady. Pouze fakta.",i:"clip"},
       {t:"Administrativní asistence",d:"Úřední korespondence přijata na vaší španělské adrese, předána tentýž den s jasným vysvětlením. Hlídáme daňové termíny. Zajistíme kontakt na gestora. Žádný termín nezapadne 1 500 km od vás.",i:"admin"},
       {t:"Příjezd a odjezd",d:"Přijíždíte příští týden? Dům bude vyvětraný, zkontrolovaný a zásobený ještě před přistáním. Odjíždíte? Postaráme se o bezpečné uzavření.",i:"home"},
+      {t:"Záznam Marama",d:"Datovaná měsíční videoprohlídka vašeho domu, s časovým razítkem a uložená. Podle aktualizované španělské legislativy anti-okupa poskytuje tento záznam vašemu právníkovi konkrétní důkaz pro zahájení zrychleného vystěhovacího řízení v případě nelegálního obsazení.",i:"secure"},
+      {t:"Koordinace turistických apartmánů",d:"Nabízíte svůj apartmán nebo vilu v Dénii na Airbnb nebo Booking.com? Postaráme se o check-in včas, pokaždé. Do 60 minut od našeho příjezdu ke kontrole máte ve WhatsAppu kompletní fotografickou zprávu dokumentující stav nemovitosti před příjezdem dalších hostů.",i:"home"},
     ],
     s_lang_h:"English · Español · Čeština",
     s_lang_body:"Každý rozhovor, každá zpráva, každý nouzový hovor — ve vašem jazyce. Ne přeloženo. Napsáno rodilým mluvčím. To není funkce. Je to základ.",
@@ -228,7 +290,7 @@ const COPY = {
     r_body:"Každá návštěva končí strukturovanou fotografickou zprávou zaslanou přímo vám — ve vašem jazyce, tentýž den. Vidíte přesně to, co jsme viděli: každou místnost zdokumentovanou, každý systém ověřený.",
     r_lang:"Dostupné v češtině, English a Español.",
     r_luxury:"Péče o dům s doklady. Každý měsíc, ať se dělo něco nebo nic — protože vědět, že je vše v pořádku, má také svou cenu.",
-    r_feats:["Kompletní fotografický záznam exteriéru i interiéru","Kontrola systémů — voda, elektřina, klimatizace, bazén","Závady s hodnocením priority","Práce řemeslníků zaznamenány a potvrzeny","Doručeno tentýž den přes WhatsApp a email"],
+    r_feats:["Kompletní fotografický záznam exteriéru i interiéru","Kontrola systémů — voda, elektřina, klimatizace, bazén a zahrada","Závady seřazené podle priority","Práce řemeslníků zaznamenány s originální fakturou","Doručeno tentýž den přes WhatsApp a email","Dostupné v češtině, English a Español"],
     r_cta:"Požádat o vzorovou zprávu",
     p_status:"Stav nemovitosti", p_secure:"Zabezpečena",
     p_title:"Měsíční inspekční zpráva", p_date:"Červen 2025 · Jávea, Costa Blanca",
@@ -284,6 +346,34 @@ const COPY = {
     stat_h3:"Měsíčně",
     stat_h4:"Jeden hovor",
     footer_lang:"Jazyk",
+    // Pricing
+    pr_sub:"Jasné a férové ceny",
+    pr_h:"Jeden poplatek.\nŽádná překvapení.",
+    pr_body:"Pevný měsíční poplatek pokrývá vše. Žádné skryté poplatky za výjezdy, žádné provize od řemeslníků, žádná překvapení na konci měsíce.",
+    pr_founding:"Zakládající ceny — fixní na 12 měsíců, pokud podepíšete smlouvu do 31. července 2026.",
+    pr_cta:"Napište nám na WhatsApp",
+    pr_tiers:[
+      {
+        name:"Essential", price:"€120", period:"/měsíc",
+        desc:"Kompletní balíček měsíční péče pro majitele, kteří chtějí zdokumentovaný klid.",
+        features:["Měsíční inspekce + fotografická zpráva tentýž den","Úschova klíčů","WhatsApp aktualizace ve vašem jazyce","Španělská registrovaná adresa pro korespondenci","Sledování daňových termínů","Měsíční videozáznam pro ochranu před neoprávněným obsazením"],
+      },
+      {
+        name:"Comfort", price:"€165", period:"/měsíc",
+        desc:"Vše z Essential plus aktivní reakce a koordinace řemeslníků.",
+        features:["Vše zahrnuté v Essential","Reakce na bouřku do 24–48h","Restart chytré domácnosti a routeru","Koordinace řemeslníků (bez provizí)","Monitoring spotřeby energií","Čtvrtletní hloubková inspekce"],
+        highlight:true,
+      },
+      {
+        name:"Prestige", price:"€220", period:"/měsíc",
+        desc:"Kompletní concierge péče o nemovitost. Váš dům připravený na příjezd.",
+        features:["Vše zahrnuté v Comfort","Příprava na příjezd — vyvětráno, zkontrolováno, připraveno","Uzavření při odjezdu — zamčeno, odpojeno, hlavní uzávěr zavřen","Koordinace nákupního balíčku na uvítanou","Prioritní WhatsApp odpovědi","Roční kompletní zpráva o stavu nemovitosti"],
+      },
+    ],
+    pr_popular:"Nejoblíbenější",
+    pr_holiday_title:"Majitelé turistických apartmánů",
+    pr_holiday_body:"Nabízíte svůj apartmán nebo vilu v Dénii na Airbnb nebo Booking.com? Postaráme se o praktickou část — check-in, check-out, inspekce mezi pobyty a reakce na bouřky. Fakturováno za návštěvu, bez měsíčního paušálu.",
+    pr_holiday_cta:"Zeptat se na ceny za návštěvu",
   },
 };
 
@@ -608,6 +698,67 @@ export default function MaramaPage() {
     </div>
   );
 
+  // ── PRICING ──────────────────────────────────────────────────────────────
+  const Pricing = (
+    <section id="pricing" style={{background:C.linen,padding:"8rem 2.5rem"}}>
+      <div style={{maxWidth:"1280px",margin:"0 auto"}}>
+        <div style={{marginBottom:"4rem"}}>
+          <div style={{display:"flex",alignItems:"center",gap:"14px",marginBottom:"1.5rem"}}>
+            <div style={{width:"28px",height:"1px",background:C.slate}}/>
+            <span style={{fontFamily:sans,fontSize:"10.5px",letterSpacing:"0.2em",color:C.slate,textTransform:"uppercase"}}>{c.pr_sub}</span>
+          </div>
+          <div style={{display:"flex",flexWrap:"wrap",alignItems:"flex-end",gap:"2.5rem",justifyContent:"space-between"}}>
+            <h2 style={{fontFamily:serif,fontSize:"clamp(36px,5vw,62px)",fontWeight:300,color:C.forest,margin:0,lineHeight:1.06,whiteSpace:"pre-line"}}>{c.pr_h}</h2>
+            <p style={{fontFamily:sans,fontSize:"15px",fontWeight:300,color:C.muted,lineHeight:1.8,maxWidth:"420px",margin:0}}>{c.pr_body}</p>
+          </div>
+          <p style={{fontFamily:sans,fontSize:"13px",fontWeight:400,color:C.slate,marginTop:"1.5rem",padding:"12px 20px",background:"rgba(61,92,79,0.06)",borderLeft:"2px solid "+C.sage,display:"inline-block"}}>{c.pr_founding}</p>
+        </div>
+        <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(280px,1fr))",gap:"1px",background:"rgba(61,92,79,0.1)",marginBottom:"3rem"}}>
+          {c.pr_tiers.map((tier,i)=>(
+            <div key={tier.name} style={{
+              background:tier.highlight?C.forest:C.linen,
+              padding:"3rem 2.5rem",
+              position:"relative",
+            }}>
+              {tier.highlight&&<div style={{position:"absolute",top:"1.5rem",right:"1.5rem",fontFamily:sans,fontSize:"9px",fontWeight:500,letterSpacing:"0.12em",textTransform:"uppercase",background:C.sage,color:C.forest,padding:"4px 12px",borderRadius:"20px"}}>{c.pr_popular}</div>}
+              <p style={{fontFamily:sans,fontSize:"10.5px",letterSpacing:"0.18em",textTransform:"uppercase",color:tier.highlight?"rgba(200,216,192,0.6)":C.muted,margin:"0 0 1rem"}}>{tier.name}</p>
+              <div style={{display:"flex",alignItems:"baseline",gap:"4px",marginBottom:"1rem"}}>
+                <span style={{fontFamily:serif,fontSize:"48px",fontWeight:300,color:tier.highlight?C.linen:C.forest,lineHeight:1}}>{tier.price}</span>
+                <span style={{fontFamily:sans,fontSize:"13px",color:tier.highlight?"rgba(200,216,192,0.55)":C.muted}}>{tier.period}</span>
+              </div>
+              <p style={{fontFamily:sans,fontSize:"13px",fontWeight:300,color:tier.highlight?"rgba(245,242,236,0.6)":C.muted,lineHeight:1.7,marginBottom:"2rem",minHeight:"56px"}}>{tier.desc}</p>
+              <div style={{height:"1px",background:tier.highlight?"rgba(200,216,192,0.15)":"rgba(61,92,79,0.1)",marginBottom:"1.5rem"}}/>
+              <ul style={{listStyle:"none",padding:0,margin:"0 0 2rem",display:"flex",flexDirection:"column",gap:"0.9rem"}}>
+                {tier.features.map(f=>(
+                  <li key={f} style={{display:"flex",alignItems:"flex-start",gap:"10px"}}>
+                    <div style={{marginTop:"3px",width:"16px",height:"16px",borderRadius:"50%",border:"1px solid "+(tier.highlight?"rgba(200,216,192,0.3)":"rgba(61,92,79,0.2)"),display:"flex",alignItems:"center",justifyContent:"center",flexShrink:0}}>
+                      <svg width="8" height="8" viewBox="0 0 8 8" fill="none"><path d="M1 4l2 2 4-4" stroke={tier.highlight?C.sage:C.slate} strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                    </div>
+                    <span style={{fontFamily:sans,fontSize:"13px",fontWeight:300,color:tier.highlight?"rgba(245,242,236,0.65)":C.muted,lineHeight:1.6}}>{f}</span>
+                  </li>
+                ))}
+              </ul>
+              <a href={"https://wa.me/"+WP_NUMBER} target="_blank" rel="noopener noreferrer"
+                style={{fontFamily:sans,fontSize:"13px",fontWeight:500,color:tier.highlight?C.forest:C.linen,background:tier.highlight?C.sage:C.forest,padding:"13px 28px",borderRadius:"2px",textDecoration:"none",letterSpacing:"0.06em",display:"block",textAlign:"center",transition:"background .2s"}}>
+                WhatsApp
+              </a>
+            </div>
+          ))}
+        </div>
+        <div style={{padding:"2.5rem 3rem",background:C.forest,borderRadius:"2px",display:"flex",flexWrap:"wrap",alignItems:"center",justifyContent:"space-between",gap:"1.5rem"}}>
+          <div>
+            <p style={{fontFamily:serif,fontSize:"22px",fontWeight:300,color:C.sage,margin:"0 0 8px",fontStyle:"italic"}}>{c.pr_holiday_title}</p>
+            <p style={{fontFamily:sans,fontSize:"13px",fontWeight:300,color:"rgba(245,242,236,0.58)",margin:0,lineHeight:1.7,maxWidth:"560px"}}>{c.pr_holiday_body}</p>
+          </div>
+          <a href={"https://wa.me/"+WP_NUMBER} target="_blank" rel="noopener noreferrer"
+            style={{fontFamily:sans,fontSize:"13px",fontWeight:500,color:C.forest,background:C.sage,padding:"13px 28px",borderRadius:"2px",textDecoration:"none",letterSpacing:"0.06em",whiteSpace:"nowrap",transition:"background .2s"}}>
+            {c.pr_holiday_cta}
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+
   // ── REPORT ───────────────────────────────────────────────────────────────
   const Report = (
     <section id="report" ref={repRef} style={{background:C.forest,padding:"9rem 2.5rem",overflow:"hidden",position:"relative"}}>
@@ -808,6 +959,7 @@ export default function MaramaPage() {
       {Nav}
       {Hero}
       {Services}
+      {Pricing}
       {Report}
       {About}
       {FAQ}
