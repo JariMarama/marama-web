@@ -61,13 +61,13 @@ const COPY = {
     r_feats:["Full exterior & interior photo record","Systems check — water, electrics, AC, pool, garden","Priority-rated condition flags","Contractor actions logged with original invoice","Same-day delivery via WhatsApp & email","Available in English, Español, and Čeština"],
     r_cta:"Request a sample report",
     p_status:"Property Status", p_secure:"Secure",
-    p_title:"Monthly Inspection Report", p_date:"June 2025 · Jávea, Costa Blanca",
+    p_title:"Monthly Inspection Report", p_date:"June 2026 · Jávea, Costa Blanca",
     p_items:[
       {l:"Water Leak Check",ok:true},{l:"Alarms Tested",ok:true},{l:"Ventilation",ok:true},
       {l:"Locks & Access Points",ok:true},{l:"Exterior Perimeter",ok:true},{l:"Post-storm Roof",flag:true},
     ],
     p_flag:"1 item flagged — contractor engaged",
-    p_photos:"Recent Photos", p_photo_sub:"18 images captured · 14 June 2025",
+    p_photos:"Recent Photos", p_photo_sub:"18 images captured · 14 June 2026",
     p_lbs:["Terrace","Pool","Entrance"],
 
     about_sub:"Who we are",
@@ -191,13 +191,13 @@ const COPY = {
     r_feats:["Registro fotográfico completo, exterior e interior","Revisión de sistemas — agua, electricidad, AC, piscina y jardín","Incidencias con valoración de prioridad","Actuaciones de contratistas con factura original","Entrega el mismo día por WhatsApp y email","Disponible en Español, English y Čeština"],
     r_cta:"Solicitar informe de ejemplo",
     p_status:"Estado de la Propiedad", p_secure:"Segura",
-    p_title:"Informe Mensual de Inspección", p_date:"Junio 2025 · Jávea, Costa Blanca",
+    p_title:"Informe Mensual de Inspección", p_date:"Junio 2026 · Jávea, Costa Blanca",
     p_items:[
       {l:"Revisión de fugas de agua",ok:true},{l:"Alarmas probadas",ok:true},{l:"Ventilación",ok:true},
       {l:"Cerraduras y accesos",ok:true},{l:"Perímetro exterior",ok:true},{l:"Tejado post-tormenta",flag:true},
     ],
     p_flag:"1 incidencia — contratista en curso",
-    p_photos:"Fotos Recientes", p_photo_sub:"18 imágenes · 14 junio 2025",
+    p_photos:"Fotos Recientes", p_photo_sub:"18 imágenes · 14 junio 2026",
     p_lbs:["Terraza","Piscina","Entrada"],
 
     about_sub:"Quiénes somos",
@@ -321,13 +321,13 @@ const COPY = {
     r_feats:["Kompletní fotografický záznam exteriéru i interiéru","Kontrola systémů — voda, elektřina, klimatizace, bazén a zahrada","Závady seřazené podle priority","Práce řemeslníků zaznamenány s originální fakturou","Doručeno tentýž den přes WhatsApp a email","Dostupné v češtině, English a Español"],
     r_cta:"Požádat o vzorovou zprávu",
     p_status:"Stav nemovitosti", p_secure:"Zabezpečena",
-    p_title:"Měsíční inspekční zpráva", p_date:"Červen 2025 · Jávea, Costa Blanca",
+    p_title:"Měsíční inspekční zpráva", p_date:"Červen 2026 · Jávea, Costa Blanca",
     p_items:[
       {l:"Kontrola úniku vody",ok:true},{l:"Test poplachového systému",ok:true},{l:"Ventilace",ok:true},
       {l:"Zámky a přístupové body",ok:true},{l:"Vnější obvod",ok:true},{l:"Střecha po bouřce",flag:true},
     ],
     p_flag:"1 závada — řemeslník v řízení",
-    p_photos:"Nedávné fotografie", p_photo_sub:"18 snímků · 14. června 2025",
+    p_photos:"Nedávné fotografie", p_photo_sub:"18 snímků · 14. června 2026",
     p_lbs:["Terasa","Bazén","Vstup"],
 
     about_sub:"Kdo jsme",
@@ -793,7 +793,7 @@ export default function MaramaPage() {
               <p style={{fontFamily:sans,fontSize:"10.5px",letterSpacing:"0.18em",textTransform:"uppercase",color:"rgba(200,216,192,0.45)",margin:"0 0 0.5rem"}}>{c.pr_holiday_sub}</p>
               <p style={{fontFamily:serif,fontSize:"26px",fontWeight:300,color:C.sage,margin:"0 0 1rem",fontStyle:"italic"}}>{c.pr_holiday_title}</p>
               <p style={{fontFamily:sans,fontSize:"13px",fontWeight:300,color:"rgba(245,242,236,0.58)",margin:"0 0 1.5rem",lineHeight:1.75,maxWidth:"520px"}}>{c.pr_holiday_body}</p>
-              <p style={{fontFamily:sans,fontSize:"12px",fontWeight:300,color:"rgba(200,216,192,0.4)",lineHeight:1.7,maxWidth:"520px",fontStyle:"italic"}}>{c.pr_holiday_offseason}</p>
+              <p style={{fontFamily:sans,fontSize:"12px",fontWeight:300,color:C.muted,lineHeight:1.7,maxWidth:"520px",fontStyle:"italic"}}>{c.pr_holiday_offseason}</p>
             </div>
             <div style={{display:"flex",flexDirection:"column",gap:"1rem",minWidth:"200px"}}>
               <div style={{background:"rgba(200,216,192,0.08)",border:"1px solid rgba(200,216,192,0.15)",borderRadius:"2px",padding:"1.25rem 1.5rem"}}>
@@ -801,36 +801,36 @@ export default function MaramaPage() {
                   <span style={{fontFamily:serif,fontSize:"36px",fontWeight:300,color:C.linen,lineHeight:1}}>{c.pr_holiday_base}</span>
                   <span style={{fontFamily:sans,fontSize:"12px",color:"rgba(200,216,192,0.55)"}}>{c.pr_holiday_base_label}</span>
                 </div>
-                <p style={{fontFamily:sans,fontSize:"12px",fontWeight:300,color:"rgba(245,242,236,0.45)",margin:0,lineHeight:1.5}}>{c.pr_holiday_base_desc}</p>
+                <p style={{fontFamily:sans,fontSize:"12px",fontWeight:300,color:C.muted,margin:0,lineHeight:1.5}}>{c.pr_holiday_base_desc}</p>
               </div>
               <div style={{background:"rgba(200,216,192,0.05)",border:"1px solid rgba(200,216,192,0.1)",borderRadius:"2px",padding:"1.25rem 1.5rem"}}>
                 <div style={{display:"flex",alignItems:"baseline",gap:"4px",marginBottom:"4px"}}>
                   <span style={{fontFamily:serif,fontSize:"28px",fontWeight:300,color:C.sage,lineHeight:1}}>{c.pr_holiday_overage}</span>
                   <span style={{fontFamily:sans,fontSize:"12px",color:"rgba(200,216,192,0.45)"}}>{c.pr_holiday_overage_label}</span>
                 </div>
-                <p style={{fontFamily:sans,fontSize:"12px",fontWeight:300,color:"rgba(245,242,236,0.4)",margin:0,lineHeight:1.5}}>{c.pr_holiday_overage_desc}</p>
+                <p style={{fontFamily:sans,fontSize:"12px",fontWeight:300,color:C.muted,margin:0,lineHeight:1.5}}>{c.pr_holiday_overage_desc}</p>
               </div>
             </div>
           </div>
-          <div style={{background:"rgba(28,43,42,0.6)",border:"1px solid rgba(200,216,192,0.08)",borderTop:"none",borderRadius:"0 0 2px 2px",padding:"2rem 3rem",display:"flex",flexWrap:"wrap",gap:"3rem",alignItems:"flex-start",justifyContent:"space-between"}}>
+          <div style={{background:C.linen,border:"1px solid rgba(61,92,79,0.12)",borderTop:"none",borderRadius:"0 0 2px 2px",padding:"2rem 3rem",display:"flex",flexWrap:"wrap",gap:"3rem",alignItems:"flex-start",justifyContent:"space-between"}}>
             <div style={{flex:"1",minWidth:"260px"}}>
-              <p style={{fontFamily:sans,fontSize:"10px",letterSpacing:"0.14em",textTransform:"uppercase",color:"rgba(200,216,192,0.35)",margin:"0 0 0.75rem"}}>{c.pr_holiday_hours_title}</p>
-              <p style={{fontFamily:sans,fontSize:"11px",color:"rgba(200,216,192,0.3)",margin:"0 0 0.75rem",fontStyle:"italic"}}>{c.pr_holiday_hours_note}</p>
+              <p style={{fontFamily:sans,fontSize:"10px",letterSpacing:"0.14em",textTransform:"uppercase",color:C.slate,margin:"0 0 0.75rem"}}>{c.pr_holiday_hours_title}</p>
+              <p style={{fontFamily:sans,fontSize:"11px",color:C.muted,margin:"0 0 0.75rem",fontStyle:"italic"}}>{c.pr_holiday_hours_note}</p>
               <div style={{display:"flex",flexDirection:"column",gap:"0"}}>
                 {c.pr_holiday_hours.map((h,i)=>(
-                  <div key={i} style={{display:"flex",alignItems:"center",justifyContent:"space-between",gap:"1rem",padding:"8px 0",borderBottom:"1px solid rgba(200,216,192,0.07)"}}>
+                  <div key={i} style={{display:"flex",alignItems:"center",justifyContent:"space-between",gap:"1rem",padding:"8px 0",borderBottom:"1px solid rgba(61,92,79,0.1)"}}>
                     <div>
-                      <span style={{fontFamily:sans,fontSize:"12px",fontWeight:500,color:C.sage}}>{h.time}</span>
-                      <span style={{fontFamily:sans,fontSize:"11px",color:"rgba(245,242,236,0.35)",marginLeft:"8px"}}>{h.label}</span>
+                      <span style={{fontFamily:sans,fontSize:"12px",fontWeight:500,color:C.slate}}>{h.time}</span>
+                      <span style={{fontFamily:sans,fontSize:"11px",color:C.muted,marginLeft:"8px"}}>{h.label}</span>
                     </div>
-                    <span style={{fontFamily:serif,fontSize:"18px",fontWeight:400,color:C.linen,flexShrink:0}}>{h.fee}</span>
+                    <span style={{fontFamily:serif,fontSize:"18px",fontWeight:400,color:C.forest,flexShrink:0}}>{h.fee}</span>
                   </div>
                 ))}
               </div>
             </div>
             <div style={{flex:"1",minWidth:"240px"}}>
-              <p style={{fontFamily:sans,fontSize:"10px",letterSpacing:"0.14em",textTransform:"uppercase",color:"rgba(200,216,192,0.35)",margin:"0 0 0.75rem"}}>Policy</p>
-              <p style={{fontFamily:sans,fontSize:"12px",fontWeight:300,color:"rgba(245,242,236,0.4)",lineHeight:1.75,margin:"0 0 1.5rem"}}>{c.pr_holiday_policy}</p>
+              <p style={{fontFamily:sans,fontSize:"10px",letterSpacing:"0.14em",textTransform:"uppercase",color:C.slate,margin:"0 0 0.75rem"}}>Policy</p>
+              <p style={{fontFamily:sans,fontSize:"12px",fontWeight:300,color:C.muted,lineHeight:1.75,margin:"0 0 1.5rem"}}>{c.pr_holiday_policy}</p>
               <a href={"https://wa.me/"+WP_NUMBER} target="_blank" rel="noopener noreferrer"
                 style={{fontFamily:sans,fontSize:"13px",fontWeight:500,color:C.forest,background:C.sage,padding:"12px 24px",borderRadius:"2px",textDecoration:"none",letterSpacing:"0.06em",display:"inline-block",transition:"background .2s"}}>
                 {c.pr_holiday_cta}
