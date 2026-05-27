@@ -66,7 +66,9 @@ export const metadata = {
     "správa domu moraira bez přirážek za řemeslníky",
     "kontrola nemovitosti denia z česka", "správa prázdné vily jávea",
   ],
-  alternates: {
+  verification: {
+    google: "JAe2JdAs-QoKG1Ec9Jnq8Cg7ayvD_ggN56menf4owiE",
+  },
     canonical: "https://maramapropertycare.es",
     languages: {
       "en":        "https://maramapropertycare.es",
