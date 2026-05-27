@@ -66,6 +66,17 @@ export const metadata = {
     "správa domu moraira bez přirážek za řemeslníky",
     "kontrola nemovitosti denia z česka", "správa prázdné vily jávea",
   ],
+  alternates: {
+    canonical: "https://maramapropertycare.es",
+    languages: {
+      "en":    "https://maramapropertycare.es",
+      "es":    "https://maramapropertycare.es",
+      "cs":    "https://maramapropertycare.es",
+      "nl":    "https://maramapropertycare.es",
+      "de":    "https://maramapropertycare.es",
+      "x-default": "https://maramapropertycare.es",
+    },
+  },
   openGraph: {
     title: "Marama | Property Care & Key Holding — Jávea, Moraira & Dénia",
     description:
@@ -73,13 +84,14 @@ export const metadata = {
     url: "https://maramapropertycare.es",
     siteName: "Marama Property Care",
     locale: "en_GB",
+    alternateLocale: ["es_ES", "cs_CZ", "nl_NL", "de_DE"],
     type: "website",
   },
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="es" className={`${cormorant.variable} ${dmSans.variable}`}>
+    <html lang="en" className={`${cormorant.variable} ${dmSans.variable}`}>
       <body>{children}</body>
     </html>
   );
