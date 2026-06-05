@@ -589,7 +589,15 @@ export default function MaramaPage() {
             style={{fontFamily:sans,fontSize:"14px",fontWeight:500,color:C.forest,background:C.sage,padding:"13px 28px",borderRadius:"2px",textDecoration:"none",textAlign:"center"}}>{c.navCta}</a>
         </div>
       )}
-      <style>{`@media(max-width:960px){.d-nav{display:none!important}.hburg{display:flex!important}}`}</style>
+      <style>{`@media(max-width:960px){.d-nav{display:none!important}.hburg{display:flex!important}}
+*,*::before,*::after{box-sizing:border-box!important}
+html,body{overflow-x:hidden!important;max-width:100vw!important}
+img,svg,video{max-width:100%!important}
+p,h1,h2,h3,h4,h5,h6,span,div{word-break:break-word!important;overflow-wrap:break-word!important}
+@media(max-width:640px){
+  *{max-width:100%!important;padding-left:clamp(0.75rem,3vw,1.5rem)!important;padding-right:clamp(0.75rem,3vw,1.5rem)!important}
+  section{padding-left:clamp(0.75rem,3vw,1.5rem)!important;padding-right:clamp(0.75rem,3vw,1.5rem)!important}
+}`}
     </nav>
   );
 
