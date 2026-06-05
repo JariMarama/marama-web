@@ -790,10 +790,10 @@ export default function MaramaPage() {
         <div style={{marginTop:"3rem"}}>
           <div style={{padding:"2rem 1.5rem",background:C.forest,borderRadius:"2px 2px 0 0",display:"flex",flexWrap:"wrap",alignItems:"flex-start",justifyContent:"space-between",gap:"1.5rem",boxSizing:"border-box",width:"100%",overflowX:"hidden"}}>
             <div style={{flex:"1",minWidth:"280px"}}>
-              <p style={{fontFamily:sans,fontSize:"10.5px",letterSpacing:"0.18em",textTransform:"uppercase",color:"rgba(200,216,192,0.45)",margin:"0 0 0.5rem"}}>{c.pr_holiday_sub}</p>
-              <p style={{fontFamily:serif,fontSize:"26px",fontWeight:300,color:C.sage,margin:"0 0 1rem",fontStyle:"italic"}}>{c.pr_holiday_title}</p>
+              <p style={{fontFamily:sans,fontSize:"10.5px",letterSpacing:"0.18em",textTransform:"uppercase",color:"rgba(200,216,192,0.45)",margin:"0 0 0.5rem",overflowWrap:"break-word"}}>{c.pr_holiday_sub}</p>
+              <p style={{fontFamily:serif,fontSize:"clamp(18px,4vw,26px)",fontWeight:300,color:C.sage,margin:"0 0 1rem",fontStyle:"italic",overflowWrap:"break-word",wordBreak:"break-word"}}>{c.pr_holiday_title}</p>
               <p style={{fontFamily:sans,fontSize:"13px",fontWeight:300,color:"rgba(245,242,236,0.58)",margin:"0 0 1.5rem",lineHeight:1.75,maxWidth:"100%",width:"100%",boxSizing:"border-box"}}>{c.pr_holiday_body}</p>
-              <p style={{fontFamily:sans,fontSize:"12px",fontWeight:300,color:C.muted,lineHeight:1.7,maxWidth:"100%",width:"100%",boxSizing:"border-box",fontStyle:"italic"}}>{c.pr_holiday_offseason}</p>
+              <p style={{fontFamily:sans,fontSize:"12px",fontWeight:300,color:C.muted,lineHeight:1.7,maxWidth:"100%",width:"100%",boxSizing:"border-box",fontStyle:"italic",overflowWrap:"break-word",wordBreak:"break-word"}}>{c.pr_holiday_offseason}</p>
             </div>
             <div style={{display:"flex",flexDirection:"column",gap:"1rem",minWidth:"200px"}}>
               <div style={{background:"rgba(200,216,192,0.08)",border:"1px solid rgba(200,216,192,0.15)",borderRadius:"2px",padding:"1.25rem 1.5rem"}}>
