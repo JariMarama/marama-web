@@ -81,7 +81,7 @@ const COPY = {
 
     faq_sub:"Questions",
     faq_h:"Everything you need to know.",
-    faq_body:"If your question isn't here, send it to us directly — by WhatsApp or email. We answer in English, Spanish, and Czech — usually the same day.",
+    faq_body:"If your question is not here, write to us directly by WhatsApp or email. We usually respond the same day.",
     faqs:[
       {q:"How often are reports sent?",a:"Every calendar month, within 24 hours of the inspection visit. The report arrives by WhatsApp and email, with photographs, a condition summary, and any flagged items. You never have to ask — it simply arrives."},
       {q:"Do you handle emergency repairs?",a:"Yes. A burst pipe, a triggered alarm, a broken shutter — we attend, coordinate, and report. We maintain relationships with trusted local contractors across plumbing, electrics, glazing, and general maintenance. You are notified at every stage."},
@@ -211,7 +211,7 @@ const COPY = {
 
     faq_sub:"Preguntas",
     faq_h:"Todo lo que necesita saber.",
-    faq_body:"Si su pregunta no está aquí, escríbanos directamente — por WhatsApp o email. Respondemos en español, inglés y checo — normalmente el mismo día.",
+    faq_body:"Si su pregunta no está aquí, escríbanos directamente — por WhatsApp o email. Normalmente respondemos el mismo día.",
     faqs:[
       {q:"¿Con qué frecuencia se envían los informes?",a:"Cada mes natural, en las 24 horas siguientes a la visita de inspección. El informe llega por WhatsApp y email, con fotografías, un resumen de estado y cualquier incidencia detectada. No tiene que pedirlo — simplemente llega."},
       {q:"¿Gestionan reparaciones de emergencia?",a:"Sí. Una tubería rota, una alarma disparada, una persiana dañada — acudimos, coordinamos y reportamos. Contamos con contratistas de confianza en fontanería, electricidad, cristalería y mantenimiento general."},
@@ -341,7 +341,7 @@ const COPY = {
 
     faq_sub:"Otázky",
     faq_h:"Vše, co potřebujete vědět.",
-    faq_body:"Pokud vaše otázka zde není, napište nám přímo — přes WhatsApp nebo email. Odpovídáme česky, anglicky a španělsky — obvykle tentýž den.",
+    faq_body:"Pokud vaše otázka zde není, napište nám přímo — přes WhatsApp nebo email. Obvykle odpovídáme tentýž den.",
     faqs:[
       {q:"Jak často jsou zprávy zasílány?",a:"Každý kalendářní měsíc, do 24 hodin od inspekční návštěvy. Zpráva přichází přes WhatsApp a email s fotografiemi, souhrnem stavu a všemi zaznamenanými závadami. Nemusíte se ptát — prostě přijde."},
       {q:"Zajišťujete nouzové opravy?",a:"Ano. Prasklé potrubí, spuštěný alarm, poškozená okenice — přijedeme, zkoordinujeme a nahlásíme. Spolupracujeme s prověřenými řemeslníky v oblasti instalatérství, elektřiny, zasklení a obecné údržby."},
@@ -639,7 +639,7 @@ export default function MaramaPage() {
 
   // ── SERVICES ─────────────────────────────────────────────────────────────
   const Services = (
-    <section id="services" ref={svcRef} style={{background:C.linen,padding:"8rem 2.5rem"}}>
+    <section id="services" ref={svcRef} style={{background:C.linen,padding:"8rem clamp(1rem,4vw,2.5rem)"}}>
       <div style={{maxWidth:"1280px",margin:"0 auto"}}>
         <div style={{marginBottom:"5rem",...rv(svcVis,0)}}>
           <div style={{display:"flex",alignItems:"center",gap:"14px",marginBottom:"1.5rem"}}>
@@ -742,7 +742,7 @@ export default function MaramaPage() {
 
   // ── PRICING ──────────────────────────────────────────────────────────────
   const Pricing = (
-    <section id="pricing" style={{background:C.linen,padding:"8rem 2.5rem"}}>
+    <section id="pricing" style={{background:C.linen,padding:"8rem clamp(1rem,4vw,2.5rem)"}}>
       <div style={{maxWidth:"1280px",margin:"0 auto"}}>
         <div style={{marginBottom:"4rem"}}>
           <div style={{display:"flex",alignItems:"center",gap:"14px",marginBottom:"1.5rem"}}>
@@ -844,7 +844,7 @@ export default function MaramaPage() {
 
   // ── REPORT ───────────────────────────────────────────────────────────────
   const Report = (
-    <section id="report" ref={repRef} style={{background:C.forest,padding:"9rem 2.5rem",overflow:"hidden",position:"relative"}}>
+    <section id="report" ref={repRef} style={{background:C.forest,padding:"9rem clamp(1rem,4vw,2.5rem)",overflow:"hidden",position:"relative"}}>
       <div style={{position:"absolute",inset:0,backgroundImage:"radial-gradient(circle at 82% 18%,rgba(200,216,192,0.04) 0%,transparent 48%),radial-gradient(circle at 8% 82%,rgba(46,64,87,0.38) 0%,transparent 50%)",pointerEvents:"none"}}/>
       <div style={{maxWidth:"1280px",margin:"0 auto",position:"relative"}}>
         <div style={{marginBottom:"5.5rem",...rv(repVis,0)}}>
@@ -885,7 +885,7 @@ export default function MaramaPage() {
 
   // ── ABOUT ─────────────────────────────────────────────────────────────────
   const About = (
-    <section id="about" ref={abtRef} style={{background:C.linen,padding:"9rem 2.5rem",overflow:"hidden"}}>
+    <section id="about" ref={abtRef} style={{background:C.linen,padding:"9rem clamp(1rem,4vw,2.5rem)",overflow:"hidden"}}>
       <div style={{maxWidth:"1280px",margin:"0 auto"}}>
         <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(300px,1fr))",gap:"6rem",alignItems:"start"}}>
           <div style={{...rv(abtVis,0,"X",-32)}}>
@@ -933,7 +933,7 @@ export default function MaramaPage() {
 
   // ── FAQ ───────────────────────────────────────────────────────────────────
   const FAQ = (
-    <section id="faq" ref={faqRef} style={{background:C.forest,padding:"9rem 2.5rem"}}>
+    <section id="faq" ref={faqRef} style={{background:C.forest,padding:"9rem clamp(1rem,4vw,2.5rem)"}}>
       <div style={{maxWidth:"1280px",margin:"0 auto"}}>
         <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(280px,1fr))",gap:"5rem",alignItems:"start"}}>
           <div style={{...rv(faqVis,0,"X",-28)}}>
@@ -978,7 +978,7 @@ export default function MaramaPage() {
 
   // ── FOOTER ───────────────────────────────────────────────────────────────
   const Footer = (
-    <footer id="contact" ref={ftRef} style={{background:"#141f1e",borderTop:"1px solid rgba(200,216,192,0.08)",padding:"6rem 2.5rem 3rem"}}>
+    <footer id="contact" ref={ftRef} style={{background:"#141f1e",borderTop:"1px solid rgba(200,216,192,0.08)",padding:"6rem clamp(1rem,4vw,2.5rem) 3rem"}}>
       <div style={{maxWidth:"1280px",margin:"0 auto"}}>
         <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(220px,1fr))",gap:"4rem",marginBottom:"5rem",...rv(ftVis,0)}}>
           <div style={{gridColumn:"span 1"}}>
