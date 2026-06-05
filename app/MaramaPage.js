@@ -602,7 +602,7 @@ export default function MaramaPage() {
         <div style={{position:"absolute",bottom:"1.75rem",right:"2rem",fontFamily:sans,fontSize:"9px",letterSpacing:"0.14em",color:"rgba(200,216,192,0.16)",textTransform:"uppercase"}}>© Marama Property Care · Costa Blanca</div>
       </div>
       <div style={{position:"absolute",inset:0,background:"linear-gradient(to bottom,rgba(28,43,42,0.1) 0%,rgba(28,43,42,0.52) 100%)",zIndex:1}}/>
-      <div style={{position:"relative",zIndex:2,maxWidth:"1280px",margin:"0 auto",padding:"120px 1.5rem 80px",width:"100%"}}>
+      <div style={{position:"relative",zIndex:2,maxWidth:"1280px",margin:"0 auto",padding:"120px clamp(1rem,4vw,1.5rem) 80px",width:"100%"}}>
         <div style={{display:"flex",alignItems:"center",gap:"14px",marginBottom:"2.25rem",...fd(0)}}>
           <div style={{width:"36px",height:"1px",background:C.sage}}/>
           <span style={{fontFamily:sans,fontSize:"10.5px",letterSpacing:"0.2em",color:C.sage,textTransform:"uppercase"}}>{c.eyebrow}</span>
@@ -653,7 +653,7 @@ export default function MaramaPage() {
         </div>
         <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(260px,1fr))",gap:"1px",background:"rgba(61,92,79,0.1)"}}>
           {c.svcs.map((svc,i)=>(
-            <div key={svc.t} style={{background:C.linen,padding:"3rem 2.5rem",cursor:"default",...rv(svcVis,0.08+i*0.1)}}
+            <div key={svc.t} style={{background:C.linen,padding:"2rem clamp(1rem,4vw,2.5rem)",cursor:"default",...rv(svcVis,0.08+i*0.1)}}
               onMouseEnter={e=>e.currentTarget.style.background=C.linMid}
               onMouseLeave={e=>e.currentTarget.style.background=C.linen}>
               <div style={{marginBottom:"1.75rem",display:"inline-flex",alignItems:"center",justifyContent:"center",width:"50px",height:"50px",borderRadius:"50%",border:`1px solid rgba(61,92,79,0.18)`,background:"rgba(61,92,79,0.04)"}}>
@@ -759,7 +759,7 @@ export default function MaramaPage() {
           {c.pr_tiers.map((tier,i)=>(
             <div key={tier.name} style={{
               background:tier.highlight?C.forest:C.linen,
-              padding:"3rem 2.5rem",
+              padding:"2rem clamp(1rem,4vw,2.5rem)",
               position:"relative",
             }}>
               {tier.highlight&&<div style={{position:"absolute",top:"1.5rem",right:"1.5rem",fontFamily:sans,fontSize:"9px",fontWeight:500,letterSpacing:"0.12em",textTransform:"uppercase",background:C.sage,color:C.forest,padding:"4px 12px",borderRadius:"20px"}}>{c.pr_popular}</div>}
@@ -906,7 +906,7 @@ export default function MaramaPage() {
           <div style={{...rv(abtVis,0.2,"X",32)}}>
             <div style={{marginBottom:"3rem",position:"relative"}}>
               <div style={{position:"absolute",top:"-1rem",left:"-0.5rem",fontFamily:serif,fontSize:"160px",fontWeight:300,color:"rgba(61,92,79,0.06)",lineHeight:1,userSelect:"none",pointerEvents:"none"}}>M</div>
-              <div style={{position:"relative",padding:"2.5rem",background:C.forest,borderRadius:"2px"}}>
+              <div style={{position:"relative",padding:"clamp(1.25rem,4vw,2.5rem)",background:C.forest,borderRadius:"2px"}}>
                 <div style={{width:"28px",height:"1px",background:C.sage,marginBottom:"1.5rem"}}/>
                 <p style={{fontFamily:serif,fontSize:"clamp(18px,2.5vw,22px)",fontWeight:300,color:C.linen,lineHeight:1.72,margin:"0 0 1.75rem",fontStyle:"italic"}}>{c.about_q}</p>
                 <p style={{fontFamily:sans,fontSize:"12px",letterSpacing:"0.1em",color:"rgba(200,216,192,0.5)",margin:0,textTransform:"uppercase"}}>{c.about_attr}</p>
@@ -1038,7 +1038,7 @@ export default function MaramaPage() {
   );
 
   return (
-    <div style={{fontFamily:sans,background:C.forest}}>
+    <div style={{fontFamily:sans,background:C.forest,overflowX:"hidden"}}>
       {Nav}
       {Hero}
       {Services}
