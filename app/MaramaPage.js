@@ -160,7 +160,7 @@ const COPY = {
 
   ES: {
     eyebrow:"Costa Blanca · Gestión de Propiedades",
-    h1:"Su vivienda en España merece", h2:"algo más que una llave y cruzar los dedos.",
+    h1:"Su vivienda en España merece", h2:"algo más que dejar las llaves con el vecino.",
     sub:"Marama es un servicio boutique de cuidado de propiedades para propietarios no residentes en la Costa Blanca. Visitamos, documentamos y gestionamos — cada mes usted sabe exactamente qué ocurre en su propiedad.",
     cta:"Escríbanos por WhatsApp", ctaLink:"Ver un informe de ejemplo",
     trust:[
@@ -290,7 +290,7 @@ const COPY = {
 
   CZ: {
     eyebrow:"Costa Blanca · Správa nemovitostí",
-    h1:"Váš dům ve Španělsku si zaslouží", h2:"víc než nechat klíče u souseda a doufat, že to dopadne.",
+    h1:"Váš dům ve Španělsku si zaslouží", h2:"víc než nechat klíče u souseda.",
     sub:"Marama se stará o domy majitelů, kteří žijí daleko — v Praze, Brně nebo Bratislavě. Každý měsíc navštívíme váš dům, zdokumentujeme jeho stav a postaráme se o vše, co nestíháte z dálky.",
     cta:"Napište nám na WhatsApp", ctaLink:"Zobrazit vzorovou zprávu",
     trust:[
@@ -596,13 +596,13 @@ html,body{overflow-x:hidden!important}
 }
 @media(max-width:480px){
   .marama-hero-h1{font-size:20px!important;line-height:1.2!important}
-}`}
+}`}</style>
     </nav>
   );
 
   // ── HERO ─────────────────────────────────────────────────────────────────
   const Hero = (
-    <section style={{position:"relative",minHeight:"100svh",display:"flex",flexDirection:"column",justifyContent:"center",overflow:"hidden"}}>
+    <section style={{position:"relative",minHeight:"100svh",display:"flex",flexDirection:"column",justifyContent:"center",overflowX:"hidden"}}>
       <div style={{position:"absolute",inset:0,background:`linear-gradient(155deg,#253830 0%,${C.forest} 45%,${C.night} 100%)`,zIndex:0}}>
         <div style={{position:"absolute",inset:0,background:"radial-gradient(ellipse at 68% 38%,rgba(200,216,192,0.06) 0%,transparent 55%),radial-gradient(ellipse at 18% 78%,rgba(46,64,87,0.45) 0%,transparent 52%)"}}/>
         <div style={{position:"absolute",inset:0,backgroundImage:"linear-gradient(rgba(200,216,192,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(200,216,192,0.025) 1px,transparent 1px)",backgroundSize:"72px 72px"}}/>
