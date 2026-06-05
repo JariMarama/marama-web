@@ -590,13 +590,12 @@ export default function MaramaPage() {
         </div>
       )}
       <style>{`@media(max-width:960px){.d-nav{display:none!important}.hburg{display:flex!important}}
-*,*::before,*::after{box-sizing:border-box!important}
-html,body{overflow-x:hidden!important;max-width:100vw!important}
-img,svg,video{max-width:100%!important}
-p,h1,h2,h3,h4,h5,h6,span,div{word-break:break-word!important;overflow-wrap:break-word!important}
+html,body{overflow-x:hidden!important}
 @media(max-width:640px){
-  *{max-width:100%!important;padding-left:clamp(0.75rem,3vw,1.5rem)!important;padding-right:clamp(0.75rem,3vw,1.5rem)!important}
-  section{padding-left:clamp(0.75rem,3vw,1.5rem)!important;padding-right:clamp(0.75rem,3vw,1.5rem)!important}
+  #services,#pricing,#report,#about,#faq,footer{padding-left:1rem!important;padding-right:1rem!important}
+}
+@media(max-width:480px){
+  .marama-hero-h1{font-size:20px!important;line-height:1.2!important}
 }`}
     </nav>
   );
@@ -615,8 +614,8 @@ p,h1,h2,h3,h4,h5,h6,span,div{word-break:break-word!important;overflow-wrap:break
           <div style={{width:"36px",height:"1px",background:C.sage}}/>
           <span style={{fontFamily:sans,fontSize:"10.5px",letterSpacing:"0.2em",color:C.sage,textTransform:"uppercase"}}>{c.eyebrow}</span>
         </div>
-        <h1 style={{fontFamily:serif,fontSize:"clamp(26px,6.5vw,82px)",fontWeight:300,lineHeight:1.1,color:C.linen,margin:"0 0 1.75rem",maxWidth:"820px",width:"100%",letterSpacing:"-0.015em",overflowWrap:"break-word",...fd(0.12)}}>
-          {c.h1}<br/><em style={{fontStyle:"italic",color:C.sage}}>{c.h2}</em>
+        <h1 className="marama-hero-h1" style={{fontFamily:serif,fontSize:"clamp(20px,5vw,82px)",fontWeight:300,lineHeight:1.15,color:C.linen,margin:"0 0 1.75rem",width:"100%",letterSpacing:"-0.015em",overflowWrap:"break-word",wordBreak:"break-word",...fd(0.12)}}>
+          {c.h1}<br/><em style={{fontStyle:"italic",color:C.sage,display:"block",wordBreak:"break-word",overflowWrap:"break-word"}}>{c.h2}</em>
         </h1>
         <p style={{fontFamily:sans,fontSize:"clamp(15px,2vw,19px)",fontWeight:300,color:"rgba(245,242,236,0.72)",lineHeight:1.75,maxWidth:"100%",width:"100%",margin:"0 0 3rem",paddingRight:"1rem",boxSizing:"border-box",...fd(0.24)}}>{c.sub}</p>
         <div style={{display:"flex",alignItems:"center",gap:"1.75rem",flexWrap:"wrap",...fd(0.36)}}>
@@ -796,7 +795,7 @@ p,h1,h2,h3,h4,h5,h6,span,div{word-break:break-word!important;overflow-wrap:break
           ))}
         </div>
         <div style={{marginTop:"3rem"}}>
-          <div style={{padding:"2rem 1.5rem",background:C.forest,borderRadius:"2px 2px 0 0",display:"flex",flexWrap:"wrap",alignItems:"flex-start",justifyContent:"space-between",gap:"1.5rem",boxSizing:"border-box",width:"100%",overflowX:"hidden"}}>
+          <div style={{padding:"2rem 1.5rem",background:C.forest,borderRadius:"2px 2px 0 0",display:"flex",flexWrap:"wrap",alignItems:"flex-start",justifyContent:"space-between",gap:"1.5rem",boxSizing:"border-box",width:"100%"}}>
             <div style={{flex:"1",minWidth:"280px"}}>
               <p style={{fontFamily:sans,fontSize:"10.5px",letterSpacing:"0.18em",textTransform:"uppercase",color:"rgba(200,216,192,0.45)",margin:"0 0 0.5rem",overflowWrap:"break-word"}}>{c.pr_holiday_sub}</p>
               <p style={{fontFamily:serif,fontSize:"clamp(18px,4vw,26px)",fontWeight:300,color:C.sage,margin:"0 0 1rem",fontStyle:"italic",overflowWrap:"break-word",wordBreak:"break-word"}}>{c.pr_holiday_title}</p>
@@ -1046,7 +1045,7 @@ p,h1,h2,h3,h4,h5,h6,span,div{word-break:break-word!important;overflow-wrap:break
   );
 
   return (
-    <div style={{fontFamily:sans,background:C.forest,overflowX:"hidden"}}>
+    <div style={{fontFamily:sans,background:C.forest,maxWidth:"100vw"}}>
       {Nav}
       {Hero}
       {Services}
