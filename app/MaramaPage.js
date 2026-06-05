@@ -15,7 +15,7 @@ const serif = "'Cormorant Garamond',Georgia,serif";
 const sans  = "'DM Sans',sans-serif";
 
 const LANGS = [
-  { key:"EN", label:"English", flag:null },
+  { key:"EN", label:"English", flag:"🇬🇧" },
   { key:"ES", label:"Español", flag:"🇪🇸" },
   { key:"CZ", label:"Čeština", flag:"🇨🇿" },
 ];
@@ -484,7 +484,7 @@ function LangSwitch({lang,setLang}) {
             padding:"5px 11px",borderRadius:"2px",border:"none",cursor:"pointer",
             transition:"background .2s,color .2s",whiteSpace:"nowrap",
             background:lang===l.key?C.sage:"transparent",
-            color:lang===l.key?C.forest:"rgba(245,242,236,0.45)",
+            color:lang===l.key?C.forest:"rgba(245,242,236,0.75)",
           }}>{l.label}</button>
         ))}
       </div>
@@ -788,12 +788,12 @@ export default function MaramaPage() {
           ))}
         </div>
         <div style={{marginTop:"3rem"}}>
-          <div style={{padding:"2.5rem 3rem",background:C.forest,borderRadius:"2px 2px 0 0",display:"flex",flexWrap:"wrap",alignItems:"flex-start",justifyContent:"space-between",gap:"2rem"}}>
+          <div style={{padding:"2rem 1.5rem",background:C.forest,borderRadius:"2px 2px 0 0",display:"flex",flexWrap:"wrap",alignItems:"flex-start",justifyContent:"space-between",gap:"1.5rem",boxSizing:"border-box",width:"100%",overflowX:"hidden"}}>
             <div style={{flex:"1",minWidth:"280px"}}>
               <p style={{fontFamily:sans,fontSize:"10.5px",letterSpacing:"0.18em",textTransform:"uppercase",color:"rgba(200,216,192,0.45)",margin:"0 0 0.5rem"}}>{c.pr_holiday_sub}</p>
               <p style={{fontFamily:serif,fontSize:"26px",fontWeight:300,color:C.sage,margin:"0 0 1rem",fontStyle:"italic"}}>{c.pr_holiday_title}</p>
-              <p style={{fontFamily:sans,fontSize:"13px",fontWeight:300,color:"rgba(245,242,236,0.58)",margin:"0 0 1.5rem",lineHeight:1.75,maxWidth:"520px"}}>{c.pr_holiday_body}</p>
-              <p style={{fontFamily:sans,fontSize:"12px",fontWeight:300,color:C.muted,lineHeight:1.7,maxWidth:"520px",fontStyle:"italic"}}>{c.pr_holiday_offseason}</p>
+              <p style={{fontFamily:sans,fontSize:"13px",fontWeight:300,color:"rgba(245,242,236,0.58)",margin:"0 0 1.5rem",lineHeight:1.75,maxWidth:"100%",width:"100%",boxSizing:"border-box"}}>{c.pr_holiday_body}</p>
+              <p style={{fontFamily:sans,fontSize:"12px",fontWeight:300,color:C.muted,lineHeight:1.7,maxWidth:"100%",width:"100%",boxSizing:"border-box",fontStyle:"italic"}}>{c.pr_holiday_offseason}</p>
             </div>
             <div style={{display:"flex",flexDirection:"column",gap:"1rem",minWidth:"200px"}}>
               <div style={{background:"rgba(200,216,192,0.08)",border:"1px solid rgba(200,216,192,0.15)",borderRadius:"2px",padding:"1.25rem 1.5rem"}}>
@@ -812,7 +812,7 @@ export default function MaramaPage() {
               </div>
             </div>
           </div>
-          <div style={{background:C.linen,border:"1px solid rgba(61,92,79,0.12)",borderTop:"none",borderRadius:"0 0 2px 2px",padding:"2rem 3rem",display:"flex",flexWrap:"wrap",gap:"3rem",alignItems:"flex-start",justifyContent:"space-between"}}>
+          <div style={{background:C.linen,border:"1px solid rgba(61,92,79,0.12)",borderTop:"none",borderRadius:"0 0 2px 2px",padding:"2rem 1.5rem",display:"flex",flexWrap:"wrap",gap:"3rem",alignItems:"flex-start",justifyContent:"space-between"}}>
             <div style={{flex:"1",minWidth:"260px"}}>
               <p style={{fontFamily:sans,fontSize:"10px",letterSpacing:"0.14em",textTransform:"uppercase",color:C.slate,margin:"0 0 0.75rem"}}>{c.pr_holiday_hours_title}</p>
               <p style={{fontFamily:sans,fontSize:"11px",color:C.muted,margin:"0 0 0.75rem",fontStyle:"italic"}}>{c.pr_holiday_hours_note}</p>
