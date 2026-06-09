@@ -955,9 +955,9 @@ html,body{overflow-x:hidden!important}
                 style={{fontFamily:sans,fontSize:"14px",fontWeight:500,color:C.forest,background:C.sage,padding:"14px 32px",borderRadius:"2px",textDecoration:"none",letterSpacing:"0.06em",display:"inline-block",textAlign:"center",transition:"background .2s"}}
                 onMouseEnter={e=>e.target.style.background=C.linen} onMouseLeave={e=>e.target.style.background=C.sage}>WhatsApp</a>
               <a href={`mailto:${EMAIL}`}
-                style={{fontFamily:sans,fontSize:"14px",fontWeight:300,color:"rgba(245,242,236,0.6)",padding:"14px 32px",borderRadius:"2px",textDecoration:"none",letterSpacing:"0.06em",display:"inline-block",textAlign:"center",border:"1px solid rgba(200,216,192,0.2)",transition:"border-color .2s,color .2s"}}
-                onMouseEnter={e=>{e.target.style.borderColor="rgba(200,216,192,0.5)";e.target.style.color=C.linen}}
-                onMouseLeave={e=>{e.target.style.borderColor="rgba(200,216,192,0.2)";e.target.style.color="rgba(245,242,236,0.6)"}}>Email</a>
+                style={{fontFamily:sans,fontSize:"14px",fontWeight:500,color:C.sage,padding:"14px 32px",borderRadius:"2px",textDecoration:"none",letterSpacing:"0.06em",display:"inline-block",textAlign:"center",border:"1px solid rgba(200,216,192,0.4)",transition:"border-color .2s,color .2s,background .2s"}}
+                onMouseEnter={e=>{e.target.style.borderColor=C.sage;e.target.style.color=C.linen}}
+                onMouseLeave={e=>{e.target.style.borderColor="rgba(200,216,192,0.4)";e.target.style.color=C.sage}}>Email</a>
             </div>
           </div>
           <div style={{...rv(faqVis,0.18,"X",28)}}>
@@ -1005,7 +1005,7 @@ html,body{overflow-x:hidden!important}
                 {c.footer_wp} — {c.footer_wp_num}
               </a>
               <a href={`mailto:${c.footer_email}`}
-                style={{display:"flex",alignItems:"center",gap:"10px",textDecoration:"none",color:C.linen,fontFamily:sans,fontSize:"14px",fontWeight:300,transition:"color .2s"}}
+                style={{display:"flex",alignItems:"center",gap:"10px",textDecoration:"underline",textUnderlineOffset:"3px",color:C.linen,fontFamily:sans,fontSize:"14px",fontWeight:300,transition:"color .2s"}}
                 onMouseEnter={e=>e.currentTarget.style.color=C.sage} onMouseLeave={e=>e.currentTarget.style.color=C.linen}>
                 <Ico n="mail" sz={16} col="rgba(200,216,192,0.5)"/>
                 {c.footer_email}
