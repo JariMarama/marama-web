@@ -15,7 +15,7 @@ const serif = "'Cormorant Garamond',Georgia,serif";
 const sans  = "'DM Sans',sans-serif";
 
 const LANGS = [
-  { key:"EN", label:"English", flag:"🇬🇧" },
+  { key:"EN", label:"English", flag:null },
   { key:"ES", label:"Español", flag:"🇪🇸" },
   { key:"CZ", label:"Čeština", flag:"🇨🇿" },
 ];
@@ -38,10 +38,10 @@ const COPY = {
       {n:"Same day",l:"Photographic report"},
       {n:"Costa Blanca",l:"Full coverage"},
     ],
-    nav:[{t:"Services",h:"#services"},{t:"Pricing",h:"#pricing"},{t:"The Report",h:"#report"},{t:"About",h:"#about"},{t:"FAQ",h:"#faq"}],
+    nav:[{t:"Services",h:"#services"},{t:"The Report",h:"#report"},{t:"About",h:"#about"},{t:"FAQ",h:"#faq"}],
     navCta:"WhatsApp",
 
-    s_sub:"What we do", s_h:"One retainer.\nEverything covered.",
+    s_sub:"What we do", s_h:"One team.\nEverything covered.",
     s_body:"A single monthly arrangement gives you a dedicated professional on the Costa Blanca — present, attentive, and fluent in your language — so your property is never without someone who genuinely cares for it.",
     svcs:[
       {t:"Key Holding",d:"Your keys held securely, your property accessed only when needed. We coordinate every contractor visit, inspection, and emergency — so you never need to be present to make things happen.",i:"key"},
@@ -81,13 +81,13 @@ const COPY = {
 
     faq_sub:"Questions",
     faq_h:"Everything you need to know.",
-    faq_body:"If your question is not here, write to us directly by WhatsApp or email. We usually respond the same day.",
+    faq_body:"If your question isn't here, send it to us directly — by WhatsApp or email. We answer in English, Spanish, and Czech — usually the same day.",
     faqs:[
       {q:"How often are reports sent?",a:"Every calendar month, within 24 hours of the inspection visit. The report arrives by WhatsApp and email, with photographs, a condition summary, and any flagged items. You never have to ask — it simply arrives."},
       {q:"Do you handle emergency repairs?",a:"Yes. A burst pipe, a triggered alarm, a broken shutter — we attend, coordinate, and report. We maintain relationships with trusted local contractors across plumbing, electrics, glazing, and general maintenance. You are notified at every stage."},
       {q:"What is the administrative shield?",a:"We act as your physical Spanish address for official correspondence. Letters from the Agencia Tributaria, Ayuntamiento, and community of owners are received, photographed, and forwarded the same day with a plain-language explanation. We track your Modelo 210 deadlines and maintain a gestor relationship for when professional handling is needed."},
       {q:"What languages do you work in?",a:"English, Spanish, and Czech natively. All reports, correspondence, and WhatsApp communication are written in whichever language you prefer. If you prefer to switch mid-conversation, so do we."},
-      {q:"Do you work with holiday rental hosts?",a:"Yes. If you manage a holiday rental in Dénia — whether through Airbnb, Booking.com, or direct — we offer a dedicated check-in and check-out service, between-stay inspections, and storm response. All billed per visit, no monthly retainer required. Send us a message and we will walk you through how it works."},
+      {q:"Do you work with holiday rental hosts?",a:"Yes. If you manage a holiday rental in Dénia — whether through Airbnb, Booking.com, or direct — we offer a dedicated check-in and check-out service, between-stay inspections, and storm response. Send us a message and we will walk you through how it works."},
       {q:"How do I get started?",a:"Send us a message on WhatsApp or by email. We will respond within one working day to arrange a brief call — in your language — to understand your property and what you need. No obligation and no hard sell."},
     ],
 
@@ -114,53 +114,10 @@ const COPY = {
     stat_h3:"Monthly",
     stat_h4:"One call",
     footer_lang:"Language",
-    // Pricing
-    pr_sub:"Simple, honest pricing",
-    pr_h:"One fee.\nNo surprises.",
-    pr_body:"A fixed monthly fee covers everything. No hidden call-out charges, no contractor markups, no surprises at the end of the month.",
-    pr_founding:"Founding client rates — locked for 12 months if you sign before 31 July 2026.",
-    pr_cta:"Ask us anything on WhatsApp",
-    pr_tiers:[
-      {
-        name:"Essential", price:"€120", period:"/month",
-        desc:"The complete monthly care package for owners who want documented peace of mind.",
-        features:["Monthly inspection + same-day photo report","Key holding","WhatsApp updates in your language","Spanish registered address for correspondence","Tax deadline tracking","Monthly anti-okupa video record"],
-      },
-      {
-        name:"Comfort", price:"€165", period:"/month",
-        desc:"Everything in Essential, plus active response and contractor coordination.",
-        features:["Everything in Essential","Storm response within 24–48h of alert","Smart home & router reboot","Contractor coordination (no markups)","Utility consumption monitoring","Quarterly deep inspection"],
-        highlight:true,
-      },
-      {
-        name:"Prestige", price:"€220", period:"/month",
-        desc:"Full concierge property care. Your home ready when you arrive.",
-        features:["Everything in Comfort","Arrival preparation — aired, checked, ready","Departure shutdown — locked, unplugged, water off","Grocery welcome pack coordination","Priority WhatsApp response","Annual full condition report"],
-      },
-    ],
-    pr_popular:"Most popular",
-    pr_holiday_title:"Holiday Rental Coordination",
-    pr_holiday_sub:"Hybrid retainer — active rental months only",
-    pr_holiday_body:"Already listing your Dénia property on Airbnb or Booking.com? We provide local boots on the ground for every guest turnaround — check-in handover, 60-minute post-checkout audit, and a full photographic report to your WhatsApp before the cleaning crew arrives.",
-    pr_holiday_base:"€180", pr_holiday_base_label:"/month (active months)",
-    pr_holiday_base_desc:"Includes up to 4 guest turnarounds per calendar month — mapping to a typical weekly Saturday-to-Saturday rental rhythm.",
-    pr_holiday_overage:"€45", pr_holiday_overage_label:"per additional turnaround",
-    pr_holiday_overage_desc:"Any turnaround beyond the first 4 in a single month.",
-    pr_holiday_offseason:"Off-season months transition seamlessly to your standard Essential or Comfort tier — year-round coverage, predictable cost.",
-    pr_holiday_hours_title:"Out-of-hours surcharges",
-    pr_holiday_hours_note:"Standard hours: Monday–Saturday 08:00–20:00",
-    pr_holiday_hours:[
-      {time:"20:00–22:00", label:"Late arrivals", fee:"€25"},
-      {time:"22:00–08:00", label:"Night arrivals / emergency lockout", fee:"€50"},
-      {time:"Sundays & public holidays", label:"All interactions", fee:"€50"},
-    ],
-    pr_holiday_policy:"Zero markup on all contractor invoices. Original invoice always presented. Pool chemistry and landscaping outside core scope.",
-    pr_holiday_cta:"Ask about holiday rental rates",
-  },
 
   ES: {
     eyebrow:"Costa Blanca · Gestión de Propiedades",
-    h1:"Su vivienda en España merece", h2:"algo más que dejar las llaves con el vecino.",
+    h1:"Su vivienda en España merece", h2:"algo más que una llave y cruzar los dedos.",
     sub:"Marama es un servicio boutique de cuidado de propiedades para propietarios no residentes en la Costa Blanca. Visitamos, documentamos y gestionamos — cada mes usted sabe exactamente qué ocurre en su propiedad.",
     cta:"Escríbanos por WhatsApp", ctaLink:"Ver un informe de ejemplo",
     trust:[
@@ -168,10 +125,10 @@ const COPY = {
       {n:"Mensual",l:"Informe fotográfico"},
       {n:"Costa Blanca",l:"Cobertura completa"},
     ],
-    nav:[{t:"Servicios",h:"#services"},{t:"Precios",h:"#pricing"},{t:"El Informe",h:"#report"},{t:"Quiénes somos",h:"#about"},{t:"Preguntas",h:"#faq"}],
+    nav:[{t:"Servicios",h:"#services"},{t:"El Informe",h:"#report"},{t:"Quiénes somos",h:"#about"},{t:"Preguntas",h:"#faq"}],
     navCta:"WhatsApp",
 
-    s_sub:"Lo que hacemos", s_h:"Un acuerdo mensual.\nTodo cubierto.",
+    s_sub:"Lo que hacemos", s_h:"Un equipo local.\nTodo cubierto.",
     s_body:"Una tarifa mensual le proporciona un profesional dedicado en la Costa Blanca — presente, atento y en su idioma — para que su propiedad nunca esté sin alguien que verdaderamente la cuide.",
     svcs:[
       {t:"Custodia de Llaves",d:"Sus llaves custodiadas con seguridad. Coordinamos cada visita de contratistas, inspección y emergencia — sin necesidad de que usted esté presente.",i:"key"},
@@ -211,7 +168,7 @@ const COPY = {
 
     faq_sub:"Preguntas",
     faq_h:"Todo lo que necesita saber.",
-    faq_body:"Si su pregunta no está aquí, escríbanos directamente — por WhatsApp o email. Normalmente respondemos el mismo día.",
+    faq_body:"Si su pregunta no está aquí, escríbanos directamente — por WhatsApp o email. Respondemos en español, inglés y checo — normalmente el mismo día.",
     faqs:[
       {q:"¿Con qué frecuencia se envían los informes?",a:"Cada mes natural, en las 24 horas siguientes a la visita de inspección. El informe llega por WhatsApp y email, con fotografías, un resumen de estado y cualquier incidencia detectada. No tiene que pedirlo — simplemente llega."},
       {q:"¿Gestionan reparaciones de emergencia?",a:"Sí. Una tubería rota, una alarma disparada, una persiana dañada — acudimos, coordinamos y reportamos. Contamos con contratistas de confianza en fontanería, electricidad, cristalería y mantenimiento general."},
@@ -244,53 +201,10 @@ const COPY = {
     stat_h3:"Mensual",
     stat_h4:"Una llamada",
     footer_lang:"Idioma",
-    // Pricing
-    pr_sub:"Precios claros y honestos",
-    pr_h:"Una tarifa.\nSin sorpresas.",
-    pr_body:"Una cuota mensual fija lo cubre todo. Sin cargos ocultos por visitas, sin comisiones de contratistas, sin sorpresas a fin de mes.",
-    pr_founding:"Tarifas fundadoras — fijadas durante 12 meses si firma antes del 31 de julio de 2026.",
-    pr_cta:"Consúltenos por WhatsApp",
-    pr_tiers:[
-      {
-        name:"Essential", price:"€120", period:"/mes",
-        desc:"El paquete completo de cuidado mensual para propietarios que quieren tranquilidad documentada.",
-        features:["Inspección mensual + informe fotográfico el mismo día","Custodia de llaves","Actualizaciones por WhatsApp en su idioma","Domicilio registrado español para correspondencia","Seguimiento de plazos fiscales","Registro mensual de vídeo antiokupa"],
-      },
-      {
-        name:"Comfort", price:"€165", period:"/mes",
-        desc:"Todo lo del Essential, más respuesta activa y coordinación de contratistas.",
-        features:["Todo lo incluido en Essential","Respuesta ante tormentas en 24–48h","Reinicio de domótica y router","Coordinación de contratistas (sin comisiones)","Monitorización del consumo de suministros","Inspección profunda trimestral"],
-        highlight:true,
-      },
-      {
-        name:"Prestige", price:"€220", period:"/mes",
-        desc:"Cuidado concierge completo. Su vivienda lista cuando llegue.",
-        features:["Todo lo incluido en Comfort","Preparación de llegada — ventilada, revisada, lista","Cierre de salida — cerrada, desenchufada, llave de paso cerrada","Coordinación de pedido de bienvenida","Respuesta prioritaria por WhatsApp","Informe completo anual de estado"],
-      },
-    ],
-    pr_popular:"El más elegido",
-    pr_holiday_title:"Coordinación de Alquiler Vacacional",
-    pr_holiday_sub:"Tarifa híbrida — solo meses de alquiler activo",
-    pr_holiday_body:"¿Ya ofrece su propiedad en Dénia en Airbnb o Booking.com? Gestionamos cada cambio de huésped sobre el terreno — entrega de llaves en el check-in, auditoría post-checkout en 60 minutos con informe fotográfico completo a su WhatsApp antes de que llegue el equipo de limpieza.",
-    pr_holiday_base:"€180", pr_holiday_base_label:"/mes (meses activos)",
-    pr_holiday_base_desc:"Incluye hasta 4 cambios de huésped por mes natural — equivalente al ritmo típico de alquiler semanal de sábado a sábado.",
-    pr_holiday_overage:"€45", pr_holiday_overage_label:"por cambio adicional",
-    pr_holiday_overage_desc:"Cualquier cambio a partir del cuarto en un mismo mes.",
-    pr_holiday_offseason:"Los meses fuera de temporada pasan automáticamente a su tarifa Essential o Comfort habitual — cobertura anual, coste predecible.",
-    pr_holiday_hours_title:"Suplementos fuera de horario",
-    pr_holiday_hours_note:"Horario estándar: lunes a sábado 08:00–20:00",
-    pr_holiday_hours:[
-      {time:"20:00–22:00", label:"Llegadas tardías", fee:"€25"},
-      {time:"22:00–08:00", label:"Llegadas nocturnas / apertura de emergencia", fee:"€50"},
-      {time:"Domingos y festivos oficiales", label:"Cualquier interacción", fee:"€50"},
-    ],
-    pr_holiday_policy:"Sin comisiones en facturas de contratistas. Factura original siempre presentada. Análisis químico de piscina y jardinería fuera del alcance básico.",
-    pr_holiday_cta:"Consultar tarifas de alquiler vacacional",
-  },
 
   CZ: {
     eyebrow:"Costa Blanca · Správa nemovitostí",
-    h1:"Váš dům ve Španělsku si zaslouží", h2:"víc než nechat klíče u souseda.",
+    h1:"Váš dům ve Španělsku si zaslouží", h2:"víc než nechat klíče u souseda a doufat, že to dopadne.",
     sub:"Marama se stará o domy majitelů, kteří žijí daleko — v Praze, Brně nebo Bratislavě. Každý měsíc navštívíme váš dům, zdokumentujeme jeho stav a postaráme se o vše, co nestíháte z dálky.",
     cta:"Napište nám na WhatsApp", ctaLink:"Zobrazit vzorovou zprávu",
     trust:[
@@ -298,7 +212,7 @@ const COPY = {
       {n:"Měsíčně",l:"Fotografická zpráva"},
       {n:"Costa Blanca",l:"Celé pobřeží"},
     ],
-    nav:[{t:"Služby",h:"#services"},{t:"Ceny",h:"#pricing"},{t:"Zpráva",h:"#report"},{t:"O nás",h:"#about"},{t:"Otázky",h:"#faq"}],
+    nav:[{t:"Služby",h:"#services"},{t:"Zpráva",h:"#report"},{t:"O nás",h:"#about"},{t:"Otázky",h:"#faq"}],
     navCta:"WhatsApp",
 
     s_sub:"Co děláme", s_h:"Jeden poplatek.\nVše pokryto.",
@@ -341,13 +255,13 @@ const COPY = {
 
     faq_sub:"Otázky",
     faq_h:"Vše, co potřebujete vědět.",
-    faq_body:"Pokud vaše otázka zde není, napište nám přímo — přes WhatsApp nebo email. Obvykle odpovídáme tentýž den.",
+    faq_body:"Pokud vaše otázka zde není, napište nám přímo — přes WhatsApp nebo email. Odpovídáme česky, anglicky a španělsky — obvykle tentýž den.",
     faqs:[
       {q:"Jak často jsou zprávy zasílány?",a:"Každý kalendářní měsíc, do 24 hodin od inspekční návštěvy. Zpráva přichází přes WhatsApp a email s fotografiemi, souhrnem stavu a všemi zaznamenanými závadami. Nemusíte se ptát — prostě přijde."},
       {q:"Zajišťujete nouzové opravy?",a:"Ano. Prasklé potrubí, spuštěný alarm, poškozená okenice — přijedeme, zkoordinujeme a nahlásíme. Spolupracujeme s prověřenými řemeslníky v oblasti instalatérství, elektřiny, zasklení a obecné údržby."},
       {q:"Co je administrativní asistence?",a:"Fungujeme jako vaše fyzická adresa ve Španělsku pro úřední korespondenci. Dopisy od Agencia Tributaria, Ayuntamiento a společenství vlastníků přijímáme, fotografujeme a předáváme tentýž den s jasným vysvětlením. Sledujeme termíny Modelo 210 a udržujeme kontakt s gestorem pro případ, že je potřeba profesionální pomoc."},
       {q:"V jakých jazycích pracujete?",a:"Česky, anglicky a španělsky — rodilí mluvčí. Všechny zprávy, korespondence i komunikace přes WhatsApp jsou vedeny v jazyce, který preferujete."},
-      {q:"Pracujete s majiteli turistických apartmánů?",a:"Ano. Pokud spravujete turistický apartmán nebo vilu v Dénia — přes Airbnb, Booking.com nebo přímo — nabízíme službu check-in a check-out, inspekce mezi pobyty a reakci na bouřky. Vše se fakturuje za návštěvu, bez měsíčního paušálu. Napište nám a vysvětlíme vám, jak to funguje."},
+      {q:"Pracujete s majiteli turistických apartmánů?",a:"Ano. Pokud spravujete turistický apartmán nebo vilu v Dénia — přes Airbnb, Booking.com nebo přímo — nabízíme službu check-in a check-out, inspekce mezi pobyty a reakci na bouřky. Napište nám a vysvětlíme vám, jak to funguje."},
       {q:"Jak začít?",a:"Pošlete nám zprávu přes WhatsApp nebo email. Ozveme se do jednoho pracovního dne a domluvíme krátký hovor — ve vašem jazyce — abychom poznali váš dům a vaše potřeby. Bez závazků."},
     ],
 
@@ -374,49 +288,6 @@ const COPY = {
     stat_h3:"Měsíčně",
     stat_h4:"Jeden hovor",
     footer_lang:"Jazyk",
-    // Pricing
-    pr_sub:"Jasné a férové ceny",
-    pr_h:"Jeden poplatek.\nŽádná překvapení.",
-    pr_body:"Pevný měsíční poplatek pokrývá vše. Žádné skryté poplatky za výjezdy, žádné provize od řemeslníků, žádná překvapení na konci měsíce.",
-    pr_founding:"Zakládající ceny — fixní na 12 měsíců, pokud podepíšete smlouvu do 31. července 2026.",
-    pr_cta:"Napište nám na WhatsApp",
-    pr_tiers:[
-      {
-        name:"Essential", price:"€120", period:"/měsíc",
-        desc:"Kompletní balíček měsíční péče pro majitele, kteří chtějí zdokumentovaný klid.",
-        features:["Měsíční inspekce + fotografická zpráva tentýž den","Úschova klíčů","WhatsApp aktualizace ve vašem jazyce","Španělská registrovaná adresa pro korespondenci","Sledování daňových termínů","Měsíční videozáznam pro ochranu před neoprávněným obsazením"],
-      },
-      {
-        name:"Comfort", price:"€165", period:"/měsíc",
-        desc:"Vše z Essential plus aktivní reakce a koordinace řemeslníků.",
-        features:["Vše zahrnuté v Essential","Reakce na bouřku do 24–48h","Restart chytré domácnosti a routeru","Koordinace řemeslníků (bez provizí)","Monitoring spotřeby energií","Čtvrtletní hloubková inspekce"],
-        highlight:true,
-      },
-      {
-        name:"Prestige", price:"€220", period:"/měsíc",
-        desc:"Kompletní concierge péče o nemovitost. Váš dům připravený na příjezd.",
-        features:["Vše zahrnuté v Comfort","Příprava na příjezd — vyvětráno, zkontrolováno, připraveno","Uzavření při odjezdu — zamčeno, odpojeno, hlavní uzávěr zavřen","Koordinace nákupního balíčku na uvítanou","Prioritní WhatsApp odpovědi","Roční kompletní zpráva o stavu nemovitosti"],
-      },
-    ],
-    pr_popular:"Nejoblíbenější",
-    pr_holiday_title:"Koordinace turistických apartmánů",
-    pr_holiday_sub:"Hybridní paušál — pouze v měsících aktivního pronájmu",
-    pr_holiday_body:"Nabízíte svůj apartmán nebo vilu v Dénii na Airbnb nebo Booking.com? Zajistíme přítomnost na místě při každé výměně hostů — předání klíčů při check-inu, audit po check-outu do 60 minut s kompletní fotografickou zprávou do vašeho WhatsAppu ještě před příchodem úklidového týmu.",
-    pr_holiday_base:"€180", pr_holiday_base_label:"/měsíc (aktivní měsíce)",
-    pr_holiday_base_desc:"Zahrnuje až 4 výměny hostů za kalendářní měsíc — odpovídá typickému týdennímu rytmu pronájmu od soboty do soboty.",
-    pr_holiday_overage:"€45", pr_holiday_overage_label:"za každou další výměnu",
-    pr_holiday_overage_desc:"Každá výměna nad rámec prvních 4 v jednom měsíci.",
-    pr_holiday_offseason:"Mimo sezonu nemovitost automaticky přechází na váš standardní tarif Essential nebo Comfort — celoroční pokrytí, předvídatelné náklady.",
-    pr_holiday_hours_title:"Příplatky za mimopracovní dobu",
-    pr_holiday_hours_note:"Standardní provozní doba: pondělí–sobota 08:00–20:00",
-    pr_holiday_hours:[
-      {time:"20:00–22:00", label:"Pozdní příjezdy", fee:"€25"},
-      {time:"22:00–08:00", label:"Noční příjezdy / nouzové otevření", fee:"€50"},
-      {time:"Neděle a státní svátky", label:"Jakákoli interakce", fee:"€50"},
-    ],
-    pr_holiday_policy:"Nulová provize z faktur řemeslníků. Vždy předkládáme originální fakturu. Chemická úprava bazénu a zahradnictví nejsou součástí základního rozsahu.",
-    pr_holiday_cta:"Zeptat se na ceny pro turistické apartmány",
-  },
 };
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -484,7 +355,7 @@ function LangSwitch({lang,setLang}) {
             padding:"5px 11px",borderRadius:"2px",border:"none",cursor:"pointer",
             transition:"background .2s,color .2s",whiteSpace:"nowrap",
             background:lang===l.key?C.sage:"transparent",
-            color:lang===l.key?C.forest:"rgba(245,242,236,0.75)",
+            color:lang===l.key?C.forest:"rgba(245,242,236,0.45)",
           }}>{l.label}</button>
         ))}
       </div>
@@ -589,33 +460,26 @@ export default function MaramaPage() {
             style={{fontFamily:sans,fontSize:"14px",fontWeight:500,color:C.forest,background:C.sage,padding:"13px 28px",borderRadius:"2px",textDecoration:"none",textAlign:"center"}}>{c.navCta}</a>
         </div>
       )}
-      <style>{`@media(max-width:960px){.d-nav{display:none!important}.hburg{display:flex!important}}
-html,body{overflow-x:hidden!important}
-@media(max-width:640px){
-  #services,#pricing,#report,#about,#faq,footer{padding-left:1rem!important;padding-right:1rem!important}
-}
-@media(max-width:480px){
-  .marama-hero-h1{font-size:20px!important;line-height:1.2!important}
-}`}</style>
+      <style>{`@media(max-width:960px){.d-nav{display:none!important}.hburg{display:flex!important}}`}</style>
     </nav>
   );
 
   // ── HERO ─────────────────────────────────────────────────────────────────
   const Hero = (
-    <section style={{position:"relative",minHeight:"100svh",display:"flex",flexDirection:"column",justifyContent:"center",overflowX:"hidden"}}>
+    <section style={{position:"relative",minHeight:"100svh",display:"flex",flexDirection:"column",justifyContent:"center",overflow:"hidden"}}>
       <div style={{position:"absolute",inset:0,background:`linear-gradient(155deg,#253830 0%,${C.forest} 45%,${C.night} 100%)`,zIndex:0}}>
         <div style={{position:"absolute",inset:0,background:"radial-gradient(ellipse at 68% 38%,rgba(200,216,192,0.06) 0%,transparent 55%),radial-gradient(ellipse at 18% 78%,rgba(46,64,87,0.45) 0%,transparent 52%)"}}/>
         <div style={{position:"absolute",inset:0,backgroundImage:"linear-gradient(rgba(200,216,192,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(200,216,192,0.025) 1px,transparent 1px)",backgroundSize:"72px 72px"}}/>
         <div style={{position:"absolute",bottom:"1.75rem",right:"2rem",fontFamily:sans,fontSize:"9px",letterSpacing:"0.14em",color:"rgba(200,216,192,0.16)",textTransform:"uppercase"}}>© Marama Property Care · Costa Blanca</div>
       </div>
       <div style={{position:"absolute",inset:0,background:"linear-gradient(to bottom,rgba(28,43,42,0.1) 0%,rgba(28,43,42,0.52) 100%)",zIndex:1}}/>
-      <div style={{position:"relative",zIndex:2,maxWidth:"1280px",margin:"0 auto",padding:"120px clamp(1rem,4vw,1.5rem) 80px",width:"100%"}}>
+      <div style={{position:"relative",zIndex:2,maxWidth:"1280px",margin:"0 auto",padding:"120px 1.5rem 80px",width:"100%"}}>
         <div style={{display:"flex",alignItems:"center",gap:"14px",marginBottom:"2.25rem",...fd(0)}}>
           <div style={{width:"36px",height:"1px",background:C.sage}}/>
           <span style={{fontFamily:sans,fontSize:"10.5px",letterSpacing:"0.2em",color:C.sage,textTransform:"uppercase"}}>{c.eyebrow}</span>
         </div>
-        <h1 className="marama-hero-h1" style={{fontFamily:serif,fontSize:"clamp(20px,5vw,82px)",fontWeight:300,lineHeight:1.15,color:C.linen,margin:"0 0 1.75rem",width:"100%",letterSpacing:"-0.015em",overflowWrap:"break-word",wordBreak:"break-word",...fd(0.12)}}>
-          {c.h1}<br/><em style={{fontStyle:"italic",color:C.sage,display:"block",wordBreak:"break-word",overflowWrap:"break-word"}}>{c.h2}</em>
+        <h1 style={{fontFamily:serif,fontSize:"clamp(26px,6.5vw,82px)",fontWeight:300,lineHeight:1.1,color:C.linen,margin:"0 0 1.75rem",maxWidth:"820px",width:"100%",letterSpacing:"-0.015em",overflowWrap:"break-word",...fd(0.12)}}>
+          {c.h1}<br/><em style={{fontStyle:"italic",color:C.sage}}>{c.h2}</em>
         </h1>
         <p style={{fontFamily:sans,fontSize:"clamp(15px,2vw,19px)",fontWeight:300,color:"rgba(245,242,236,0.72)",lineHeight:1.75,maxWidth:"100%",width:"100%",margin:"0 0 3rem",paddingRight:"1rem",boxSizing:"border-box",...fd(0.24)}}>{c.sub}</p>
         <div style={{display:"flex",alignItems:"center",gap:"1.75rem",flexWrap:"wrap",...fd(0.36)}}>
@@ -646,7 +510,7 @@ html,body{overflow-x:hidden!important}
 
   // ── SERVICES ─────────────────────────────────────────────────────────────
   const Services = (
-    <section id="services" ref={svcRef} style={{background:C.linen,padding:"8rem clamp(1rem,4vw,2.5rem)"}}>
+    <section id="services" ref={svcRef} style={{background:C.linen,padding:"8rem 2.5rem"}}>
       <div style={{maxWidth:"1280px",margin:"0 auto"}}>
         <div style={{marginBottom:"5rem",...rv(svcVis,0)}}>
           <div style={{display:"flex",alignItems:"center",gap:"14px",marginBottom:"1.5rem"}}>
@@ -660,7 +524,7 @@ html,body{overflow-x:hidden!important}
         </div>
         <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(260px,1fr))",gap:"1px",background:"rgba(61,92,79,0.1)"}}>
           {c.svcs.map((svc,i)=>(
-            <div key={svc.t} style={{background:C.linen,padding:"2rem clamp(1rem,4vw,2.5rem)",cursor:"default",...rv(svcVis,0.08+i*0.1)}}
+            <div key={svc.t} style={{background:C.linen,padding:"3rem 2.5rem",cursor:"default",...rv(svcVis,0.08+i*0.1)}}
               onMouseEnter={e=>e.currentTarget.style.background=C.linMid}
               onMouseLeave={e=>e.currentTarget.style.background=C.linen}>
               <div style={{marginBottom:"1.75rem",display:"inline-flex",alignItems:"center",justifyContent:"center",width:"50px",height:"50px",borderRadius:"50%",border:`1px solid rgba(61,92,79,0.18)`,background:"rgba(61,92,79,0.04)"}}>
@@ -747,111 +611,9 @@ html,body{overflow-x:hidden!important}
     </div>
   );
 
-  // ── PRICING ──────────────────────────────────────────────────────────────
-  const Pricing = (
-    <section id="pricing" style={{background:C.linen,padding:"8rem clamp(1rem,4vw,2.5rem)"}}>
-      <div style={{maxWidth:"1280px",margin:"0 auto"}}>
-        <div style={{marginBottom:"4rem"}}>
-          <div style={{display:"flex",alignItems:"center",gap:"14px",marginBottom:"1.5rem"}}>
-            <div style={{width:"28px",height:"1px",background:C.slate}}/>
-            <span style={{fontFamily:sans,fontSize:"10.5px",letterSpacing:"0.2em",color:C.slate,textTransform:"uppercase"}}>{c.pr_sub}</span>
-          </div>
-          <div style={{display:"flex",flexWrap:"wrap",alignItems:"flex-end",gap:"2.5rem",justifyContent:"space-between"}}>
-            <h2 style={{fontFamily:serif,fontSize:"clamp(36px,5vw,62px)",fontWeight:300,color:C.forest,margin:0,lineHeight:1.06,whiteSpace:"pre-line"}}>{c.pr_h}</h2>
-            <p style={{fontFamily:sans,fontSize:"15px",fontWeight:300,color:C.muted,lineHeight:1.8,maxWidth:"420px",margin:0}}>{c.pr_body}</p>
-          </div>
-          <p style={{fontFamily:sans,fontSize:"13px",fontWeight:400,color:C.slate,marginTop:"1.5rem",padding:"12px 20px",background:"rgba(61,92,79,0.06)",borderLeft:"2px solid "+C.sage,display:"inline-block"}}>{c.pr_founding}</p>
-        </div>
-        <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(280px,1fr))",gap:"1px",background:"rgba(61,92,79,0.1)",marginBottom:"3rem"}}>
-          {c.pr_tiers.map((tier,i)=>(
-            <div key={tier.name} style={{
-              background:tier.highlight?C.forest:C.linen,
-              padding:"2rem clamp(1rem,4vw,2.5rem)",
-              position:"relative",
-            }}>
-              {tier.highlight&&<div style={{position:"absolute",top:"1.5rem",right:"1.5rem",fontFamily:sans,fontSize:"9px",fontWeight:500,letterSpacing:"0.12em",textTransform:"uppercase",background:C.sage,color:C.forest,padding:"4px 12px",borderRadius:"20px"}}>{c.pr_popular}</div>}
-              <p style={{fontFamily:sans,fontSize:"10.5px",letterSpacing:"0.18em",textTransform:"uppercase",color:tier.highlight?"rgba(200,216,192,0.6)":C.muted,margin:"0 0 1rem"}}>{tier.name}</p>
-              <div style={{display:"flex",alignItems:"baseline",gap:"4px",marginBottom:"1rem"}}>
-                <span style={{fontFamily:serif,fontSize:"48px",fontWeight:300,color:tier.highlight?C.linen:C.forest,lineHeight:1}}>{tier.price}</span>
-                <span style={{fontFamily:sans,fontSize:"13px",color:tier.highlight?"rgba(200,216,192,0.55)":C.muted}}>{tier.period}</span>
-              </div>
-              <p style={{fontFamily:sans,fontSize:"13px",fontWeight:300,color:tier.highlight?"rgba(245,242,236,0.6)":C.muted,lineHeight:1.7,marginBottom:"2rem",minHeight:"56px"}}>{tier.desc}</p>
-              <div style={{height:"1px",background:tier.highlight?"rgba(200,216,192,0.15)":"rgba(61,92,79,0.1)",marginBottom:"1.5rem"}}/>
-              <ul style={{listStyle:"none",padding:0,margin:"0 0 2rem",display:"flex",flexDirection:"column",gap:"0.9rem"}}>
-                {tier.features.map(f=>(
-                  <li key={f} style={{display:"flex",alignItems:"flex-start",gap:"10px"}}>
-                    <div style={{marginTop:"3px",width:"16px",height:"16px",borderRadius:"50%",border:"1px solid "+(tier.highlight?"rgba(200,216,192,0.3)":"rgba(61,92,79,0.2)"),display:"flex",alignItems:"center",justifyContent:"center",flexShrink:0}}>
-                      <svg width="8" height="8" viewBox="0 0 8 8" fill="none"><path d="M1 4l2 2 4-4" stroke={tier.highlight?C.sage:C.slate} strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                    </div>
-                    <span style={{fontFamily:sans,fontSize:"13px",fontWeight:300,color:tier.highlight?"rgba(245,242,236,0.65)":C.muted,lineHeight:1.6}}>{f}</span>
-                  </li>
-                ))}
-              </ul>
-              <a href={"https://wa.me/"+WP_NUMBER} target="_blank" rel="noopener noreferrer"
-                style={{fontFamily:sans,fontSize:"13px",fontWeight:500,color:tier.highlight?C.forest:C.linen,background:tier.highlight?C.sage:C.forest,padding:"13px 28px",borderRadius:"2px",textDecoration:"none",letterSpacing:"0.06em",display:"block",textAlign:"center",transition:"background .2s"}}>
-                WhatsApp
-              </a>
-            </div>
-          ))}
-        </div>
-        <div style={{marginTop:"3rem"}}>
-          <div style={{padding:"2rem 1.5rem",background:C.forest,borderRadius:"2px 2px 0 0",display:"flex",flexWrap:"wrap",alignItems:"flex-start",justifyContent:"space-between",gap:"1.5rem",boxSizing:"border-box",width:"100%"}}>
-            <div style={{flex:"1",minWidth:"280px"}}>
-              <p style={{fontFamily:sans,fontSize:"10.5px",letterSpacing:"0.18em",textTransform:"uppercase",color:"rgba(200,216,192,0.45)",margin:"0 0 0.5rem",overflowWrap:"break-word"}}>{c.pr_holiday_sub}</p>
-              <p style={{fontFamily:serif,fontSize:"clamp(18px,4vw,26px)",fontWeight:300,color:C.sage,margin:"0 0 1rem",fontStyle:"italic",overflowWrap:"break-word",wordBreak:"break-word"}}>{c.pr_holiday_title}</p>
-              <p style={{fontFamily:sans,fontSize:"13px",fontWeight:300,color:"rgba(245,242,236,0.58)",margin:"0 0 1.5rem",lineHeight:1.75,maxWidth:"100%",width:"100%",boxSizing:"border-box"}}>{c.pr_holiday_body}</p>
-              <p style={{fontFamily:sans,fontSize:"12px",fontWeight:300,color:C.muted,lineHeight:1.7,maxWidth:"100%",width:"100%",boxSizing:"border-box",fontStyle:"italic",overflowWrap:"break-word",wordBreak:"break-word"}}>{c.pr_holiday_offseason}</p>
-            </div>
-            <div style={{display:"flex",flexDirection:"column",gap:"1rem",minWidth:"200px"}}>
-              <div style={{background:"rgba(200,216,192,0.08)",border:"1px solid rgba(200,216,192,0.15)",borderRadius:"2px",padding:"1.25rem 1.5rem"}}>
-                <div style={{display:"flex",alignItems:"baseline",gap:"4px",marginBottom:"4px"}}>
-                  <span style={{fontFamily:serif,fontSize:"36px",fontWeight:300,color:C.linen,lineHeight:1}}>{c.pr_holiday_base}</span>
-                  <span style={{fontFamily:sans,fontSize:"12px",color:"rgba(200,216,192,0.55)"}}>{c.pr_holiday_base_label}</span>
-                </div>
-                <p style={{fontFamily:sans,fontSize:"12px",fontWeight:300,color:C.muted,margin:0,lineHeight:1.5}}>{c.pr_holiday_base_desc}</p>
-              </div>
-              <div style={{background:"rgba(200,216,192,0.05)",border:"1px solid rgba(200,216,192,0.1)",borderRadius:"2px",padding:"1.25rem 1.5rem"}}>
-                <div style={{display:"flex",alignItems:"baseline",gap:"4px",marginBottom:"4px"}}>
-                  <span style={{fontFamily:serif,fontSize:"28px",fontWeight:300,color:C.sage,lineHeight:1}}>{c.pr_holiday_overage}</span>
-                  <span style={{fontFamily:sans,fontSize:"12px",color:"rgba(200,216,192,0.45)"}}>{c.pr_holiday_overage_label}</span>
-                </div>
-                <p style={{fontFamily:sans,fontSize:"12px",fontWeight:300,color:C.muted,margin:0,lineHeight:1.5}}>{c.pr_holiday_overage_desc}</p>
-              </div>
-            </div>
-          </div>
-          <div style={{background:C.linen,border:"1px solid rgba(61,92,79,0.12)",borderTop:"none",borderRadius:"0 0 2px 2px",padding:"2rem 1.5rem",display:"flex",flexWrap:"wrap",gap:"3rem",alignItems:"flex-start",justifyContent:"space-between"}}>
-            <div style={{flex:"1",minWidth:"260px"}}>
-              <p style={{fontFamily:sans,fontSize:"10px",letterSpacing:"0.14em",textTransform:"uppercase",color:C.slate,margin:"0 0 0.75rem"}}>{c.pr_holiday_hours_title}</p>
-              <p style={{fontFamily:sans,fontSize:"11px",color:C.muted,margin:"0 0 0.75rem",fontStyle:"italic"}}>{c.pr_holiday_hours_note}</p>
-              <div style={{display:"flex",flexDirection:"column",gap:"0"}}>
-                {c.pr_holiday_hours.map((h,i)=>(
-                  <div key={i} style={{display:"flex",alignItems:"center",justifyContent:"space-between",gap:"1rem",padding:"8px 0",borderBottom:"1px solid rgba(61,92,79,0.1)"}}>
-                    <div>
-                      <span style={{fontFamily:sans,fontSize:"12px",fontWeight:500,color:C.slate}}>{h.time}</span>
-                      <span style={{fontFamily:sans,fontSize:"11px",color:C.muted,marginLeft:"8px"}}>{h.label}</span>
-                    </div>
-                    <span style={{fontFamily:serif,fontSize:"18px",fontWeight:400,color:C.forest,flexShrink:0}}>{h.fee}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div style={{flex:"1",minWidth:"240px"}}>
-              <p style={{fontFamily:sans,fontSize:"10px",letterSpacing:"0.14em",textTransform:"uppercase",color:C.slate,margin:"0 0 0.75rem"}}>Policy</p>
-              <p style={{fontFamily:sans,fontSize:"12px",fontWeight:300,color:C.muted,lineHeight:1.75,margin:"0 0 1.5rem"}}>{c.pr_holiday_policy}</p>
-              <a href={"https://wa.me/"+WP_NUMBER} target="_blank" rel="noopener noreferrer"
-                style={{fontFamily:sans,fontSize:"13px",fontWeight:500,color:C.forest,background:C.sage,padding:"12px 24px",borderRadius:"2px",textDecoration:"none",letterSpacing:"0.06em",display:"inline-block",transition:"background .2s"}}>
-                {c.pr_holiday_cta}
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-
   // ── REPORT ───────────────────────────────────────────────────────────────
   const Report = (
-    <section id="report" ref={repRef} style={{background:C.forest,padding:"9rem clamp(1rem,4vw,2.5rem)",overflow:"hidden",position:"relative"}}>
+    <section id="report" ref={repRef} style={{background:C.forest,padding:"9rem 2.5rem",overflow:"hidden",position:"relative"}}>
       <div style={{position:"absolute",inset:0,backgroundImage:"radial-gradient(circle at 82% 18%,rgba(200,216,192,0.04) 0%,transparent 48%),radial-gradient(circle at 8% 82%,rgba(46,64,87,0.38) 0%,transparent 50%)",pointerEvents:"none"}}/>
       <div style={{maxWidth:"1280px",margin:"0 auto",position:"relative"}}>
         <div style={{marginBottom:"5.5rem",...rv(repVis,0)}}>
@@ -892,7 +654,7 @@ html,body{overflow-x:hidden!important}
 
   // ── ABOUT ─────────────────────────────────────────────────────────────────
   const About = (
-    <section id="about" ref={abtRef} style={{background:C.linen,padding:"9rem clamp(1rem,4vw,2.5rem)",overflow:"hidden"}}>
+    <section id="about" ref={abtRef} style={{background:C.linen,padding:"9rem 2.5rem",overflow:"hidden"}}>
       <div style={{maxWidth:"1280px",margin:"0 auto"}}>
         <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(300px,1fr))",gap:"6rem",alignItems:"start"}}>
           <div style={{...rv(abtVis,0,"X",-32)}}>
@@ -913,7 +675,7 @@ html,body{overflow-x:hidden!important}
           <div style={{...rv(abtVis,0.2,"X",32)}}>
             <div style={{marginBottom:"3rem",position:"relative"}}>
               <div style={{position:"absolute",top:"-1rem",left:"-0.5rem",fontFamily:serif,fontSize:"160px",fontWeight:300,color:"rgba(61,92,79,0.06)",lineHeight:1,userSelect:"none",pointerEvents:"none"}}>M</div>
-              <div style={{position:"relative",padding:"clamp(1.25rem,4vw,2.5rem)",background:C.forest,borderRadius:"2px"}}>
+              <div style={{position:"relative",padding:"2.5rem",background:C.forest,borderRadius:"2px"}}>
                 <div style={{width:"28px",height:"1px",background:C.sage,marginBottom:"1.5rem"}}/>
                 <p style={{fontFamily:serif,fontSize:"clamp(18px,2.5vw,22px)",fontWeight:300,color:C.linen,lineHeight:1.72,margin:"0 0 1.75rem",fontStyle:"italic"}}>{c.about_q}</p>
                 <p style={{fontFamily:sans,fontSize:"12px",letterSpacing:"0.1em",color:"rgba(200,216,192,0.5)",margin:0,textTransform:"uppercase"}}>{c.about_attr}</p>
@@ -940,7 +702,7 @@ html,body{overflow-x:hidden!important}
 
   // ── FAQ ───────────────────────────────────────────────────────────────────
   const FAQ = (
-    <section id="faq" ref={faqRef} style={{background:C.forest,padding:"9rem clamp(1rem,4vw,2.5rem)"}}>
+    <section id="faq" ref={faqRef} style={{background:C.forest,padding:"9rem 2.5rem"}}>
       <div style={{maxWidth:"1280px",margin:"0 auto"}}>
         <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(280px,1fr))",gap:"5rem",alignItems:"start"}}>
           <div style={{...rv(faqVis,0,"X",-28)}}>
@@ -955,9 +717,9 @@ html,body{overflow-x:hidden!important}
                 style={{fontFamily:sans,fontSize:"14px",fontWeight:500,color:C.forest,background:C.sage,padding:"14px 32px",borderRadius:"2px",textDecoration:"none",letterSpacing:"0.06em",display:"inline-block",textAlign:"center",transition:"background .2s"}}
                 onMouseEnter={e=>e.target.style.background=C.linen} onMouseLeave={e=>e.target.style.background=C.sage}>WhatsApp</a>
               <a href={`mailto:${EMAIL}`}
-                style={{fontFamily:sans,fontSize:"14px",fontWeight:500,color:C.sage,padding:"14px 32px",borderRadius:"2px",textDecoration:"none",letterSpacing:"0.06em",display:"inline-block",textAlign:"center",border:"1px solid rgba(200,216,192,0.4)",transition:"border-color .2s,color .2s,background .2s"}}
-                onMouseEnter={e=>{e.target.style.borderColor=C.sage;e.target.style.color=C.linen}}
-                onMouseLeave={e=>{e.target.style.borderColor="rgba(200,216,192,0.4)";e.target.style.color=C.sage}}>Email</a>
+                style={{fontFamily:sans,fontSize:"14px",fontWeight:300,color:"rgba(245,242,236,0.6)",padding:"14px 32px",borderRadius:"2px",textDecoration:"none",letterSpacing:"0.06em",display:"inline-block",textAlign:"center",border:"1px solid rgba(200,216,192,0.2)",transition:"border-color .2s,color .2s"}}
+                onMouseEnter={e=>{e.target.style.borderColor="rgba(200,216,192,0.5)";e.target.style.color=C.linen}}
+                onMouseLeave={e=>{e.target.style.borderColor="rgba(200,216,192,0.2)";e.target.style.color="rgba(245,242,236,0.6)"}}>Email</a>
             </div>
           </div>
           <div style={{...rv(faqVis,0.18,"X",28)}}>
@@ -985,7 +747,7 @@ html,body{overflow-x:hidden!important}
 
   // ── FOOTER ───────────────────────────────────────────────────────────────
   const Footer = (
-    <footer id="contact" ref={ftRef} style={{background:"#141f1e",borderTop:"1px solid rgba(200,216,192,0.08)",padding:"6rem clamp(1rem,4vw,2.5rem) 3rem"}}>
+    <footer id="contact" ref={ftRef} style={{background:"#141f1e",borderTop:"1px solid rgba(200,216,192,0.08)",padding:"6rem 2.5rem 3rem"}}>
       <div style={{maxWidth:"1280px",margin:"0 auto"}}>
         <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(220px,1fr))",gap:"4rem",marginBottom:"5rem",...rv(ftVis,0)}}>
           <div style={{gridColumn:"span 1"}}>
@@ -1005,7 +767,7 @@ html,body{overflow-x:hidden!important}
                 {c.footer_wp} — {c.footer_wp_num}
               </a>
               <a href={`mailto:${c.footer_email}`}
-                style={{display:"flex",alignItems:"center",gap:"10px",textDecoration:"underline",textUnderlineOffset:"3px",color:C.linen,fontFamily:sans,fontSize:"14px",fontWeight:300,transition:"color .2s"}}
+                style={{display:"flex",alignItems:"center",gap:"10px",textDecoration:"none",color:C.linen,fontFamily:sans,fontSize:"14px",fontWeight:300,transition:"color .2s"}}
                 onMouseEnter={e=>e.currentTarget.style.color=C.sage} onMouseLeave={e=>e.currentTarget.style.color=C.linen}>
                 <Ico n="mail" sz={16} col="rgba(200,216,192,0.5)"/>
                 {c.footer_email}
@@ -1045,11 +807,10 @@ html,body{overflow-x:hidden!important}
   );
 
   return (
-    <div style={{fontFamily:sans,background:C.forest,maxWidth:"100vw"}}>
+    <div style={{fontFamily:sans,background:C.forest}}>
       {Nav}
       {Hero}
       {Services}
-      {Pricing}
       {Report}
       {About}
       {FAQ}
