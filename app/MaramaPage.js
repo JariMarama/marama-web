@@ -114,6 +114,7 @@ const COPY = {
     stat_h3:"Monthly",
     stat_h4:"One call",
     footer_lang:"Language",
+  },
 
   ES: {
     eyebrow:"Costa Blanca · Gestión de Propiedades",
@@ -201,6 +202,7 @@ const COPY = {
     stat_h3:"Mensual",
     stat_h4:"Una llamada",
     footer_lang:"Idioma",
+  },
 
   CZ: {
     eyebrow:"Costa Blanca · Správa nemovitostí",
